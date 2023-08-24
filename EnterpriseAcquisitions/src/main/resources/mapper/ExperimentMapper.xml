@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.mapper.ExperimentMapper">
+
+    <resultMap id="BaseResultMap" type="com.ruoyi.pojo.Experiment">
+            <id property="expId" column="exp_id" jdbcType="INTEGER"/>
+            <id property="userId" column="user_id" jdbcType="BIGINT"/>
+            <result property="status" column="status" jdbcType="BIT"/>
+            <result property="sumScore" column="sum_score" jdbcType="INTEGER"/>
+            <result property="startTime" column="start_time" jdbcType="TIMESTAMP"/>
+            <result property="endTime" column="end_time" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        exp_id,user_id,status,
+        sum_score,start_time,end_time
+    </sql>
+</mapper>

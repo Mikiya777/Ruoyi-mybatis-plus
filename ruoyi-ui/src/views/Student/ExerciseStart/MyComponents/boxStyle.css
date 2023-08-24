@@ -1,0 +1,35 @@
+
+.video{
+    position: absolute;
+    left: 20px;
+    bottom: 20px;
+}
+
+.schedule {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width:100%; /* Adjust this as needed */
+    margin: 0 auto;
+}
+
+.item {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 5px;
+    flex: 1;
+    text-align: center;
+}
+
+.progress {
+    height: 10px;
+    background-color: #eee;
+    margin-top: 5px;
+}
+
+.progress-bar {
+    height: 100%;
+    background-color: skyblue; /* Adjust the color as needed */
+}
