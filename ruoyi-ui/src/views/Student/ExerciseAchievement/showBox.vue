@@ -4,7 +4,7 @@
       <el-button class="button-box" slot="reference"> {{ name }}</el-button>
       <div class="content-box">
         <!-- 展示图片 -->
-        <div v-if="!answer">
+        <div v-if="type===0">
           <img :src="img" class="img-box" />
         </div>
 
