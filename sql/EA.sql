@@ -27,11 +27,25 @@ create table schedule(
     user_id bigint(20) not null,
     status bit(1) comment '0未完成，1已提交',
     sum_score int(3) DEFAULT 0 comment '总分',
-    url varchar(255) not null,
+    page_info_id bigint,
     start_time datetime,
     end_time datetime,
     primary key(exp_id,user_id)
 )comment '演练进度';
+
+create table page_info(
+    page_info_id bigint auto_increment,
+    FriendBodyString varchar(255),
+    PayWay varchar(255),
+    controlNumber int,
+    friendNumber int,
+    friendsing int,
+    isPlaying boolean,
+    randomString varchar(255),
+    workString varchar(255),
+    worksing int,
+    primary key (page_info_id)
+)comment '页面信息-用于完成继续实验的跳转功能';
 
 # 使得experiment表在插入新数据时，每个用户自己的exp_id自增
 DELIMITER //

@@ -5,11 +5,9 @@ import com.ruoyi.pojo.Experiment;
 import com.ruoyi.pojo.RequestResult;
 import com.ruoyi.pojo.Schedule;
 import com.ruoyi.service.ExperimentService;
+import com.ruoyi.service.PageInfoService;
 import com.ruoyi.service.ScheduleService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import java.util.ArrayList;
@@ -27,6 +25,9 @@ public class ScheduleController {
     @Resource
     private ExperimentService experimentService;
 
+    @Resource
+    private PageInfoService pageInfoService;
+
     /**
      * @description: 根据用户id获取该用户的所有演练进度
      * @param user_id
@@ -37,10 +38,21 @@ public class ScheduleController {
         List<Schedule> scheduleList = new ArrayList<>();
         List<Experiment> experimentList = experimentService.list(new QueryWrapper<Experiment>().eq("user_id", user_id));
         for (Experiment experiment : experimentList) {
-            Schedule schedule = scheduleService.getOne(new QueryWrapper<Schedule>().eq("user_id", user_id).eq("exp_id", experiment.getExpId()));
+            Schedule schedule = scheduleService.getUserSchedule(user_id, experiment.getExpId());
             if (schedule != null)
                 scheduleList.add(schedule);
         }
         return new RequestResult<>(scheduleList);
     }
+
+    @PostMapping("/submit")
+    public RequestResult<Boolean> submitSchedule(@RequestBody Schedule schedule) {
+        if (pageInfoService.savePageInfo(schedule.getPageInfo())){
+            schedule.setPageInfoId(schedule.getPageInfo().getPageInfoId());
+            return new RequestResult<>(scheduleService.saveSchedule(schedule));
+        }
+        return new RequestResult<>(false);
+    }
+
+
 }
