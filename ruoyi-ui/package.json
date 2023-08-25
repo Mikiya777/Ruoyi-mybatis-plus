@@ -8,7 +8,7 @@
     "serve": "export NODE_OPTIONS=--openssl-legacy-provider &&  vue-cli-service serve",
     "start": "set NODE_OPTIONS=--openssl-legacy-provider && npm run serve",
     "dev": "  export NODE_OPTIONS=--openssl-legacy-provider && npm run serve",
-    "build": "set NODE_OPTIONS=--openssl-legacy-provider && vue-cli-service build --report"
+    "build": "export NODE_OPTIONS=--openssl-legacy-provider && vue-cli-service build --report"
   },
   "husky": {
     "hooks": {
