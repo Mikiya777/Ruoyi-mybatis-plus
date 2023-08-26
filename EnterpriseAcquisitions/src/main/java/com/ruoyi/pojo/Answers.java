@@ -62,11 +62,8 @@ public class Answers implements Serializable {
             return false;
         }
         Answers other = (Answers) that;
-        return (this.getExpId() == null ? other.getExpId() == null : this.getExpId().equals(other.getExpId()))
-            && (this.getQuestionId() == null ? other.getQuestionId() == null : this.getQuestionId().equals(other.getQuestionId()))
-            && (this.getUserId() == null ? other.getUserId() == null : this.getUserId().equals(other.getUserId()))
-            && (this.getAnswer() == null ? other.getAnswer() == null : this.getAnswer().equals(other.getAnswer()))
-            && (this.getId() == null ? other.getId() == null : this.getId().equals(other.getId()))
+        return
+            (this.getId() == null ? other.getId() == null : this.getId().equals(other.getId()))
             && (this.getNextId() == null ? other.getNextId() == null : this.getNextId().equals(other.getNextId()));
     }
 

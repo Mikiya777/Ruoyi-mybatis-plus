@@ -24,4 +24,7 @@
         WHERE  user_id = #{param1} and exp_id = #{param2}
         ORDER BY question_id DESC LIMIT 1;
     </select>
+    <select id="selectAnswerByPageId" resultType="java.lang.Integer">
+        select count(*) from answers where user_id = #{param1} and exp_id = #{param2} and id = #{param3};
+    </select>
 </mapper>

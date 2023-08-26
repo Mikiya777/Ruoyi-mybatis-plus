@@ -22,6 +22,13 @@ public class AnswersServiceImpl extends ServiceImpl<AnswersMapper, Answers>
     public Integer getTheLatestQuestionId(Long userId, Integer expId) {
         return answersMapper.selectTheLatestQuestionId(userId,expId);
     }
+
+    @Override
+    public Boolean CheckAnswersIfValid(Answers answers) {
+        if (answersMapper.selectAnswerByPageId(answers.getId())>0)
+            return false;
+        return true;
+    }
 }
 
 

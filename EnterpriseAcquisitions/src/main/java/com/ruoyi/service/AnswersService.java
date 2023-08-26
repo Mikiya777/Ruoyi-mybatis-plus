@@ -10,4 +10,6 @@ import com.baomidou.mybatisplus.extension.service.IService;
 */
 public interface AnswersService extends IService<Answers> {
     Integer getTheLatestQuestionId(Long userId,Integer expId);
+
+    Boolean CheckAnswersIfValid(Answers answers);
 }
