@@ -9,5 +9,5 @@ import com.baomidou.mybatisplus.extension.service.IService;
 * @createDate 2023-08-26 16:27:46
 */
 public interface AnswersService extends IService<Answers> {
-
+    Integer getTheLatestQuestionId(Long userId,Integer expId);
 }

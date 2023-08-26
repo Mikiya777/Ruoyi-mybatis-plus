@@ -17,4 +17,11 @@
         exp_id,question_id,user_id,
         answer,id,next_id
     </sql>
+
+    <select id="selectTheLatestQuestionId" resultType="java.lang.Integer">
+        SELECT question_id
+        FROM answers
+        WHERE  user_id = #{param1} and exp_id = #{param2}
+        ORDER BY question_id DESC LIMIT 1;
+    </select>
 </mapper>

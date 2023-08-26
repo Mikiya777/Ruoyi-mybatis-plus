@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
 import java.util.Date;
+import java.util.List;
 
 /**
  * @description: 针对表【experiment(实验表)】的数据库操作Controller
@@ -55,21 +56,37 @@ public class ExperimentController {
         newSchedule.setUserId(user_id);
         newSchedule.setStatus(false);
         newSchedule.setStartTime(experiment.getStartTime());
+        newSchedule.setId("p01");
 
         scheduleService.save(newSchedule);
         return new RequestResult<>(experiment);
     }
 
     /**
+     * 获取当前用户所有实验
+     * @return 实验列表
+     */
+    @GetMapping("/get")
+    public RequestResult<List<Experiment>> getExprimentList(){
+        LoginUser loginUser = SecurityUtils.getLoginUser();
+        List<Experiment> experimentList = experimentService
+                .list(new QueryWrapper<Experiment>()
+                        .eq("user_id", loginUser.getUserId())
+                        .orderByDesc("exp_id"));
+        return new RequestResult<>(experimentList);
+    }
+
+    /**
      * @description: 实验完成时要执行的操作
-     * @param user_id 用户id
+     *
      * @param exp_id 实验id
      * @return 操作是否成功
      */
 
-    @GetMapping("finishExp/{user_id}/{exp_id}")
-    public RequestResult<Boolean> finishExp(@PathVariable("user_id") Long user_id, @PathVariable("exp_id") Integer exp_id) {
-        Experiment experiment = experimentService.getOne(new QueryWrapper<Experiment>().eq("user_id", user_id).eq("exp_id", exp_id));
+    @GetMapping("finishExp/{exp_id}")
+    public RequestResult<Boolean> finishExp(@PathVariable("exp_id") Integer exp_id) {
+        LoginUser loginUser = SecurityUtils.getLoginUser();
+        Experiment experiment = experimentService.getOne(new QueryWrapper<Experiment>().eq("user_id", loginUser.getUserId()).eq("exp_id", exp_id));
         experiment.setStatus(true);
         experiment.setEndTime(new Date());
         boolean update = experimentService.updateById(experiment);

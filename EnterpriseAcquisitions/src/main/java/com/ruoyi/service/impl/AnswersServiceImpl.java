@@ -6,6 +6,8 @@ import com.ruoyi.service.AnswersService;
 import com.ruoyi.mapper.AnswersMapper;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
+
 /**
 * @author 25808
 * @description 针对表【answers(作答记录)】的数据库操作Service实现
@@ -14,7 +16,12 @@ import org.springframework.stereotype.Service;
 @Service
 public class AnswersServiceImpl extends ServiceImpl<AnswersMapper, Answers>
     implements AnswersService{
-
+    @Resource
+    private AnswersMapper answersMapper;
+    @Override
+    public Integer getTheLatestQuestionId(Long userId, Integer expId) {
+        return answersMapper.selectTheLatestQuestionId(userId,expId);
+    }
 }
 
 

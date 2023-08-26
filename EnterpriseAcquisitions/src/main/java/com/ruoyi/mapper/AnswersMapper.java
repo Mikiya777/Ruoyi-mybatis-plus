@@ -10,7 +10,7 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 * @Entity .pojo.Answers
 */
 public interface AnswersMapper extends BaseMapper<Answers> {
-
+    Integer selectTheLatestQuestionId(Long userId,Integer expId);
 }
 
 

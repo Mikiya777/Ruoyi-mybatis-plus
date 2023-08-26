@@ -11,4 +11,5 @@ import com.ruoyi.pojo.Experiment;
 */
 public interface ExperimentService extends IService<Experiment> {
     Integer getLatestExpId(Long user_id);
+
 }
