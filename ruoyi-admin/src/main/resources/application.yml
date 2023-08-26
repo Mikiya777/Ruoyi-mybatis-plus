@@ -1,4 +1,5 @@
 # 项目相关配置
+
 ruoyi:
   # 名称
   name: RuoYi
@@ -19,6 +20,7 @@ ruoyi:
 server:
   # 服务器的HTTP端口，默认为8080
   port: 8080
+  host: 192.168.137.121
   servlet:
     # 应用的访问路径
     context-path: /

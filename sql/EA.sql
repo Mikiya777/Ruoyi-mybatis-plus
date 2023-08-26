@@ -3,7 +3,7 @@ create table answers(
     question_id int not null comment '作答顺序',
     user_id bigint(20) not null ,
     answer varchar(255) comment '作答内容',
-    id varchar(32) not null comment '页面id',
+    id varchar(32)  comment '页面id',
     next_id varchar(32) comment '下一页id',
     primary key(exp_id,question_id,user_id)
 )comment '作答记录';

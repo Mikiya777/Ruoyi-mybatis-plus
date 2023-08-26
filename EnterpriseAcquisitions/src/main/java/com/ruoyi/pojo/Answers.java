@@ -1,6 +1,6 @@
 package com.ruoyi.pojo;
 
-import com.alibaba.fastjson2.annotation.JSONField;
+import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
@@ -33,39 +33,19 @@ public class Answers implements Serializable {
     private Long userId;
 
     /**
-     * 
+     * 作答内容
      */
-    private String picture;
+    private String answer;
 
     /**
-     * 
+     * 页面id
      */
-    private String text;
+    private String id;
 
     /**
-     * 
+     * 下一页id
      */
-    private String blank;
-
-    /**
-     * 
-     */
-    private String textblank;
-
-    /**
-     * 
-     */
-    private String singleChoice;
-
-    /**
-     * 
-     */
-    private String mutilChoice;
-
-    /**
-     * 
-     */
-    private Integer score;
+    private String nextId;
 
     @TableField(exist = false)
     private static final long serialVersionUID = 1L;
@@ -85,13 +65,9 @@ public class Answers implements Serializable {
         return (this.getExpId() == null ? other.getExpId() == null : this.getExpId().equals(other.getExpId()))
             && (this.getQuestionId() == null ? other.getQuestionId() == null : this.getQuestionId().equals(other.getQuestionId()))
             && (this.getUserId() == null ? other.getUserId() == null : this.getUserId().equals(other.getUserId()))
-            && (this.getPicture() == null ? other.getPicture() == null : this.getPicture().equals(other.getPicture()))
-            && (this.getText() == null ? other.getText() == null : this.getText().equals(other.getText()))
-            && (this.getBlank() == null ? other.getBlank() == null : this.getBlank().equals(other.getBlank()))
-            && (this.getTextblank() == null ? other.getTextblank() == null : this.getTextblank().equals(other.getTextblank()))
-            && (this.getSingleChoice() == null ? other.getSingleChoice() == null : this.getSingleChoice().equals(other.getSingleChoice()))
-            && (this.getMutilChoice() == null ? other.getMutilChoice() == null : this.getMutilChoice().equals(other.getMutilChoice()))
-            && (this.getScore() == null ? other.getScore() == null : this.getScore().equals(other.getScore()));
+            && (this.getAnswer() == null ? other.getAnswer() == null : this.getAnswer().equals(other.getAnswer()))
+            && (this.getId() == null ? other.getId() == null : this.getId().equals(other.getId()))
+            && (this.getNextId() == null ? other.getNextId() == null : this.getNextId().equals(other.getNextId()));
     }
 
     @Override
@@ -101,13 +77,9 @@ public class Answers implements Serializable {
         result = prime * result + ((getExpId() == null) ? 0 : getExpId().hashCode());
         result = prime * result + ((getQuestionId() == null) ? 0 : getQuestionId().hashCode());
         result = prime * result + ((getUserId() == null) ? 0 : getUserId().hashCode());
-        result = prime * result + ((getPicture() == null) ? 0 : getPicture().hashCode());
-        result = prime * result + ((getText() == null) ? 0 : getText().hashCode());
-        result = prime * result + ((getBlank() == null) ? 0 : getBlank().hashCode());
-        result = prime * result + ((getTextblank() == null) ? 0 : getTextblank().hashCode());
-        result = prime * result + ((getSingleChoice() == null) ? 0 : getSingleChoice().hashCode());
-        result = prime * result + ((getMutilChoice() == null) ? 0 : getMutilChoice().hashCode());
-        result = prime * result + ((getScore() == null) ? 0 : getScore().hashCode());
+        result = prime * result + ((getAnswer() == null) ? 0 : getAnswer().hashCode());
+        result = prime * result + ((getId() == null) ? 0 : getId().hashCode());
+        result = prime * result + ((getNextId() == null) ? 0 : getNextId().hashCode());
         return result;
     }
 
@@ -120,13 +92,9 @@ public class Answers implements Serializable {
         sb.append(", expId=").append(expId);
         sb.append(", questionId=").append(questionId);
         sb.append(", userId=").append(userId);
-        sb.append(", picture=").append(picture);
-        sb.append(", text=").append(text);
-        sb.append(", blank=").append(blank);
-        sb.append(", textblank=").append(textblank);
-        sb.append(", singleChoice=").append(singleChoice);
-        sb.append(", mutilChoice=").append(mutilChoice);
-        sb.append(", score=").append(score);
+        sb.append(", answer=").append(answer);
+        sb.append(", id=").append(id);
+        sb.append(", nextId=").append(nextId);
         sb.append(", serialVersionUID=").append(serialVersionUID);
         sb.append("]");
         return sb.toString();

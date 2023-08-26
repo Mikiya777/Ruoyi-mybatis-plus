@@ -1,13 +1,15 @@
 package com.ruoyi.controller;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.ruoyi.common.core.domain.model.LoginUser;
+import com.ruoyi.common.utils.SecurityUtils;
 import com.ruoyi.pojo.Experiment;
-import com.ruoyi.pojo.PageInfo;
 import com.ruoyi.pojo.RequestResult;
 import com.ruoyi.pojo.Schedule;
 import com.ruoyi.service.ExperimentService;
 import com.ruoyi.service.ScheduleService;
 
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -22,6 +24,7 @@ import java.util.Date;
 @RestController
 @RequestMapping("/experiment")
 public class ExperimentController {
+
     @Resource
     private ExperimentService experimentService;
 
@@ -30,21 +33,25 @@ public class ExperimentController {
 
     /**
      * @description: 根据用户id创建一个新的实验
-     * @param user_id
+     *
      * @return 实验id
      */
-    @GetMapping("/createExp/{user_id}")
-    public RequestResult<Experiment> createExp(@PathVariable("user_id") Long user_id) {
+    @GetMapping("/createExp")
+    @PreAuthorize("@ss.hasPermi('ExerciseStart')")
+    public RequestResult<Experiment> createExp() {
+        LoginUser loginUser = SecurityUtils.getLoginUser();
+        Long user_id = loginUser.getUserId();
+
         Experiment experiment = new Experiment();
         experiment.setUserId(user_id);
         experiment.setStatus(false);
-        experiment.setSumScore(0);
         experiment.setStartTime(new Date());
         experimentService.save(experiment);
-        experiment = experimentService.getOne(new QueryWrapper<Experiment>().eq("user_id", user_id));
+        Integer expId = experimentService.getLatestExpId(user_id);
+        experiment.setExpId(expId);
 
         Schedule newSchedule = new Schedule();
-        newSchedule.setExpId(experiment.getExpId());
+        newSchedule.setExpId(expId);
         newSchedule.setUserId(user_id);
         newSchedule.setStatus(false);
         newSchedule.setStartTime(experiment.getStartTime());

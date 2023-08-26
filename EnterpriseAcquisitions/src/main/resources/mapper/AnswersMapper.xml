@@ -8,19 +8,13 @@
             <id property="expId" column="exp_id" jdbcType="INTEGER"/>
             <id property="questionId" column="question_id" jdbcType="INTEGER"/>
             <id property="userId" column="user_id" jdbcType="BIGINT"/>
-            <result property="picture" column="picture" jdbcType="VARCHAR"/>
-            <result property="text" column="text" jdbcType="VARCHAR"/>
-            <result property="blank" column="blank" jdbcType="VARCHAR"/>
-            <result property="textblank" column="textblank" jdbcType="VARCHAR"/>
-            <result property="singleChoice" column="single_choice" jdbcType="CHAR"/>
-            <result property="mutilChoice" column="mutil_choice" jdbcType="VARCHAR"/>
-            <result property="score" column="score" jdbcType="INTEGER"/>
+            <result property="answer" column="answer" jdbcType="VARCHAR"/>
+            <result property="id" column="id" jdbcType="VARCHAR"/>
+            <result property="nextId" column="next_id" jdbcType="VARCHAR"/>
     </resultMap>
 
     <sql id="Base_Column_List">
         exp_id,question_id,user_id,
-        picture,text,blank,
-        textblank,single_choice,mutil_choice,
-        score
+        answer,id,next_id
     </sql>
 </mapper>

@@ -1,5 +1,6 @@
 package com.ruoyi.pojo;
 
+
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
@@ -32,11 +33,6 @@ public class Experiment implements Serializable {
     private Boolean status;
 
     /**
-     * 总分
-     */
-    private Integer sumScore;
-
-    /**
      * 开始时间
      */
     private Date startTime;
@@ -64,7 +60,6 @@ public class Experiment implements Serializable {
         return (this.getExpId() == null ? other.getExpId() == null : this.getExpId().equals(other.getExpId()))
             && (this.getUserId() == null ? other.getUserId() == null : this.getUserId().equals(other.getUserId()))
             && (this.getStatus() == null ? other.getStatus() == null : this.getStatus().equals(other.getStatus()))
-            && (this.getSumScore() == null ? other.getSumScore() == null : this.getSumScore().equals(other.getSumScore()))
             && (this.getStartTime() == null ? other.getStartTime() == null : this.getStartTime().equals(other.getStartTime()))
             && (this.getEndTime() == null ? other.getEndTime() == null : this.getEndTime().equals(other.getEndTime()));
     }
@@ -76,7 +71,6 @@ public class Experiment implements Serializable {
         result = prime * result + ((getExpId() == null) ? 0 : getExpId().hashCode());
         result = prime * result + ((getUserId() == null) ? 0 : getUserId().hashCode());
         result = prime * result + ((getStatus() == null) ? 0 : getStatus().hashCode());
-        result = prime * result + ((getSumScore() == null) ? 0 : getSumScore().hashCode());
         result = prime * result + ((getStartTime() == null) ? 0 : getStartTime().hashCode());
         result = prime * result + ((getEndTime() == null) ? 0 : getEndTime().hashCode());
         return result;
@@ -91,7 +85,6 @@ public class Experiment implements Serializable {
         sb.append(", expId=").append(expId);
         sb.append(", userId=").append(userId);
         sb.append(", status=").append(status);
-        sb.append(", sumScore=").append(sumScore);
         sb.append(", startTime=").append(startTime);
         sb.append(", endTime=").append(endTime);
         sb.append(", serialVersionUID=").append(serialVersionUID);

@@ -8,40 +8,15 @@
             <id property="expId" column="exp_id" jdbcType="INTEGER"/>
             <id property="userId" column="user_id" jdbcType="BIGINT"/>
             <result property="status" column="status" jdbcType="BIT"/>
-            <result property="sumScore" column="sum_score" jdbcType="INTEGER"/>
-            <result property="pageInfoId" column="page_info_id" jdbcType="BIGINT"/>
+            <result property="id" column="id" jdbcType="VARCHAR"/>
+            <result property="nextId" column="next_id" jdbcType="VARCHAR"/>
             <result property="startTime" column="start_time" jdbcType="TIMESTAMP"/>
             <result property="endTime" column="end_time" jdbcType="TIMESTAMP"/>
     </resultMap>
 
     <sql id="Base_Column_List">
         exp_id,user_id,status,
-        sum_score,page_info_id,start_time,
+        id,next_id,start_time,
         end_time
     </sql>
-    <insert id="insertSelective">
-        insert into schedule(exp_id,user_id,status,
-                             sum_score,page_info_id,start_time,
-                             end_time) values (#{expId,jdbcType=INTEGER},#{userId,jdbcType=BIGINT},#{status,jdbcType=BIT},
-                                               #{sumScore,jdbcType=INTEGER},#{pageInfoId,jdbcType=BIGINT},#{startTime,jdbcType=TIMESTAMP},
-                                               #{endTime,jdbcType=TIMESTAMP})
-    </insert>
-    <resultMap id="ScheduleAndPageInfoResult" type="com.ruoyi.pojo.Schedule">
-        <result property="userId" column="user_id"></result>
-        <result property="expId" column="exp_id"></result>
-        <result property="pageInfoId" column="page_info_id"></result>
-        <result property="sumScore" column="sum_score"></result>
-        <result property="status" column="status"></result>
-        <result property="startTime" column="start_time"></result>
-        <result property="endTime" column="end_time"></result>
-        <collection property="pageInfoId" select="com.ruoyi.mapper.PageInfoMapper.selectByPageInfoId" column="page_info_id"></collection>
-    </resultMap>
-
-    <select id="selectScheduleAndPageInfoByUserIdAndExpId" resultType="com.ruoyi.pojo.Schedule">
-        select
-        <include refid="Base_Column_List"/>
-        from schedule
-        where user_id = #{userId,jdbcType=BIGINT}
-        and exp_id = #{expId,jdbcType=INTEGER}
-    </select>
 </mapper>

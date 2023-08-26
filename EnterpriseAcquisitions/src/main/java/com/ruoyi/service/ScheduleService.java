@@ -8,10 +8,9 @@ import java.util.List;
 /**
 * @author 25808
 * @description 针对表【schedule(演练进度)】的数据库操作Service
-* @createDate 2023-08-25 08:56:03
+* @createDate 2023-08-26 16:27:46
 */
 public interface ScheduleService extends IService<Schedule> {
-    public Schedule getUserSchedule(Long userId, Integer expId);
 
-    public Boolean saveSchedule(Schedule schedule);
+    List<Schedule> getScheduleList(Long user_id);
 }

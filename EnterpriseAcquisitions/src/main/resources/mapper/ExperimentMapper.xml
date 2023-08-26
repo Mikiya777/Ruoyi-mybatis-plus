@@ -8,13 +8,19 @@
             <id property="expId" column="exp_id" jdbcType="INTEGER"/>
             <id property="userId" column="user_id" jdbcType="BIGINT"/>
             <result property="status" column="status" jdbcType="BIT"/>
-            <result property="sumScore" column="sum_score" jdbcType="INTEGER"/>
             <result property="startTime" column="start_time" jdbcType="TIMESTAMP"/>
             <result property="endTime" column="end_time" jdbcType="TIMESTAMP"/>
     </resultMap>
 
     <sql id="Base_Column_List">
         exp_id,user_id,status,
-        sum_score,start_time,end_time
+        start_time,end_time
     </sql>
+    <select id="selectTheLatestExpId" resultType="java.lang.Integer">
+        SELECT exp_id
+        FROM experiment
+        WHERE  user_id = #{param1}
+        ORDER BY exp_id DESC LIMIT 1;
+    </select>
+
 </mapper>
