@@ -2,8 +2,12 @@ package com.ruoyi.controller;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.ruoyi.pojo.Experiment;
+import com.ruoyi.pojo.PageInfo;
 import com.ruoyi.pojo.RequestResult;
+import com.ruoyi.pojo.Schedule;
 import com.ruoyi.service.ExperimentService;
+import com.ruoyi.service.ScheduleService;
+
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,6 +25,9 @@ public class ExperimentController {
     @Resource
     private ExperimentService experimentService;
 
+    @Resource
+    private ScheduleService scheduleService;
+
     /**
      * @description: 根据用户id创建一个新的实验
      * @param user_id
@@ -35,6 +42,14 @@ public class ExperimentController {
         experiment.setStartTime(new Date());
         experimentService.save(experiment);
         experiment = experimentService.getOne(new QueryWrapper<Experiment>().eq("user_id", user_id));
+
+        Schedule newSchedule = new Schedule();
+        newSchedule.setExpId(experiment.getExpId());
+        newSchedule.setUserId(user_id);
+        newSchedule.setStatus(false);
+        newSchedule.setStartTime(experiment.getStartTime());
+
+        scheduleService.save(newSchedule);
         return new RequestResult<>(experiment);
     }
 
@@ -44,6 +59,7 @@ public class ExperimentController {
      * @param exp_id 实验id
      * @return 操作是否成功
      */
+
     @GetMapping("finishExp/{user_id}/{exp_id}")
     public RequestResult<Boolean> finishExp(@PathVariable("user_id") Long user_id, @PathVariable("exp_id") Integer exp_id) {
         Experiment experiment = experimentService.getOne(new QueryWrapper<Experiment>().eq("user_id", user_id).eq("exp_id", exp_id));

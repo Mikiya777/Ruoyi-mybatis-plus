@@ -7,6 +7,7 @@ import com.ruoyi.pojo.Schedule;
 import com.ruoyi.service.ExperimentService;
 import com.ruoyi.service.PageInfoService;
 import com.ruoyi.service.ScheduleService;
+
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
@@ -33,6 +34,7 @@ public class ScheduleController {
      * @param user_id
      * @return 演练进度列表
      */
+
     @GetMapping("/get/{user_id}")
     public RequestResult<List<Schedule>> getScheduleList(@PathVariable Long user_id) {
         List<Schedule> scheduleList = new ArrayList<>();
@@ -44,6 +46,7 @@ public class ScheduleController {
         }
         return new RequestResult<>(scheduleList);
     }
+
 
     @PostMapping("/submit")
     public RequestResult<Boolean> submitSchedule(@RequestBody Schedule schedule) {

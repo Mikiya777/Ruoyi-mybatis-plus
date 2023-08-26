@@ -4,6 +4,7 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.ruoyi.pojo.Answers;
 import com.ruoyi.pojo.RequestResult;
 import com.ruoyi.service.AnswersService;
+
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
@@ -23,6 +24,7 @@ public class AnswersController {
      * @param answers
      * @return 操作是否成功
      */
+
     @PostMapping("/submit")
     public RequestResult<Boolean> submit(@RequestBody Answers answers) {
         boolean save = answersService.save(answers);
