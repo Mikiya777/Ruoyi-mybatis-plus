@@ -1,0 +1,288 @@
+[
+  {
+    "id": "0",
+    "type": 0,
+    "option": [],
+    "img": "/imgItem/p1.png",
+    "question": "",
+    "next_id": "p2"
+  },
+  {
+    "id": "p2",
+    "type": 0,
+    "option": [],
+    "img": "/imgItem/p2.png",
+    "question": "",
+    "next_id": "p3"
+  },
+  {
+    "id": "p3",
+    "type": 0,
+    "option": [],
+    "img": "/imgItem/p3.png",
+    "question": "",
+    "next_id": "p4"
+  },
+  {
+    "id": "p4",
+    "type": 0,
+    "option": [],
+    "img": "/imgItem/p4.png",
+    "audio": "/imgItem/p4.mp3",
+    "question": "",
+    "next_id": "p5"
+  },
+  {
+    "id": "p5",
+    "type": 0,
+    "option": [],
+    "img": "/imgItem/p5.png",
+    "audio": "/imgItem/p5.mp3",
+    "question": "",
+    "next_id": "p6填空"
+  },
+  {
+    "id": "p6填空",
+    "type": 1,
+    "option": [],
+    "img": "/imgItem/p6填空.png",
+    "question": "项目组长张总监根据助手提供的报表对WW公司进行了评估， 并在次日将分析结果向董事会进行汇报。在董事会上，张总监说道：“根据我的测算，WW公司2014年 净资产收益率为[文本框]%, 销售利润率为[文本框]%, 总资产报酬率为[文本框]%， 经营活动现金流入量／营业收入为[文本框]%。（结果保留一位小数）净资产收益率=(净利润 / 平均净资产)×100％；销售(营业)利润率=(利润总额 / 营业收入)×100％；总资产报酬率=[(利润总额+利息支出) / 平均资产总额]×100％(利息支出可用财务费用代替)(相关数据请查看登录后左侧菜单中“财务报表”)",
+    "num": 4,
+    "next_id": "p7"
+  },
+  {
+    "id": "p7",
+    "type": 0,
+    "option": [],
+    "img": "/imgItem/p7.png",
+    "audio": "/imgItem/p7.mp3",
+    "question": "",
+    "next_id": "p8多选"
+  },
+  {
+    "id": "p8多选",
+    "type": 3,
+    "option": ["A、净资产收益率", "B、销售利润率","C、总资产报酬率","D、经营活动现金流入量"],
+    "img": "/imgItem/p8多选.png",
+    "question": "“通过与标准对比，我发现盈利能力指标当中的（）指标达到了公司的并购标准（多选题）。” (具体要求为：最近一期净资产收益率不低于17%，最近一期销售利润率不低于12%，最近一期总资产报酬率不低于4%，经营活动现金流入量/营业收入不低于0.8）",
+    "next_id": "p9"
+  },
+  {
+    "id": "p9",
+    "type": 0,
+    "option": [],
+    "img": "/imgItem/p9.png",
+    "audio": "/imgItem/p9.mp3",
+    "question": "",
+    "next_id": "p10"
+  },
+  {
+    "id": "p10",
+    "type": 0,
+    "option": [],
+    "img": "/imgItem/p10.png",
+    "audio": "/imgItem/p10.mp3",
+    "question": "",
+    "next_id": "p11填空"
+  },
+  {
+    "id": "p11填空",
+    "type": 1,
+    "option": [],
+    "img": "/imgItem/p11填空.png",
+    "question": "项目组长张总监根据助手提供的报表对MM公司进行了评估，并在次日将分析结果向董事会进行汇报。在董事会上，张总监说道：“根据我的测算，WW公司2014年销售收入增长率为 净资产收益率为[文本框]%。（ 结果保留一位小数） (相关数据请查看登录后左侧菜单中“财务报表”)",
+    "num": 1,
+    "next_id": "p12"
+  },
+  {
+    "id": "p12",
+    "type": 0,
+    "option": [],
+    "img": "/imgItem/p12.png",
+    "audio": "/imgItem/p12.mp3",
+    "question": "",
+    "next_id": "p13单选"
+  },
+  {
+    "id": "p13单选",
+    "type": 2,
+    "option": ["A、是","B、否"],
+    "img": "/imgItem/p13单选.png",
+    "question": "“（是/否）达到公司的标准。”(具体要求为：最近一期销售收入增长率不低于7%。)",
+    "next_id": "p14"
+  },
+  {
+    "id": "p14",
+    "type": 0,
+    "option": [],
+    "img": "/imgItem/p14.png",
+    "audio": "/imgItem/p14.mp3",
+    "question": "",
+    "next_id": "p15"
+  },
+  {
+    "id": "p15",
+    "type": 0,
+    "option": [],
+    "img": "/imgItem/p15.png",
+    "audio": "/imgItem/p15.mp3",
+    "question": "",
+    "next_id": "p16填空"
+  },
+  {
+    "id": "p16填空",
+    "type": 1,
+    "option": [],
+    "img": "/imgItem/p16填空.png",
+    "question": "项目组长张总监根据助手提供的报表对WW公司进行了评估，并在次日将分析结果向董事会进行汇报。在董事会上，张总监说道：“根据我的测算，WW公司2014年 资产负债率为[文本框]%, 流动比率为[文本框]%,（结果保留一位小数）资产负债率=(负债总额／资产总额)×100％；流动比率=(流动资产／流动负债)(相关数据请查看登录后左侧菜单中“财务报表”)",
+    "num": 2,
+    "next_id": "p17"
+  },
+  {
+    "id": "p17",
+    "type": 0,
+    "option": [],
+    "img": "/imgItem/p17.png",
+    "audio": "/imgItem/p17.mp3",
+    "question": "",
+    "next_id": "p18多选"
+  },
+  {
+    "id": "p18多选",
+    "type": 3,
+    "option": ["A、资产负债率","B、流动比率"],
+    "img": "/imgItem/p18多选.png",
+    "question": "通过与标准对比，我发现对比标准后发现偿债能力指标当中的（）指标达到了公司的并购标准（多选题）。 (具体要求为：资产负债率约为67%；流动比率约为1.5，上下浮动应该控制在20%以内。）",
+    "next_id": "p19"
+  },
+  {
+    "id": "p19",
+    "type": 0,
+    "option": [],
+    "img": "/imgItem/p19.png",
+    "audio": "/imgItem/p19.mp3",
+    "question": "",
+    "next_id": "p20"
+  },
+  {
+    "id": "p20",
+    "type": 0,
+    "option": [],
+    "img": "/imgItem/p20.png",
+    "audio": "/imgItem/p20.mp3",
+    "question": "",
+    "next_id": "p21填空"
+  },
+  {
+    "id": "p21填空",
+    "type": 1,
+    "option": [],
+    "img": "/imgItem/p21填空.png",
+    "question": "项目组长张总监根据助手提供的报表对MM公司进行了评估，并在次日将分析结果向董事会进行汇报。在董事会上，张总监说到：“根据我的测算，WW公司2014年存 货周转率为[文本框]%。”（结果保留一位小数）存货周转率(次)=营业成本 / 平均存货(相关数据请查看登录后左侧菜单中“财务报表”)",
+    "num": 1,
+    "next_id": "p22"
+  },
+  {
+    "id": "p22",
+    "type": 0,
+    "option": [],
+    "img": "/imgItem/p22.png",
+    "audio": "/imgItem/p22.mp3",
+    "question": "",
+    "next_id": "p23单选"
+  },
+  {
+    "id": "p23单选",
+    "type": 2,
+    "option": ["A、是","B、否"],
+    "img": "/imgItem/p23单选.png",
+    "question": "(是/否)达到了公司的并购标准。 (具体要求为：最近一期存货周转率约为0.5次/年，如果最近一期销售利润率超过标准20%以上，则存货周转率约达到0.4次/年。)",
+    "next_id": "p24"
+  },
+  {
+    "id": "p24",
+    "type": 0,
+    "option": [],
+    "img": "/imgItem/p24.png",
+    "audio": "/imgItem/p24.mp3",
+    "question": "",
+    "next_id": "p25"
+  },
+  {
+    "id": "p25",
+    "type": 0,
+    "option": [],
+    "img": "/imgItem/p25.png",
+    "audio": "/imgItem/p25.mp3",
+    "question": "",
+    "next_id": "p26单选"
+  },
+  {
+    "id": "p26单选",
+    "type": 2,
+    "option": ["A、是","B、否"],
+    "img": "/imgItem/p26单选.png",
+    "question": "此时，董事长问项目组长张总监：“张总监，你来总结一下，此时并购WW公司是否是一个绝佳的时机？”（单选题）",
+    "next_id": "p27"
+  },
+  {
+    "id": "p27",
+    "type": 0,
+    "option": [],
+    "img": "/imgItem/p27.png",
+    "audio": "/imgItem/p27.mp3",
+    "question": "",
+    "next_id": "p28简答"
+  },
+  {
+    "id": "p28简答",
+    "type": 4,
+    "option": [],
+    "img": "/imgItem/p28简答.png",
+    "question": "董事长又追问张总监：“为什么？说明理由”",
+    "next_id": "p29"
+  },
+  {
+    "id": "p29",
+    "type": 0,
+    "option": [],
+    "img": "/imgItem/p29.png",
+    "audio": "/imgItem/p29.mp3",
+    "question": "",
+    "next_id": "p30填空"
+  },
+  {
+    "id": "p30填空",
+    "type": 1,
+    "option": [],
+    "img": "/imgItem/p30填空.png",
+    "question": "张总监回答道：“谨慎起见，我们采用未来五年现金流量现值作为估值基础。WW公司未来五年的现金流量分别为40亿、82亿、88亿、80亿、93亿，预期收益率为6%，总股数为185 000万股，且全部为流通股。目前股票价格为15元/股。最终计算得到的WW公司股价为[文本框]元/股。“ (6%复利现金系数，n=1~5：0.9434、0.89、0.8396、0.7921、0.7473）（结果保留一位小数）被并企业总估值=∑（i=1，n=5）第n年现金流量*对应年份复利现值系数",
+    "num": 1,
+    "next_id": "p31"
+  },
+  {
+    "id": "p31",
+    "type": 0,
+    "option": [],
+    "img": "/imgItem/p31.png",
+    "audio": "/imgItem/p31.mp3",
+    "question": "",
+    "next_id": "p32单选"
+  },
+  {
+    "id": "p32单选",
+    "type": 2,
+    "option": ["A、被高估/适合并购","B、被低估/适合并购", "C、被高估/不适合并购", "D、被低估/不适合并购"],
+    "img": "/imgItem/p32单选.png",
+    "question": "张总监回答：“这说明，对比现在该公司二级市场上的股票价格，该公司的股价是被（高/低）估，因此（是/不）合适进行并购”，并进一步确定可接受的最高出价（）。（单选题）",
+    "next_id": "p33"
+  },
+  {
+    "id": "p33",
+    "type": 0,
+    "option": [],
+    "img": "/imgItem/p33.png",
+    "question": "",
+    "next_id": "p34"
+  }
+]

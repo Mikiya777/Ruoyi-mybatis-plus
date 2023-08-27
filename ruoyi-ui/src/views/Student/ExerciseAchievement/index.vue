@@ -1,48 +1,120 @@
 <template>
   <div>
-    {{ title }}
-    <ul v-for="indexA in time "  :key="indexA" class="ul-box">
-        <template  v-for="(item , index ) in splitData[indexA-1]" >
-        <show-box  :isShow="true" :key="index" :content="item.content"> </show-box>
-      </template>
-    </ul>
-
-
-
+    <el-table
+      v-loading="loading"
+      :data="dataList"
+      highlight-current-row
+      style="width: 100%"
+    >
+      <el-table-column
+        prop="name"
+        label="演练名称"
+        :show-overflow-tooltip="true"
+        align="center"
+      ></el-table-column>
+      <el-table-column
+        prop="startTime"
+        label="演练时间"
+        align="center"
+        :show-overflow-tooltip="true"
+      ></el-table-column>
+      <el-table-column
+        prop="status"
+        :show-overflow-tooltip="true"
+        align="center"
+        label="演练状态"
+      >
+        <template slot-scope="scope">
+          <el-tag
+            :type="scope.row.status ? 'primary' : 'success'"
+            disable-transitions
+            >{{ scope.row.status ? "已结束" : "进行中" }}</el-tag
+          >
+        </template>
+      </el-table-column>
+      <el-table-column
+        prop="score"
+        label="总得分"
+        align="center"
+        :show-overflow-tooltip="true"
+      ></el-table-column>
+      <el-table-column
+        prop="expId"
+        label="操作"
+        align="center"
+        :show-overflow-tooltip="true"
+      >
+        <template slot-scope="scope">
+          <div class="detail" @click="handleGoPage(scope.row.expId)">
+            <svg
+              viewBox="64 64 896 896"
+              fill="currentColor"
+              width="1em"
+              height="1em"
+              data-icon="copy"
+              aria-hidden="true"
+            >
+              <path
+                d="M832 64H296c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h496v688c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8V96c0-17.7-14.3-32-32-32zM704 192H192c-17.7 0-32 14.3-32 32v530.7c0 8.5 3.4 16.6 9.4 22.6l173.3 173.3c2.2 2.2 4.7 4 7.4 5.5v1.9h4.2c3.5 1.3 7.2 2 11 2H704c17.7 0 32-14.3 32-32V224c0-17.7-14.3-32-32-32zM350 856.2L263.9 770H350v86.2zM664 888H414V746c0-22.1-17.9-40-40-40H232V264h432v624z"
+              ></path>
+            </svg>
+            演练详情
+          </div>
+        </template>
+      </el-table-column>
+    </el-table>
   </div>
 </template>
 
 <script>
-import ShowBox from "@/views/Student/ExerciseAchievement/showBox.vue";
+import { getExperiment } from "@/api/student/api.js";
 
 export default {
   name: "ExerciseAchievement",
-  components: {ShowBox},
-
   data() {
     return {
-      title: "成绩",
-      dataList:[],
-      splitData:{},
-      time:0
-    }
+      dataList: [],
+      loading: true,
+    };
   },
   created() {
-    this.dataList = [ {id:0,content:'333'},{id:1,content:'222'},{id:2,content:'123'},{id:2,content:'<img src="./bad.png"><img>'} ]
-    this.time = Math.ceil( this.dataList.length / 4 +1)
-    for (let i = 0; i < this.dataList.length; i += 4) {
-      const group = this.dataList.slice(i, i + 4);
-      this.splitData[i / 4] = group;
-    }
-    console.log(   0/4 )
-  }
+    getExperiment({ pageNum: 1 }).then((res) => {
+      this.loading = false;
+      this.dataList = res.data.experimentList.map((item) => {
+        return {
+          ...item,
+          startTime: this.formatDateTime(item.startTime),
+          name: `企业并购${item.expId}次演练`,
+        };
+      });
+      console.log(res, res);
+    });
+  },
+  methods: {
+    formatDateTime(a) {
+      const date = new Date(a);
+      const year = date.getFullYear();
+      const month = String(date.getMonth() + 1).padStart(2, "0");
+      const day = String(date.getDate()).padStart(2, "0");
+      const hours = String(date.getHours()).padStart(2, "0");
+      const minutes = String(date.getMinutes()).padStart(2, "0");
 
-}
+      return `${year}-${month}-${day} ${hours}:${minutes}`;
+    },
+    handleGoPage(e) {
+      localStorage.setItem("detail_expid", e);
+      this.$router.push('/ExerciseDetail/index')
+    },
+  },
+};
 </script>
 
 <style scoped>
-.ul-box{
+.detail {
+  color: #40a9ff;
+  cursor: pointer;
   display: flex;
-  width: 100%;
+  align-items: center;
+  justify-content: center;
 }
 </style>
