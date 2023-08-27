@@ -6,7 +6,6 @@ import com.ruoyi.common.core.controller.BaseController;
 import com.ruoyi.common.core.domain.model.LoginUser;
 import com.ruoyi.common.utils.SecurityUtils;
 import com.ruoyi.pojo.Answers;
-import com.ruoyi.pojo.AnswersListWithPages;
 import com.ruoyi.pojo.RequestResult;
 import com.ruoyi.service.AnswersService;
 
@@ -55,16 +54,15 @@ public class AnswersController extends BaseController {
      * @return 作答记录列表
      */
     @GetMapping("/get/{exp_id}")
-    public RequestResult<AnswersListWithPages> get(@PathVariable("exp_id") Integer expId) {
+    public RequestResult<List<Answers>> get(@PathVariable("exp_id") Integer expId) {
         LoginUser loginUser = SecurityUtils.getLoginUser();
-        Page page = MyPageUtils.startPage();
+        MyPageUtils.startPage();
         List<Answers> list = answersService
                 .list(new QueryWrapper<Answers>()
                         .eq("user_id", loginUser.getUserId())
                         .eq("exp_id", expId)
                         .orderByAsc("question_id"));
         list = list.stream().distinct().collect(Collectors.toList());
-        AnswersListWithPages answersListWithPages = new AnswersListWithPages(list, page);
-        return new RequestResult<>(answersListWithPages);
+        return new RequestResult<>(list);
     }
 }

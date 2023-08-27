@@ -19,6 +19,8 @@ import javax.annotation.Resource;
 import java.util.Date;
 import java.util.List;
 
+import static com.ruoyi.common.utils.PageUtils.startPage;
+
 /**
  * @description: 针对表【experiment(实验表)】的数据库操作Controller
  */
@@ -56,7 +58,7 @@ public class ExperimentController {
         newSchedule.setUserId(user_id);
         newSchedule.setStatus(false);
         newSchedule.setStartTime(experiment.getStartTime());
-        newSchedule.setId("p01");
+        newSchedule.setNextId("0");
 
         scheduleService.save(newSchedule);
         return new RequestResult<>(experiment);
@@ -69,6 +71,7 @@ public class ExperimentController {
     @GetMapping("/get")
     public RequestResult<List<Experiment>> getExprimentList(){
         LoginUser loginUser = SecurityUtils.getLoginUser();
+        startPage();
         List<Experiment> experimentList = experimentService
                 .list(new QueryWrapper<Experiment>()
                         .eq("user_id", loginUser.getUserId())
