@@ -112,7 +112,7 @@ export default {
           blank:"10,89,23",
 
           picture:'imgUrl'+this.pictureUrl,
-          
+
         };
 
         const jsonData = JSON.stringify(answerData)
