@@ -162,3 +162,13 @@ export function deptTreeSelect() {
     method: 'get'
   })
 }
+
+
+
+// 查询部门下拉树结构
+export function startExercise() {
+  return request({
+    url: '/experiment/createExp',
+    method: 'get',
+  })
+}

@@ -1,21 +1,37 @@
 <template>
   <div class="box-div">
-
-      <img src="./MyComponents/assets/total/01.png" alt="img" @click="changePage">
+    <img
+      src="@/assets/start.png"
+      alt="img"
+      @click="changePage"
+    />
   </div>
 </template>
 
 <script>
+import { startExercise } from "@/api/student/api.js";
 export default {
   name: "ExerciseStart",
   data() {
-    return {
-    }
+    return {};
   },
 
-  methods:{
-    changePage: function (){
-      this.$router.push("/one")
+  methods: {
+    changePage: function () {
+      startExercise().then((res) => {
+        const expId = res.data.expId;
+        localStorage.setItem("exp_id", expId || "");
+        // 这个页面跳转的时候清除next_id
+        localStorage.removeItem("next_id");
+        console.log(expId);
+        // 在当前标签页中使用 window.open 打开新标签页
+        const newTab = window.open("/startExercise");
+        // 监听新标签页的加载完成事件
+        newTab.onload = () => {
+          // 在新标签页中设置 sessionStorage 数据
+          newTab.sessionStorage.setItem("startKey", "start");
+        };
+      });
     },
 
     /*
@@ -31,18 +47,18 @@ export default {
       });
     }
     */
-  }
-}
+  },
+};
 </script>
 
 <style scoped>
-.box-div{
+.box-div {
   height: calc(100vh - 84px);
   width: 100%;
   background-color: red;
 }
 
-img{
+img {
   height: 100%;
   width: 100%;
   object-fit: fill;

@@ -70,7 +70,6 @@ export default {
       default: true,
     },
     type: {},
-    content: {},
     option: {},
     name: {},
     question: {},
@@ -85,6 +84,7 @@ export default {
       try {
         //解析json
         const answer = this.answer && JSON.parse(this.answer);
+        console.log("answer",answer);
         return this.mapCharacters(answer);
       } catch (error) {
         // 如果报错说明不用解析
@@ -95,12 +95,12 @@ export default {
   methods: {
     wrapContent(content) {
       const dataArray = (this.answer && JSON.parse(this.answer)) || [];
-      console.log();
+      console.log(dataArray);
 
       let index = 0;
       const replacedText = content.replace(
         /\[文本框\]/g,
-        () => `<span class="deep-span"> ${dataArray[index++] || ""}</span>`
+        () => `<span class="deep-span"> ${dataArray[++index] || ""}</span>`
       );
       return replacedText;
     },
