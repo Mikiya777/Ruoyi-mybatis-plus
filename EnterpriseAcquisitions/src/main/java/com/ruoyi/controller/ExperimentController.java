@@ -4,6 +4,7 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.ruoyi.common.core.domain.model.LoginUser;
 import com.ruoyi.common.utils.SecurityUtils;
 import com.ruoyi.pojo.Experiment;
+import com.ruoyi.pojo.ExperimentWithPages;
 import com.ruoyi.pojo.RequestResult;
 import com.ruoyi.pojo.Schedule;
 import com.ruoyi.service.ExperimentService;
@@ -18,6 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.annotation.Resource;
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 
 import static com.ruoyi.common.utils.PageUtils.startPage;
 
@@ -69,14 +71,15 @@ public class ExperimentController {
      * @return 实验列表
      */
     @GetMapping("/get")
-    public RequestResult<List<Experiment>> getExprimentList(){
+    public RequestResult<ExperimentWithPages> getExprimentList(){
         LoginUser loginUser = SecurityUtils.getLoginUser();
         startPage();
         List<Experiment> experimentList = experimentService
                 .list(new QueryWrapper<Experiment>()
                         .eq("user_id", loginUser.getUserId())
                         .orderByDesc("exp_id"));
-        return new RequestResult<>(experimentList);
+        int total = experimentService.count(new QueryWrapper<Experiment>().eq("user_id", loginUser.getUserId()));
+        return new RequestResult<>(new ExperimentWithPages(experimentList,(int)Math.ceil(total/10.0)));
     }
 
     /**

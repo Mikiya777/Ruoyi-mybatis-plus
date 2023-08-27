@@ -6,7 +6,7 @@ create table answers(
     id varchar(32) comment '页面id',
     next_id varchar(32) comment '下一页id',
     primary key(exp_id,question_id,user_id)
-)comment '作答记录';
+)character set utf8 comment '作答记录';
 
 create table experiment(
     exp_id int not null comment '实验id也是本用户的第几次实验',

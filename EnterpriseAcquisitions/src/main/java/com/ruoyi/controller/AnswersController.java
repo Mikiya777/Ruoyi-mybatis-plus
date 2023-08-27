@@ -56,7 +56,6 @@ public class AnswersController extends BaseController {
     @GetMapping("/get/{exp_id}")
     public RequestResult<List<Answers>> get(@PathVariable("exp_id") Integer expId) {
         LoginUser loginUser = SecurityUtils.getLoginUser();
-        MyPageUtils.startPage();
         List<Answers> list = answersService
                 .list(new QueryWrapper<Answers>()
                         .eq("user_id", loginUser.getUserId())
