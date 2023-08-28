@@ -10,10 +10,12 @@ import com.ruoyi.pojo.RequestResult;
 import com.ruoyi.service.AnswersService;
 
 import com.ruoyi.utils.MyPageUtils;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import java.util.List;
+import java.util.Random;
 import java.util.stream.Collectors;
 
 /**
@@ -26,32 +28,190 @@ public class AnswersController extends BaseController {
     private AnswersService answersService;
 
     /**
-     * @description: 提交作答记录
      * @param answers 作答
      * @return 操作是否成功
+     * @description: 提交作答记录
      */
 
     @PostMapping("/submit")
     public RequestResult<Answers> submit(@RequestBody Answers answers) {
         answers.setUserId(SecurityUtils.getLoginUser().getUserId());
         Integer theLatestQuestionId = answersService.getTheLatestQuestionId(answers.getUserId(), answers.getExpId());
-        answers.setQuestionId(theLatestQuestionId == null ? 1: theLatestQuestionId);
-        if (answers.getNextId() == null){
+        answers.setQuestionId(theLatestQuestionId == null ? 1 : theLatestQuestionId);
+        if (answers.getNextId() == null) {
+            switch (answers.getId()) {
+                case "33":
+                    if (new Random().nextBoolean())
+                        answers.setNextId("dgood");
+                    else
+                        answers.setNextId("dbad");
+                    break;
+                case "dbad":
+                    if (answers.getAnswer().equals("\\\"A\\\"")) {
+                        answers.setNextId("h1");
+                    } else if (answers.getAnswer().equals("\\\"B\\\"")) {
+                        answers.setNextId("dwork");
+                    }
+                    break;
+                case "dprice":
+                    String[] split = answers.getAnswer().split("\\\"");
+                    if (Double.parseDouble(split[0]) >= 25) {
+                        answers.setNextId("f1");
+                    } else
+                        answers.setNextId("h1");
+                    break;
+                case "f34简答":
+                    Answers f32Answer = answersService.getOne(new QueryWrapper<Answers>()
+                            .eq("id", "f32单选")
+                            .eq("exp_id", answers.getExpId())
+                            .eq("user_id", SecurityUtils.getLoginUser().getUserId()));
+                    if (f32Answer.getAnswer().equals("\\\"A\\\"")) {
+                        answers.setNextId("f35MM");
+                    } else if (f32Answer.getAnswer().equals("\\\"B\\\"")) {
+                        answers.setNextId("f35Son");
+                    } else if (f32Answer.getAnswer().equals("\\\"C\\\"")) {
+                        answers.setNextId("f35Gold");
+                    }
+                    break;
+                case "f38单选":
+                    if (answers.getAnswer().equals("\\\"A\\\"")) {
+                        answers.setNextId("f39现金");
+                    } else if (answers.getAnswer().equals("\\\"B\\\"")) {
+                        answers.setNextId("f39混合");
+                    }
+                    break;
+                case "f60":
+                    Answers Son = answersService.getOne(new QueryWrapper<Answers>()
+                            .eq("id", "f35Son")
+                            .eq("exp_id", answers.getExpId())
+                            .eq("user_id", SecurityUtils.getLoginUser().getUserId()));
 
+                    Answers Gold = answersService.getOne(new QueryWrapper<Answers>()
+                            .eq("id", "f35Gold")
+                            .eq("exp_id", answers.getExpId())
+                            .eq("user_id", SecurityUtils.getLoginUser().getUserId()));
+                    if (Son != null || Gold != null) {
+                        answers.setNextId("f回归母公司");
+                    } else {
+                        Answers f38 = answersService.getOne(new QueryWrapper<Answers>()
+                                .eq("id", "f38单选")
+                                .eq("exp_id", answers.getExpId())
+                                .eq("user_id", SecurityUtils.getLoginUser().getUserId()));
+                        if (f38.getAnswer().equals("\\\"A\\\"")) {
+                            answers.setNextId("fMM现金");
+
+                        } else if (f38.getAnswer().equals("\\\"B\\\"")) {
+                            answers.setNextId("fMM混合");
+                        }
+                    }
+                    break;
+                case "f回归母公司":
+                    Answers Son2 = answersService.getOne(new QueryWrapper<Answers>()
+                            .eq("id", "f35Son")
+                            .eq("exp_id", answers.getExpId())
+                            .eq("user_id", SecurityUtils.getLoginUser().getUserId()));
+                    Answers f38 = answersService.getOne(new QueryWrapper<Answers>()
+                            .eq("id", "f38单选")
+                            .eq("exp_id", answers.getExpId())
+                            .eq("user_id", SecurityUtils.getLoginUser().getUserId()));
+                    if (Son2 != null) {
+                        if (f38.getAnswer().equals("\\\"A\\\"")) {
+                            answers.setNextId("fSon现金");
+
+                        } else if (f38.getAnswer().equals("\\\"B\\\"")) {
+                            answers.setNextId("fSon混合");
+                        }
+                    }
+                    break;
+                case "h18单选":
+                    if (answers.getAnswer().equals("\\\"A\\\"")) {
+                        answers.setNextId("M&A1");
+                    } else if (answers.getAnswer().equals("\\\"B\\\"")) {
+                        answers.setNextId("FD1");
+                    }
+                    break;
+                case "FD1":
+                    if (new Random().nextBoolean()){
+                        answers.setNextId("FDS");
+                    }else {
+                        answers.setNextId("FDD1");
+                    }
+                    break;
+                case "FDD2单选":
+                    if (answers.getAnswer().equals("\\\"A\\\"")) {
+                        answers.setNextId("TA1");
+                    } else if (answers.getAnswer().equals("\\\"B\\\"")) {
+                        answers.setNextId("M&A1");
+                    }
+                    break;
+                case "M&A5单选":
+                    if (answers.getAnswer().equals("\\\"A\\\"")) {
+                        answers.setNextId("TA1");
+                    } else if (answers.getAnswer().equals("\\\"B\\\"")) {
+                        answers.setNextId("MAA1");
+                    }
+                    break;
+                case "MAA4单选":
+                    if (answers.getAnswer().equals("\\\"A\\\"")) {
+                        answers.setNextId("TA1");
+                    } else if (answers.getAnswer().equals("\\\"B\\\"")) {
+                        answers.setNextId("CC1");
+                    }
+                    break;
+                case "CC5":
+                    if (answers.getAnswer().equals("\\\"A\\\"")) {
+                        answers.setNextId("TA1");
+                    } else if (answers.getAnswer().equals("\\\"B\\\"")) {
+                        answers.setNextId("AB1");
+                    }
+                    break;
+                case "AB5单选":
+                    if (answers.getAnswer().equals("\\\"A\\\"")) {
+                        if (new Random().nextBoolean()) {
+                            answers.setNextId("SC1");
+                        }else {
+                            answers.setNextId("BNA1");
+                        }
+                    } else if (answers.getAnswer().equals("\\\"B\\\"")) {
+                        answers.setNextId("NF1");
+                    }
+                    break;
+                case "BMA5单选":
+                    if (answers.getAnswer().equals("\\\"A\\\"")) {
+                        answers.setNextId("SS1");
+                    } else if (answers.getAnswer().equals("\\\"B\\\"")) {
+                        answers.setNextId("CA1");
+                    }
+                    break;
+                case "NF2单选":
+                    if (answers.getAnswer().equals("\\\"A\\\"")) {
+                        answers.setNextId("TA1");
+                    } else if (answers.getAnswer().equals("\\\"B\\\"")) {
+                        answers.setNextId("DS1");
+                    }
+                    break;
+                case "DS4单选":
+                    if (answers.getAnswer().equals("\\\"A\\\"")) {
+                        answers.setNextId("DSSS1");
+                    } else if (answers.getAnswer().equals("\\\"B\\\"")) {
+                        answers.setNextId("DSCA1");
+                    }
+                    break;
+
+            }
         }
 
-        if (answersService.CheckAnswersIfValid(answers)){
+        if (answersService.CheckAnswersIfValid(answers)) {
             answersService.save(answers);
             return new RequestResult<>(answers);
         }
-        return new RequestResult<>(400, "落子无悔，无问得失，不可重复提交!",answers);
+        return new RequestResult<>(400, "落子无悔，无问得失，不可重复提交!", answers);
     }
 
     /**
-     * @description: 根据用户id和实验id获取该用户的作答记录
-     *
      * @param expId 实验id
      * @return 作答记录列表
+     * @description: 根据用户id和实验id获取该用户的作答记录
      */
     @GetMapping("/get/{exp_id}")
     public RequestResult<List<Answers>> get(@PathVariable("exp_id") Integer expId) {
