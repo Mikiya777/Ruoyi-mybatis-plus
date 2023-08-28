@@ -2,21 +2,16 @@ create table answers(
     exp_id int not null comment '实验id也是本用户的第几次实验',
     question_id int not null comment '作答顺序',
     user_id bigint(20) not null ,
-    picture varchar(255),
-    `text` text,
-    blank varchar(255),
-    textblank varchar(10000),
-    single_choice char(1),
-    mutil_choice varchar(7),
-    score int(3),
+    answer varchar(255) comment '作答内容',
+    id varchar(32) comment '页面id',
+    next_id varchar(32) comment '下一页id',
     primary key(exp_id,question_id,user_id)
-)comment '作答记录';
+)character set utf8 comment '作答记录';
 
 create table experiment(
     exp_id int not null comment '实验id也是本用户的第几次实验',
     user_id bigint(20) not null,
     status bit(1) comment '0未完成，1已提交',
-    sum_score int(3) DEFAULT 0 comment '总分',
     start_time datetime comment '开始时间',
     end_time datetime comment '结束时间',
     PRIMARY KEY (exp_id,user_id)
@@ -26,12 +21,26 @@ create table schedule(
     exp_id int not null,
     user_id bigint(20) not null,
     status bit(1) comment '0未完成，1已提交',
-    sum_score int(3) DEFAULT 0 comment '总分',
-    url varchar(255) not null,
+    id varchar(32) comment '页面id',
+    next_id varchar(32) comment '下一页id',
     start_time datetime,
     end_time datetime,
     primary key(exp_id,user_id)
 )comment '演练进度';
+
+# create table page_info(
+#     page_info_id bigint auto_increment,
+#     FriendBodyString varchar(255),
+#     PayWay varchar(255),
+#     controlNumber int,
+#     friendNumber int,
+#     friendsing int,
+#     isPlaying boolean,
+#     randomString varchar(255),
+#     workString varchar(255),
+#     worksing int,
+#     primary key (page_info_id)
+# )comment '页面信息-用于完成继续实验的跳转功能';
 
 # 使得experiment表在插入新数据时，每个用户自己的exp_id自增
 DELIMITER //
@@ -51,35 +60,35 @@ DELIMITER ;
 
 # 在插入新记录后，首先检查新记录中的 score 是否不为空（NULL）。
 # 如果 score 不为空，那么就执行一个 UPDATE 语句来将 experiment 表中对应实验和用户的总分加上新记录中的 score。
-DELIMITER //
-
-CREATE TRIGGER update_sum_score
-    AFTER INSERT ON answers
-    FOR EACH ROW
-BEGIN
-    IF NEW.score IS NOT NULL THEN
-        UPDATE experiment
-        SET sum_score = sum_score + NEW.score
-        WHERE exp_id = NEW.exp_id AND user_id = NEW.user_id;
-    END IF;
-END;
-//
-DELIMITER ;
+# DELIMITER //
+#
+# CREATE TRIGGER update_sum_score
+#     AFTER INSERT ON answers
+#     FOR EACH ROW
+# BEGIN
+#     IF NEW.score IS NOT NULL THEN
+#         UPDATE experiment
+#         SET sum_score = sum_score + NEW.score
+#         WHERE exp_id = NEW.exp_id AND user_id = NEW.user_id;
+#     END IF;
+# END;
+# //
+# DELIMITER ;
 
 
 # 当作答记录插入时，更新进度表的实验总分
-DELIMITER //
-
-CREATE TRIGGER sync_experiment_score
-    AFTER UPDATE ON experiment
-    FOR EACH ROW
-BEGIN
-    UPDATE schedule
-    SET sum_score = NEW.sum_score
-    WHERE exp_id = NEW.exp_id AND user_id = NEW.user_id;
-END//
-
-DELIMITER ;
+# DELIMITER //
+#
+# CREATE TRIGGER sync_experiment_score
+#     AFTER UPDATE ON experiment
+#     FOR EACH ROW
+# BEGIN
+#     UPDATE schedule
+#     SET sum_score = NEW.sum_score
+#     WHERE exp_id = NEW.exp_id AND user_id = NEW.user_id;
+# END//
+#
+# DELIMITER ;
 
 
 
@@ -107,6 +116,17 @@ BEGIN
 END;
 //
 
+DELIMITER ;
+
+# 提交新作答后记录最新的页面id和下一页id用于继续演练的功能
+DELIMITER //
+CREATE TRIGGER insert_schedule AFTER INSERT ON answers
+    FOR EACH ROW
+BEGIN
+    UPDATE schedule SET id = NEW.id, next_id = NEW.next_id
+    WHERE exp_id = NEW.exp_id AND user_id = NEW.user_id;
+END;
+//
 DELIMITER ;
 
 

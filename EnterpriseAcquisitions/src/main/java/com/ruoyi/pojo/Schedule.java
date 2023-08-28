@@ -1,5 +1,6 @@
 package com.ruoyi.pojo;
 
+import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
@@ -32,14 +33,14 @@ public class Schedule implements Serializable {
     private Boolean status;
 
     /**
-     * 总分
+     * 页面id
      */
-    private Integer sumScore;
+    private String id;
 
     /**
-     * 
+     * 下一页id
      */
-    private String url;
+    private String nextId;
 
     /**
      * 
@@ -69,8 +70,8 @@ public class Schedule implements Serializable {
         return (this.getExpId() == null ? other.getExpId() == null : this.getExpId().equals(other.getExpId()))
             && (this.getUserId() == null ? other.getUserId() == null : this.getUserId().equals(other.getUserId()))
             && (this.getStatus() == null ? other.getStatus() == null : this.getStatus().equals(other.getStatus()))
-            && (this.getSumScore() == null ? other.getSumScore() == null : this.getSumScore().equals(other.getSumScore()))
-            && (this.getUrl() == null ? other.getUrl() == null : this.getUrl().equals(other.getUrl()))
+            && (this.getId() == null ? other.getId() == null : this.getId().equals(other.getId()))
+            && (this.getNextId() == null ? other.getNextId() == null : this.getNextId().equals(other.getNextId()))
             && (this.getStartTime() == null ? other.getStartTime() == null : this.getStartTime().equals(other.getStartTime()))
             && (this.getEndTime() == null ? other.getEndTime() == null : this.getEndTime().equals(other.getEndTime()));
     }
@@ -82,8 +83,8 @@ public class Schedule implements Serializable {
         result = prime * result + ((getExpId() == null) ? 0 : getExpId().hashCode());
         result = prime * result + ((getUserId() == null) ? 0 : getUserId().hashCode());
         result = prime * result + ((getStatus() == null) ? 0 : getStatus().hashCode());
-        result = prime * result + ((getSumScore() == null) ? 0 : getSumScore().hashCode());
-        result = prime * result + ((getUrl() == null) ? 0 : getUrl().hashCode());
+        result = prime * result + ((getId() == null) ? 0 : getId().hashCode());
+        result = prime * result + ((getNextId() == null) ? 0 : getNextId().hashCode());
         result = prime * result + ((getStartTime() == null) ? 0 : getStartTime().hashCode());
         result = prime * result + ((getEndTime() == null) ? 0 : getEndTime().hashCode());
         return result;
@@ -98,8 +99,8 @@ public class Schedule implements Serializable {
         sb.append(", expId=").append(expId);
         sb.append(", userId=").append(userId);
         sb.append(", status=").append(status);
-        sb.append(", sumScore=").append(sumScore);
-        sb.append(", url=").append(url);
+        sb.append(", id=").append(id);
+        sb.append(", nextId=").append(nextId);
         sb.append(", startTime=").append(startTime);
         sb.append(", endTime=").append(endTime);
         sb.append(", serialVersionUID=").append(serialVersionUID);

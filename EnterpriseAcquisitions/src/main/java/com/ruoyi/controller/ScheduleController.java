@@ -1,15 +1,19 @@
 package com.ruoyi.controller;
 
+import com.alibaba.fastjson2.JSON;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.github.pagehelper.Page;
+import com.ruoyi.common.core.domain.model.LoginUser;
+import com.ruoyi.common.utils.SecurityUtils;
 import com.ruoyi.pojo.Experiment;
 import com.ruoyi.pojo.RequestResult;
 import com.ruoyi.pojo.Schedule;
+import com.ruoyi.pojo.ScheduleListWithPages;
 import com.ruoyi.service.ExperimentService;
 import com.ruoyi.service.ScheduleService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+
+import com.ruoyi.utils.MyPageUtils;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import java.util.ArrayList;
@@ -27,20 +31,28 @@ public class ScheduleController {
     @Resource
     private ExperimentService experimentService;
 
+
     /**
      * @description: 根据用户id获取该用户的所有演练进度
-     * @param user_id
+     *
      * @return 演练进度列表
      */
-    @GetMapping("/get/{user_id}")
-    public RequestResult<List<Schedule>> getScheduleList(@PathVariable Long user_id) {
-        List<Schedule> scheduleList = new ArrayList<>();
-        List<Experiment> experimentList = experimentService.list(new QueryWrapper<Experiment>().eq("user_id", user_id));
-        for (Experiment experiment : experimentList) {
-            Schedule schedule = scheduleService.getOne(new QueryWrapper<Schedule>().eq("user_id", user_id).eq("exp_id", experiment.getExpId()));
-            if (schedule != null)
-                scheduleList.add(schedule);
-        }
-        return new RequestResult<>(scheduleList);
+
+    @GetMapping("/get")
+    public RequestResult<ScheduleListWithPages> getScheduleList() {
+
+        LoginUser loginUser = SecurityUtils.getLoginUser();
+
+        ScheduleListWithPages scheduleListWithPages = new ScheduleListWithPages();
+        int total = scheduleService.count(new QueryWrapper<Schedule>().eq("user_id", loginUser.getUserId()));
+        scheduleListWithPages.setPages( (int)Math.ceil(total / 8.0) );
+        MyPageUtils.startPage();
+        List<Schedule> scheduleList = scheduleService.list(new QueryWrapper<Schedule>()
+                .eq("user_id", loginUser.getUserId()).orderByDesc("exp_id"));
+
+        scheduleListWithPages.setScheduleList(scheduleList);
+
+        System.out.println(scheduleListWithPages);
+        return new RequestResult<>(scheduleListWithPages);
     }
 }
