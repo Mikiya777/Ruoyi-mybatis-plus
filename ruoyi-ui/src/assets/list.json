@@ -43,7 +43,7 @@
   },
   {
     "id": "p6填空",
-    "type": 1,
+    "type": 5,
     "option": [],
     "img": "/imgItem/p6填空.png",
     "question": "项目组长张总监根据助手提供的报表对WW公司进行了评估， 并在次日将分析结果向董事会进行汇报。在董事会上，张总监说道：“根据我的测算，WW公司2014年 净资产收益率为[文本框]%, 销售利润率为[文本框]%, 总资产报酬率为[文本框]%， 经营活动现金流入量／营业收入为[文本框]%。（结果保留一位小数）净资产收益率=(净利润 / 平均净资产)×100％；销售(营业)利润率=(利润总额 / 营业收入)×100％；总资产报酬率=[(利润总额+利息支出) / 平均资产总额]×100％(利息支出可用财务费用代替)(相关数据请查看登录后左侧菜单中“财务报表”)",
@@ -62,7 +62,12 @@
   {
     "id": "p8多选",
     "type": 3,
-    "option": ["A、净资产收益率", "B、销售利润率","C、总资产报酬率","D、经营活动现金流入量"],
+    "option": [
+      "A、净资产收益率",
+      "B、销售利润率",
+      "C、总资产报酬率",
+      "D、经营活动现金流入量"
+    ],
     "img": "/imgItem/p8多选.png",
     "question": "“通过与标准对比，我发现盈利能力指标当中的（）指标达到了公司的并购标准（多选题）。” (具体要求为：最近一期净资产收益率不低于17%，最近一期销售利润率不低于12%，最近一期总资产报酬率不低于4%，经营活动现金流入量/营业收入不低于0.8）",
     "next_id": "p9"
@@ -106,7 +111,10 @@
   {
     "id": "p13单选",
     "type": 2,
-    "option": ["A、是","B、否"],
+    "option": [
+      "A、是",
+      "B、否"
+    ],
     "img": "/imgItem/p13单选.png",
     "question": "“（是/否）达到公司的标准。”(具体要求为：最近一期销售收入增长率不低于7%。)",
     "next_id": "p14"
@@ -131,7 +139,7 @@
   },
   {
     "id": "p16填空",
-    "type": 1,
+    "type": 5,
     "option": [],
     "img": "/imgItem/p16填空.png",
     "question": "项目组长张总监根据助手提供的报表对WW公司进行了评估，并在次日将分析结果向董事会进行汇报。在董事会上，张总监说道：“根据我的测算，WW公司2014年 资产负债率为[文本框]%, 流动比率为[文本框]%,（结果保留一位小数）资产负债率=(负债总额／资产总额)×100％；流动比率=(流动资产／流动负债)(相关数据请查看登录后左侧菜单中“财务报表”)",
@@ -150,7 +158,10 @@
   {
     "id": "p18多选",
     "type": 3,
-    "option": ["A、资产负债率","B、流动比率"],
+    "option": [
+      "A、资产负债率",
+      "B、流动比率"
+    ],
     "img": "/imgItem/p18多选.png",
     "question": "通过与标准对比，我发现对比标准后发现偿债能力指标当中的（）指标达到了公司的并购标准（多选题）。 (具体要求为：资产负债率约为67%；流动比率约为1.5，上下浮动应该控制在20%以内。）",
     "next_id": "p19"
@@ -194,7 +205,10 @@
   {
     "id": "p23单选",
     "type": 2,
-    "option": ["A、是","B、否"],
+    "option": [
+      "A、是",
+      "B、否"
+    ],
     "img": "/imgItem/p23单选.png",
     "question": "(是/否)达到了公司的并购标准。 (具体要求为：最近一期存货周转率约为0.5次/年，如果最近一期销售利润率超过标准20%以上，则存货周转率约达到0.4次/年。)",
     "next_id": "p24"
@@ -220,7 +234,10 @@
   {
     "id": "p26单选",
     "type": 2,
-    "option": ["A、是","B、否"],
+    "option": [
+      "A、是",
+      "B、否"
+    ],
     "img": "/imgItem/p26单选.png",
     "question": "此时，董事长问项目组长张总监：“张总监，你来总结一下，此时并购WW公司是否是一个绝佳的时机？”（单选题）",
     "next_id": "p27"
@@ -272,7 +289,12 @@
   {
     "id": "p32单选",
     "type": 2,
-    "option": ["A、被高估/适合并购","B、被低估/适合并购", "C、被高估/不适合并购", "D、被低估/不适合并购"],
+    "option": [
+      "A、被高估/适合并购",
+      "B、被低估/适合并购",
+      "C、被高估/不适合并购",
+      "D、被低估/不适合并购"
+    ],
     "img": "/imgItem/p32单选.png",
     "question": "张总监回答：“这说明，对比现在该公司二级市场上的股票价格，该公司的股价是被（高/低）估，因此（是/不）合适进行并购”，并进一步确定可接受的最高出价（）。（单选题）",
     "next_id": "p33"
@@ -283,6 +305,1298 @@
     "option": [],
     "img": "/imgItem/p33.png",
     "question": "",
-    "next_id": "p34"
+    "next_id": "",
+    "ps": "准备阶段end,准备接入随机跳转"
+  },
+  {
+    "id": "dgood",
+    "type": 0,
+    "option": [],
+    "img": "/imgItem/dgood.png",
+    "audio": "/imgItem/dgood.mp3",
+    "question": "",
+    "next_id": "f1"
+  },
+  {
+    "id": "dbad",
+    "type": 0,
+    "option": [],
+    "img": "/imgItem/dbad.png",
+    "question": "",
+    "next_id": "dquestion"
+  },
+  {
+    "id": "dquestion",
+    "type": 2,
+    "option": [
+      "A、谈判结束",
+      "B、谈判继续"
+    ],
+    "img": "/imgItem/dquestion.png",
+    "question": "汪总思索片刻，便委婉地拒绝了MM公司的收购请求。接下来可以选择结束沟通，或继续争取合作，请选择：",
+    "next_id": "",
+    "ps": "choice A to end ; choice B to carry on"
+  },
+  {
+    "id": "dwork",
+    "type": 0,
+    "option": [],
+    "img": "/imgItem/dwork.png",
+    "audio": "/imgItem/dwork.mp3",
+    "question": "",
+    "next_id": "dprice"
+  },
+  {
+    "id": "dprice",
+    "type": 1,
+    "option": [],
+    "img": "/imgItem/dprice.png",
+    "question": "杨总与之进一步交谈，想以高价吸引对方，进而争取对方的合作，说到：“我们是真心实意想收购，咱再谈谈。这样，为了表示出我们的诚意， MM公司愿意出以初始价格每股[文本框]元进行这次收购”。",
+    "num": 1,
+    "next_id": "",
+    "ps": "谈价格，根据输入>=25 跳转到 善意并购 反之跳转到恶意并购"
+  },
+  {
+    "id": "f1",
+    "type": 0,
+    "option": [],
+    "img": "/imgItem/f1.png",
+    "question": "",
+    "next_id": "f2"
+  },
+  {
+    "id": "f2",
+    "type": 0,
+    "option": [],
+    "img": "/imgItem/f2.png",
+    "audio": "/imgItem/f2.mp3",
+    "question": "",
+    "next_id": "f3"
+  },
+  {
+    "id": "f3",
+    "type": 4,
+    "option": [],
+    "img": "/imgItem/f3.png",
+    "question": "张总监草拟了呈交给董事长的报告（内容主要包括但不限于对WW 公司的基本面分析、并购时机分析以及并购建议，请输入不少于50字的并购方案报告）。",
+    "next_id": "f4"
+  },
+  {
+    "id": "f4",
+    "type": 0,
+    "option": [],
+    "img": "/imgItem/f4.png",
+    "question": "",
+    "next_id": "f5"
+  },
+  {
+    "id": "f5",
+    "type": 0,
+    "option": [],
+    "img": "/imgItem/f5.png",
+    "question": "",
+    "next_id": "f6"
+  },
+  {
+    "id": "f6",
+    "type": 0,
+    "option": [],
+    "img": "/imgItem/f6.png",
+    "audio": "/imgItem/f6.mp3",
+    "question": "",
+    "next_id": "f7"
+  },
+  {
+    "id": "f7",
+    "type": 0,
+    "option": [],
+    "img": "/imgItem/f7.png",
+    "audio": "/imgItem/f7.mp3",
+    "question": "",
+    "next_id": "f8"
+  },
+  {
+    "id": "f8",
+    "type": 0,
+    "option": [],
+    "img": "/imgItem/f8.png",
+    "audio": "/imgItem/f8.mp3",
+    "question": "",
+    "next_id": "f9"
+  },
+  {
+    "id": "f9",
+    "type": 0,
+    "option": [],
+    "img": "/imgItem/f9.png",
+    "audio": "/imgItem/f9.mp3",
+    "question": "",
+    "next_id": "f10"
+  },
+  {
+    "id": "f10",
+    "type": 0,
+    "option": [],
+    "img": "/imgItem/f10.png",
+    "audio": "/imgItem/f10.mp3",
+    "question": "",
+    "next_id": "f11"
+  },
+  {
+    "id": "f11",
+    "type": 0,
+    "option": [],
+    "img": "/imgItem/f11.png",
+    "audio": "/imgItem/f11.mp3",
+    "question": "",
+    "next_id": "f12"
+  },
+  {
+    "id": "f12",
+    "type": 0,
+    "option": [],
+    "img": "/imgItem/f12.png",
+    "audio": "/imgItem/f12.mp3",
+    "question": "",
+    "next_id": "f13"
+  },
+  {
+    "id": "f13",
+    "type": 0,
+    "option": [],
+    "img": "/imgItem/f13.png",
+    "audio": "/imgItem/f13.mp3",
+    "question": "",
+    "next_id": "f14"
+  },
+  {
+    "id": "f14",
+    "type": 0,
+    "option": [],
+    "img": "/imgItem/f14.png",
+    "question": "",
+    "next_id": "f15简答"
+  },
+  {
+    "id": "f15简答",
+    "type": 4,
+    "option": [],
+    "img": "/imgItem/f15简答.png",
+    "question": "休息间，杨总小声问张总监：“你觉得将资产剥离和降价都对并购产生什么影响？哪种方式能使我们受益更多？为什么？” 张总监回答道：“（）”",
+    "next_id": "f16"
+  },
+  {
+    "id": "f16",
+    "type": 0,
+    "option": [],
+    "img": "/imgItem/f16.png",
+    "audio": "/imgItem/f16.mp3",
+    "question": "",
+    "next_id": "f17"
+  },
+  {
+    "id": "f17",
+    "type": 0,
+    "option": [],
+    "img": "/imgItem/f17.png",
+    "audio": "/imgItem/f17.mp3",
+    "question": "",
+    "next_id": "f18选择"
+  },
+  {
+    "id": "f18选择",
+    "type": 2,
+    "option": [
+      "A、我方是诚意并购，暂时按贵方所提定下",
+      "B、我方是诚意并购，按照当前的事实和数据，贵方的法律风险难以忽视，您们的报价我们难以接受"
+    ],
+    "img": "/imgItem/f18选择.png",
+    "question": "张总监看向杨总，杨总面容平静，看不出态度。请选择回应：(单选题)",
+    "next_id": "f19"
+  },
+  {
+    "id": "f19",
+    "type": 0,
+    "option": [],
+    "img": "/imgItem/f19.png",
+    "audio": "/imgItem/f19.mp3",
+    "question": "",
+    "next_id": "f20单选"
+  },
+  {
+    "id": "f20单选",
+    "type": 2,
+    "option": [
+      "A、“好的，我们同意贵方的报价。”",
+      "B、“贵方的报价我们仍难以接受，可按资产剥离处理”"
+    ],
+    "img": "/imgItem/f20单选.png",
+    "question": "张总监此刻需做出最后的回应，请选择：",
+    "next_id": "f21"
+  },
+  {
+    "id": "f21",
+    "type": 0,
+    "option": [],
+    "img": "/imgItem/f21.png",
+    "audio": "/imgItem/f21.mp3",
+    "question": "",
+    "next_id": "f22"
+  },
+  {
+    "id": "f22",
+    "type": 0,
+    "option": [],
+    "img": "/imgItem/f22.png",
+    "audio": "/imgItem/f22.mp3",
+    "question": "",
+    "next_id": "f23"
+  },
+  {
+    "id": "f23",
+    "type": 0,
+    "option": [],
+    "img": "/imgItem/f23.png",
+    "audio": "/imgItem/f23.mp3",
+    "question": "",
+    "next_id": "f24"
+  },
+  {
+    "id": "f24",
+    "type": 0,
+    "option": [],
+    "img": "/imgItem/f24.png",
+    "audio": "/imgItem/f24.mp3",
+    "question": "",
+    "next_id": "f25单选"
+  },
+  {
+    "id": "f25单选",
+    "type": 2,
+    "option": [
+      "A、股权收购",
+      "B、资产收购",
+      "C、购买可转换债"
+    ],
+    "img": "/imgItem/f25单选.png",
+    "question": "张总监说：“我认为（）是最符合我们并购意图的收购方式。”",
+    "next_id": "f26"
+  },
+  {
+    "id": "f26",
+    "type": 0,
+    "option": [],
+    "img": "/imgItem/f26.png",
+    "audio": "/imgItem/f26.mp3",
+    "question": "",
+    "next_id": "f27简答"
+  },
+  {
+    "id": "f27简答",
+    "type": 4,
+    "option": [],
+    "img": "/imgItem/f27简答.png",
+    "question": "张总监说：“理由是（）。”",
+    "next_id": "f28"
+  },
+  {
+    "id": "f28",
+    "type": 0,
+    "option": [],
+    "img": "/imgItem/f28.png",
+    "audio": "/imgItem/f28.mp3",
+    "question": "",
+    "next_id": "f29"
+  },
+  {
+    "id": "f29",
+    "type": 0,
+    "option": [],
+    "img": "/imgItem/f29.png",
+    "audio": "/imgItem/f29.mp3",
+    "question": "",
+    "next_id": "f30"
+  },
+  {
+    "id": "f30",
+    "type": 0,
+    "option": [],
+    "img": "/imgItem/f30.png",
+    "audio": "/imgItem/f30.mp3",
+    "question": "",
+    "next_id": "f31"
+  },
+  {
+    "id": "f31",
+    "type": 0,
+    "option": [],
+    "img": "/imgItem/f31.png",
+    "audio": "/imgItem/f31.mp3",
+    "question": "",
+    "next_id": "f32单选"
+  },
+  {
+    "id": "f32单选",
+    "type": 2,
+    "option": [
+      "A、MM公司0",
+      "B、MM公司控股股东成立的子公司",
+      "C、与投资公司合作的投资基金"
+    ],
+    "img": "/imgItem/f32单选.png",
+    "question": "项目组长张总监在次日向董事会汇报时， 说到：“利用何种并购主体进行并购与后续资本的进入方式与整个并购的有效性具有密切的联系。从目前的情况看，因此，初步决定应该以（）为主体进行并购。”",
+    "next_id": "f33"
+  },
+  {
+    "id": "f33",
+    "type": 0,
+    "option": [],
+    "img": "/imgItem/f33.png",
+    "audio": "/imgItem/f33.mp3",
+    "question": "",
+    "next_id": "f34简答"
+  },
+  {
+    "id": "f34简答",
+    "type": 4,
+    "option": [],
+    "img": "/imgItem/f34简答.png",
+    "question": "原因在于......",
+    "next_id": "",
+    "ps": "根据f32的单选来确定下一个如何跳转"
+  },
+  {
+    "id": "f35MM",
+    "type": 0,
+    "option": [],
+    "img": "/imgItem/f35MM.png",
+    "audio": "/imgItem/f35MM.mp3",
+    "question": "",
+    "next_id": "f36MM"
+  },
+  {
+    "id": "f35Son",
+    "type": 0,
+    "option": [],
+    "img": "/imgItem/f35Son.png",
+    "audio": "/imgItem/f35Son.mp3",
+    "question": "",
+    "next_id": "f36Son"
+  },
+  {
+    "id": "f35Gold",
+    "type": 0,
+    "option": [],
+    "img": "/imgItem/f35Gold.png",
+    "audio": "/imgItem/f35Gold.mp3",
+    "question": "",
+    "next_id": "f36Gold"
+  },
+  {
+    "id": "f36MM",
+    "type": 0,
+    "option": [],
+    "img": "/imgItem/f36MM.png",
+    "audio": "/imgItem/f36MM.mp3",
+    "question": "",
+    "next_id": "f37MM"
+  },
+  {
+    "id": "f36Son",
+    "type": 0,
+    "option": [],
+    "img": "/imgItem/f36Son.png",
+    "audio": "/imgItem/f36Son.mp3",
+    "question": "",
+    "next_id": "f37Son"
+  },
+  {
+    "id": "f37MM",
+    "type": 0,
+    "option": [],
+    "img": "/imgItem/f37MM.png",
+    "audio": "/imgItem/f37MM.mp3",
+    "question": "",
+    "next_id": "f38"
+  },
+  {
+    "id": "f37Son",
+    "type": 0,
+    "option": [],
+    "img": "/imgItem/f37Son.png",
+    "audio": "/imgItem/f37Son.mp3",
+    "question": "",
+    "next_id": "f38单选"
+  },
+  {
+    "id": "f38单选",
+    "type": 2,
+    "option": [
+      "A、现金支付",
+      "B、混合支付"
+    ],
+    "img": "/imgItem/f38单选.png",
+    "question": "项目组长张总监说到：“大家说的都很有道理，但是我们公司现在拥有货币资金近110亿，并且不同于其他上市公司，MM公司高层并不持有自己公司的股票。我们还是应该采取（）的付款方式。”",
+    "next_id": "",
+    "ps": "支付方式根据选项不同进行跳转"
+  },
+  {
+    "id": "f39混合",
+    "type": 0,
+    "option": [],
+    "img": "/imgItem/f39混合.png",
+    "audio": "/imgItem/f39混合.mp3",
+    "question": "",
+    "next_id": "f40混合"
+  },
+  {
+    "id": "f39现金",
+    "type": 0,
+    "option": [],
+    "img": "/imgItem/f39现金.png",
+    "audio": "/imgItem/f39现金.mp3",
+    "question": "",
+    "next_id": "f40现金"
+  },
+  {
+    "id": "f40混合",
+    "type": 3,
+    "option": [
+      "A、对WW公司原股东定向增发+自有现金",
+      "B、对WW公司原股东定向增发+债券融资所获现金",
+      "C、对WW公司原股东定向增发+自有现金+银行贷款所获现金"
+    ],
+    "img": "/imgItem/f40混合.png",
+    "question": "根据以上情况，我们公司可以选择的支付方式是（）。（多选题）",
+    "next_id": "f41"
+  },
+  {
+    "id": "f40现金",
+    "type": 3,
+    "option": [
+      "A、股票融资",
+      "B、股票融资+债券融资",
+      "C、股票融资+银行贷款"
+    ],
+    "img": "/imgItem/f40现金.png",
+    "question": "董事会决定，并购采用现金支付的方式。 张总监对董事进行汇报时说到：“公司MM目前的总资产为658.7亿元，总负债为280.6亿元， 公司的财务政策要求资产负债率不得超过60%，并且公司MM有着良好的银企关系。考虑到购买溢价， 要想完成收购，需要近180亿的资金，而MM公司现有110亿的资金， 日常约束性现金余额为50亿，因此，需要进行大约120亿元的外部融资。我们并购组认为选择的融资方式最好是（）。”（多选题）",
+    "next_id": "f41"
+  },
+  {
+    "id": "f41",
+    "type": 0,
+    "option": [],
+    "img": "/imgItem/f41.png",
+    "audio": "/imgItem/f41.mp3",
+    "question": "",
+    "next_id": "f42"
+  },
+  {
+    "id": "f42",
+    "type": 0,
+    "option": [],
+    "img": "/imgItem/f42.png",
+    "audio": "/imgItem/f42.mp3",
+    "question": "",
+    "next_id": "f43"
+  },
+  {
+    "id": "f43",
+    "type": 0,
+    "option": [],
+    "img": "/imgItem/f43.png",
+    "audio": "/imgItem/f43.mp3",
+    "question": "",
+    "next_id": "f44"
+  },
+  {
+    "id": "f44",
+    "type": 0,
+    "option": [],
+    "img": "/imgItem/f44.png",
+    "audio": "/imgItem/f44.mp3",
+    "question": "",
+    "next_id": "f45"
+  },
+  {
+    "id": "f45",
+    "type": 0,
+    "option": [],
+    "img": "/imgItem/f45.png",
+    "audio": "/imgItem/f45.mp3",
+    "question": "",
+    "next_id": "f46"
+  },
+  {
+    "id": "f46",
+    "type": 0,
+    "option": [],
+    "img": "/imgItem/f46.png",
+    "audio": "/imgItem/f46.mp3",
+    "question": "",
+    "next_id": "f47"
+  },
+  {
+    "id": "f47",
+    "type": 2,
+    "option": [
+      "A、收入，收入",
+      "B、决策权，收入",
+      "C、收入，决策权",
+      "D、决策权，决策权"
+    ],
+    "img": "/imgItem/f47.png",
+    "question": "张总监说到：“各位都说的很有道理，现金补偿是弥补（）；而股份补偿是弥补（）。”（单选题）",
+    "next_id": "f48"
+  },
+  {
+    "id": "f48",
+    "type": 0,
+    "option": [],
+    "img": "/imgItem/f48.png",
+    "audio": "/imgItem/f48.mp3",
+    "question": "",
+    "next_id": "f49"
+  },
+  {
+    "id": "f49",
+    "type": 0,
+    "option": [],
+    "img": "/imgItem/f49.png",
+    "audio": "/imgItem/f49.mp3",
+    "question": "",
+    "next_id": "f50"
+  },
+  {
+    "id": "f50",
+    "type": 0,
+    "option": [],
+    "img": "/imgItem/f50.png",
+    "audio": "/imgItem/f50.mp3",
+    "question": "",
+    "next_id": "f51"
+  },
+  {
+    "id": "f51",
+    "type": 0,
+    "option": [],
+    "img": "/imgItem/f51.png",
+    "audio": "/imgItem/f51.mp3",
+    "question": "",
+    "next_id": "f52"
+  },
+  {
+    "id": "f52",
+    "type": 0,
+    "option": [],
+    "img": "/imgItem/f52.png",
+    "audio": "/imgItem/f52.mp3",
+    "question": "",
+    "next_id": "f53"
+  },
+  {
+    "id": "f53",
+    "type": 0,
+    "option": [],
+    "img": "/imgItem/f53.png",
+    "audio": "/imgItem/f53.mp3",
+    "question": "",
+    "next_id": "f54"
+  },
+  {
+    "id": "f54",
+    "type": 0,
+    "option": [],
+    "img": "/imgItem/f54.png",
+    "audio": "/imgItem/f54.mp3",
+    "question": "",
+    "next_id": "f55"
+  },
+  {
+    "id": "f55",
+    "type": 0,
+    "option": [],
+    "img": "/imgItem/f55.png",
+    "audio": "/imgItem/f55.mp3",
+    "question": "",
+    "next_id": "f56"
+  },
+  {
+    "id": "f56",
+    "type": 0,
+    "option": [],
+    "img": "/imgItem/f56.png",
+    "audio": "/imgItem/f56.mp3",
+    "question": "",
+    "next_id": "f57简答"
+  },
+  {
+    "id": "f57简答",
+    "type": 4,
+    "option": [],
+    "img": "/imgItem/f57简答.png",
+    "question": "组长张总监说到：“那好吧，我们回去再商量一下。”在第二天的并购讨论会议上，张总监向董事会进行了汇报： “目前WW公司对我们提出的业绩承诺协议还存在异议，我认为应该进行修正，保证双方都能接受。理由是（）”",
+    "next_id": "f58"
+  },
+  {
+    "id": "f58",
+    "type": 0,
+    "option": [],
+    "img": "/imgItem/f58.png",
+    "audio": "/imgItem/f58.mp3",
+    "question": "",
+    "next_id": "f59填空"
+  },
+  {
+    "id": "f59填空",
+    "type": 0,
+    "option": [],
+    "img": "/imgItem/f59填空.png",
+    "question": "董事会通过了修改后的业绩承诺协议。几日后，张总监在并购讨论会上与WW公司确认新的业绩承诺协议， 说到：“经过我方深入探讨，对业绩承诺协议进行调整， 主要更改为： WW公司承诺未来三年经有证券从业资格的会计师事务所审计的扣除非经常性损益后归属于母公司股东的净利润达到70亿元，达不到条件就要在[文本框]年用现金的方式进行偿还。”",
+    "num": 1,
+    "next_id": "f60"
+  },
+  {
+    "id": "f60",
+    "type": 0,
+    "option": [],
+    "img": "/imgItem/f60.png",
+    "audio": "/imgItem/f60.mp3",
+    "question": "",
+    "next_id": "",
+    "ps": "根据是否需要回顾母公司进行跳转"
+  },
+  {
+    "id": "f回归母公司",
+    "type": 0,
+    "option": [],
+    "img": "/imgItem/f回归母公司.png",
+    "audio": "/imgItem/f回归母公司.mp3",
+    "question": "",
+    "next_id": "",
+    "ps": "根据前面选择的并购主体和支付方式展示到底是哪个报告"
+  },
+  {
+    "id": "fMM混合",
+    "type": 0,
+    "option": [],
+    "img": "/imgItem/fMM混合.png",
+    "question": "",
+    "next_id": "",
+    "end": true,
+    "ps": "MM公司混合支付结局"
+  },
+  {
+    "id": "fMM现金",
+    "type": 0,
+    "option": [],
+    "img": "/imgItem/fMM现金.png",
+    "question": "",
+    "next_id": "",
+    "end": true,
+    "ps": "MM公司现金支付结局"
+  },
+  {
+    "id": "fSon混合",
+    "type": 0,
+    "option": [],
+    "img": "/imgItem/fSon混合.png",
+    "question": "",
+    "next_id": "",
+    "end": true,
+    "ps": "MM公司子公司混合结局"
+  },
+  {
+    "id": "fSon现金",
+    "type": 0,
+    "option": [],
+    "img": "/imgItem/fSon现金.png",
+    "question": "",
+    "next_id": "",
+    "end": true,
+    "ps": "MM公司子公司现金结局"
+  },
+  {
+    "id": "fgold",
+    "type": 0,
+    "option": [],
+    "img": "/imgItem/fgold.png",
+    "question": "",
+    "next_id": "",
+    "end": true,
+    "ps": "投资资金结局"
+  },
+  {
+    "id": "h1",
+    "type": 0,
+    "option": [],
+    "img": "/imgItem/h1.png",
+    "audio": "/imgItem/h1.mp3",
+    "question": "",
+    "next_id": "h2",
+    "ps": "恶意并购开始"
+  },
+  {
+    "id": "h2",
+    "type": 0,
+    "option": [],
+    "img": "/imgItem/h2.png",
+    "audio": "/imgItem/h2.mp3",
+    "question": "",
+    "next_id": "h3"
+  },
+  {
+    "id": "h3",
+    "type": 0,
+    "option": [],
+    "img": "/imgItem/h3.png",
+    "audio": "/imgItem/h3.mp3",
+    "question": "",
+    "next_id": "h4"
+  },
+  {
+    "id": "h4",
+    "type": 0,
+    "option": [],
+    "img": "/imgItem/h4.png",
+    "audio": "/imgItem/h4.mp3",
+    "question": "",
+    "next_id": "h5"
+  },
+  {
+    "id": "h5",
+    "type": 0,
+    "option": [],
+    "img": "/imgItem/h5.png",
+    "question": "",
+    "next_id": "h6简答"
+  },
+  {
+    "id": "h6简答",
+    "type": 4,
+    "option": [],
+    "img": "/imgItem/h6简答.png",
+    "question": "张总监草拟了呈交给董事长的报告（内容主要包括但不限于对WW 公司的基本面分析、并购时机分析以及并购建议，请输入不少于50字的并购方案报告）。",
+    "next_id": "h7"
+  },
+  {
+    "id": "h7",
+    "type": 0,
+    "option": [],
+    "img": "/imgItem/h7.png",
+    "question": "",
+    "next_id": "h8"
+  },
+  {
+    "id": "h8",
+    "type": 0,
+    "option": [],
+    "img": "/imgItem/h8.png",
+    "audio": "/imgItem/h8.mp3",
+    "question": "",
+    "next_id": "h9"
+  },
+  {
+    "id": "h9",
+    "type": 0,
+    "option": [],
+    "img": "/imgItem/h9.png",
+    "audio": "/imgItem/h9.mp3",
+    "question": "",
+    "next_id": "h10"
+  },
+  {
+    "id": "h10",
+    "type": 0,
+    "option": [],
+    "img": "/imgItem/h10.png",
+    "audio": "/imgItem/h10.mp3",
+    "question": "",
+    "next_id": "h11单选"
+  },
+  {
+    "id": "h11单选",
+    "type": 2,
+    "option": [
+      "A、现金流充足稳定",
+      "B、资金匮乏",
+      "C、被并方股票价值被低估",
+      "D、被并方股票价值被高估",
+      "E、市场利率高"
+    ],
+    "img": "/imgItem/h11单选.png",
+    "question": "组长张总监说到：“是的，一次性并购主要适用于（）情况。”(单选题)",
+    "next_id": "h12"
+  },
+  {
+    "id": "h12",
+    "type": 0,
+    "option": [],
+    "img": "/imgItem/h12.png",
+    "audio": "/imgItem/h12.mp3",
+    "question": "",
+    "next_id": "h13单选"
+  },
+  {
+    "id": "h13单选",
+    "type": 2,
+    "option": [
+      "A、现金流充足稳定",
+      "B、资金匮乏",
+      "C、被并方股票价值被低估",
+      "D、被并方股票价值被高估",
+      "E、市场利率高"
+    ],
+    "img": "/imgItem/h13单选.png",
+    "question": "组长张总监接着说到：“分步并购主要适用于（）情况，我同意小章的主张。”(单选题)",
+    "next_id": "h14"
+  },
+  {
+    "id": "h14",
+    "type": 0,
+    "option": [],
+    "img": "/imgItem/h14.png",
+    "audio": "/imgItem/h14.mp3",
+    "question": "",
+    "next_id": "h15"
+  },
+  {
+    "id": "h15",
+    "type": 0,
+    "option": [],
+    "img": "/imgItem/h15.png",
+    "audio": "/imgItem/h15.mp3",
+    "question": "",
+    "next_id": "h16单选"
+  },
+  {
+    "id": "h16单选",
+    "type": 2,
+    "option": ["A、董事会轮选制","B、毒性卖权","C、股票回购","D、毒药丸"],
+    "img": "/imgItem/h16单选.png",
+    "question": "张总监说到：“小李，我知道你说的是（）策略，但是这项规定在中国的适用性实际存在一定的限制。看样子，并购对我们非常有利。”(单选题)",
+    "next_id": "h17"
+  },
+  {
+    "id": "h17",
+    "type": 0,
+    "option": [],
+    "img": "/imgItem/h17.png",
+    "audio": "/imgItem/h17.mp3",
+    "question": "",
+    "next_id": "h18单选"
+  },
+  {
+    "id": "h18单选",
+    "type": 2,
+    "option": [
+      "A、用自有资金加紧收购，防止修改章程",
+      "B、在现有章程内寻找合适的董事"
+    ],
+    "img": "/imgItem/h18单选.png",
+    "question": "因此，他们可能通过授权董事会对董事任职资格进行审查。我认为我们应该想一些办法。”根据当前形势，请做出选择：(单选题)",
+    "next_id": "",
+    "ps": "选择加紧收购或者寻找董事"
+  },
+  {
+    "id": "FD1",
+    "type": 0,
+    "option": [],
+    "img": "/imgItem/FD1.png",
+    "question": "",
+    "next_id": ""
+  },
+  {
+    "id": "FDS",
+    "type": 0,
+    "option": [],
+    "img": "/imgItem/FDS.png",
+    "question": "",
+    "next_id": "",
+    "ps": "M&A1"
+  },
+  {
+    "id": "FDD1",
+    "type": 0,
+    "option": [],
+    "img": "/imgItem/FDD1.png",
+    "question": "",
+    "next_id": "FDD2单选"
+  },
+  {
+    "id": "FDD2单选",
+    "type": 2,
+    "option": [
+      "A、卖掉股票，终止并购",
+      "B、继续并购"
+    ],
+    "img": "/imgItem/FDD2单选.png",
+    "question": "在现有章程下，找不到合适的董事，没能阻止WW公司的反并购操作。根据当前的形势，项目小组组长张总监做出选择：(单选题)",
+    "next_id": ""
+  },
+  {
+    "id": "M&A1",
+    "type": 0,
+    "option": [],
+    "img": "/imgItem/M&A1.png",
+    "audio": "/imgItem/M&A1.mp3",
+    "question": "",
+    "next_id": "M&A2"
+  },
+  {
+    "id": "M&A2",
+    "type": 0,
+    "option": [],
+    "img": "/imgItem/M&A2.png",
+    "audio": "/imgItem/M&A2.mp3",
+    "question": "",
+    "next_id": "M&A3"
+  },
+  {
+    "id": "M&A3",
+    "type": 0,
+    "option": [],
+    "img": "/imgItem/M&A3.png",
+    "audio": "/imgItem/M&A3.mp3",
+    "question": "",
+    "next_id": "M&A4"
+  },
+  {
+    "id": "M&A4",
+    "type": 0,
+    "option": [],
+    "img": "/imgItem/M&A4.png",
+    "audio": "/imgItem/M&A4.mp3",
+    "question": "",
+    "next_id": "M&A5单选"
+  },
+  {
+    "id": "M&A5单选",
+    "type": 2,
+    "option": [
+      "A、意识到收购风险，趁着当前股票价格还不错，决定卖掉股票终止收购",
+      "B、收购仍较为有利，决定继续收购"
+    ],
+    "img": "/imgItem/M&A5单选.png",
+    "question": "在小组会议上，项目组长张总监提出：“我们要想强行收购WW公司， 总共需要大约200亿资金，如果接下来WW公司股价上涨过快，甚至需要200多亿的资金， 远超可动用的自有资金，因此需要进行融资。我们现在需要讨论目前的融资条件。小章说：“ 我们MM公司目前持有子公司A 67.4%的股权，子公司A又持有B公司51%的股权。在并购过程中， 公司A首先质押了手头WW公司的股票，融资近50亿元；另外，我们还质押子公司A 近40亿股给主要合作银行， 获得60多亿元融资，子公司A将起手头B公司的9亿股质押给了另一城商银行的当地分行，获得30多亿元融资，也就是说， 通过多重嵌套的股权质押融资我们实现了近100亿元的融资规模，当然，这样做杠杆风险很大。”小杨说： “此外，我们公司还可以发行10年期可赎回资本补充债券，发行规模不超过58亿元。”小刘说：“最后一种手段为劣后杠杆， MM公司共拿出20亿元资金作为劣后，可以向各银行融资80亿元。”组长张总监听完大家所述，经过权衡，做出选择：(单选题)",
+    "next_id": ""
+  },
+  {
+    "id": "MAA1",
+    "type": 0,
+    "option": [],
+    "img": "/imgItem/MAA1.png",
+    "audio": "/imgItem/MAA1.mp3",
+    "question": "",
+    "next_id": "MAA2"
+  },
+  {
+    "id": "MAA2",
+    "type": 3,
+    "option": [
+      "A、银行贷款",
+      "B、发行债券",
+      "C、股权质押",
+      "D、卖方融资"
+    ],
+    "img": "/imgItem/MAA2.png",
+    "question": "组长张总监说：“大家说的都很有道理。 我们整个集团需要筹资近200亿元的资金才能保证并购的顺利进行，我们可以根据实际情况，选择（）的融资方式。”(多选题)",
+    "next_id": "MAA3"
+  },
+  {
+    "id": "MAA3",
+    "type": 0,
+    "option": [],
+    "img": "/imgItem/MAA3.png",
+    "audio": "/imgItem/MAA3.mp3",
+    "question": "",
+    "next_id": "MAA4单选"
+  },
+  {
+    "id": "MAA4单选",
+    "type": 2,
+    "option": [
+      "A、决定卖掉股票终止收购",
+      "B、收购仍较为有利，决定继续收购"
+    ],
+    "img": "/imgItem/MAA4单选.png",
+    "question": "接着，在讨论并购融资的小组会议上，财务专家小章提出：“我们通过A、B等旗下公司层层连环质押， 放大了质押的WW公司股票贬值带来的风险。当一个环节出现问题时，整个链条都将会断裂。若WW公司股价下跌， 会导致持有该公司股票的价值下降，这会让债权人要求我们公司追加担保物、 拍卖股票或者提前还款的方式保证债权，造成巨大的资金风险。组长张总监经过权衡，做出选择：(单选题)",
+    "next_id": ""
+  },
+  {
+    "id": "CC1",
+    "type": 0,
+    "option": [],
+    "img": "/imgItem/CC1.png",
+    "audio": "/imgItem/CC1.mp3",
+    "question": "",
+    "next_id": "CC2多选"
+  },
+  {
+    "id": "CC2多选",
+    "type": 3,
+    "option": [
+      "A、杠杆风险",
+      "B、股票贬值风险",
+      "C、法律政策风险",
+      "D、盈利风险"
+    ],
+    "img": "/imgItem/CC2多选.png",
+    "question": "组长张总监在并购汇报会议上说到：“董事长，鉴于我们现在的融资情况， 我们会在并购过程中特别关注（）风险，以保证并购的顺利实施。”(多选题)",
+    "next_id": "CC3"
+  },
+  {
+    "id": "CC3",
+    "type": 0,
+    "option": [],
+    "img": "/imgItem/CC3.png",
+    "audio": "/imgItem/CC3.mp3",
+    "question": "",
+    "next_id": "CC4"
+  },
+  {
+    "id": "CC4",
+    "type": 0,
+    "option": [],
+    "img": "/imgItem/CC4.png",
+    "audio": "/imgItem/CC4.mp3",
+    "question": "",
+    "next_id": "CC5单选"
+  },
+  {
+    "id": "CC5单选",
+    "type": 2,
+    "option": [
+      "A、局势日趋复杂化，决定卖掉股票终止收购",
+      "B、收购仍较为有利，决定继续收购。张总监决定与AB保险方接洽，了解对方意向"
+    ],
+    "img": "/imgItem/CC5单选.png",
+    "question": "截至2015年12月18日，MM公司持有股权已达到24.26%。然而，在并购双方专心斗争时 ，另一方也悄无声息地加入战场——AB保险。12月15日，AB保险持股已达6%。在小组会议上，小王说： “我建议和AB保险结盟，获得WW公司的控制权，共同对抗WW公司的反击。”但是也有人反对，小赵说： “AB保险只是想分一杯羹，一旦并购出现问题，AB保险很有可能会倒戈。” 组长张总监经过权衡，做出选择：(单选题)",
+    "next_id": ""
+  },
+  {
+    "id": "AB1",
+    "type": 0,
+    "option": [],
+    "img":"/imgItem/AB1.png",
+    "audio":"/imgItem/AB1.mp3",
+    "question": "",
+    "next_id": "AB2"
+  },{
+  "id": "AB2",
+  "type": 0,
+  "option": [],
+  "img":"/imgItem/AB2.png",
+  "audio":"/imgItem/AB2.mp3",
+  "question": "",
+  "next_id": "AB3"
+},{
+  "id": "AB3",
+  "type": 0,
+  "option": [],
+  "img":"/imgItem/AB3.png",
+  "audio":"/imgItem/AB3.mp3",
+  "question": "",
+  "next_id": "AB4"
+},{
+  "id": "AB4",
+  "type": 0,
+  "option": [],
+  "img":"/imgItem/AB4.png",
+  "audio":"/imgItem/AB4.mp3",
+  "question": "",
+  "next_id": "AB5单选"
+},{
+  "id": "AB5单选",
+  "type": 2,
+  "option": ["A、认为很有必要与AB保险公司合作，接着到：“贵公司若与我们结盟，若成功并购，我们将会保证贵方利益。","B、没必要投入过多与AB保险公司合作，接着到：“您言之有理，那我们再研究研究。"],
+  "img":"/imgItem/AB5单选.png",
+
+  "question": "看到对方较为看重利益，若结盟可能需要足够的投入满足对方的要求，张总监思考片刻：(单选题)",
+  "next_id": ""
+},
+  {
+    "id": "SC1",
+    "type": 0,
+    "option": [],
+    "img": "/imgItem/SC1.png",
+    "question": "",
+    "next_id": "SC2"
+  },
+  {
+    "id": "SC2",
+    "type": 0,
+    "option": [],
+    "img": "/imgItem/SC2.png",
+    "question": "",
+    "next_id": "SC3"
+  },
+  {
+    "id": "SC3",
+    "type": 0,
+    "option": [],
+    "img": "/imgItem/SC3.png",
+    "question": "",
+    "next_id": "",
+    "end": true
+  },
+  {
+    "id": "BMA1",
+    "type": 0,
+    "option": [],
+    "img": "/imgItem/BMA1.png",
+
+    "question": "",
+    "next_id": "BMA2"
+  },
+  {
+    "id": "BMA2",
+    "type": 0,
+    "option": [],
+    "img": "/imgItem/BMA2.png",
+
+    "question": "",
+    "next_id": "BMA3单选"
+  },
+  {
+    "id": "BMA3单选",
+    "type": 2,
+    "option": [
+      "A、股票回购",
+      "B、杠杆资本重组",
+      "C、白衣骑士",
+      "D、帕克曼式防御"
+    ],
+    "img": "/imgItem/BMA3单选.png",
+    "question": "张总监在第二天向董事会进行汇报：“董事长，WW公司目前已经找到了别人帮忙，他们准备采取（）并购防御策略。”(单选题)",
+    "next_id": "BMA4"
+  },
+  {
+    "id": "BMA4",
+    "type": 0,
+    "option": [],
+    "img": "/imgItem/BMA4.png",
+
+    "question": "",
+    "next_id": "BMA5"
+  },
+  {
+    "id": "BMA5单选",
+    "type": 2,
+    "option": [
+      "A、卖掉股票",
+      "B、继续收购"
+    ],
+    "img": "/imgItem/BMA5单选.png",
+    "question": "面对WW公司现在的第一大股东（SD公司），董事会与项目小组就是否要继续进行并购事宜进行讨论。 项目小组有人建议终止收购，卖掉WW公司的股票；也有人不甘心就此结束，建议继续融资进行收购。 对此，张总监向董事会汇报了具体情况，讨论究竟卖掉股票还是继续收购。(单选题)",
+    "next_id": ""
+  },
+  {
+    "id": "SS1",
+    "type": 0,
+    "option": [],
+    "img": "/imgItem/SS1.png",
+
+    "question": "",
+    "next_id": "",
+    "end": true
+  },
+  {
+    "id": "CA1",
+    "type": 0,
+    "option": [],
+    "img": "/imgItem/CA1.png",
+
+    "question": "",
+    "next_id": "",
+    "end": true
+  },
+  {
+    "id": "NF1",
+    "type": 0,
+    "option": [],
+    "img": "/imgItem/NF1.png",
+
+    "question": "",
+    "next_id": "NF2单选"
+  },
+  {
+    "id": "NF2单选",
+    "type": 2,
+    "option": ["A、决定卖掉股票终止收购","B、收购仍较为有利，决定继续收购"],
+    "img": "/imgItem/NF2单选.png",
+
+    "question": "接着，在讨论并购融资的小组会议上，财务专家小章提出：“我们通过A、B等旗下公司层层连环质押， 放大了质押的WW公司股票贬值带来的风险。当一个环节出现问题时，整个链条都将会断裂。若WW公司股价下跌， 会导致持有该公司股票的价值下降，这会让债权人要求我们公司追加担保物、 拍卖股票或者提前还款的方式保证债权，造成巨大的资金风险。组长张总监经过权衡，做出选择：(单选题)",
+    "next_id": ""
+  },{
+  "id": "DS1",
+  "type": 0,
+  "option": [],
+  "img":"/imgItem/DS1.png",
+  "audio":"/imgItem/DS1.mp3",
+  "question": "",
+  "next_id": "DS2单选"
+},{
+  "id": "DS2单选",
+  "type": 2,
+  "option": ["A、股票回购","B、杠杆资本重组","C、白衣骑士","D、帕克曼式防御"],
+  "img":"/imgItem/DS2单选.png",
+
+  "question": "张总监在第二天向董事会进行汇报：“董事长，WW公司目前已经找到了别人帮忙，他们准备采取（）并购防御策略。”(单选题)",
+  "next_id": "DS3"
+},{
+  "id": "DS3",
+  "type": 0,
+  "option": [],
+  "img":"/imgItem/DS3.png",
+  "audio":"/imgItem/DS3.mp3",
+  "question": "",
+  "next_id": "DS4单选"
+},{
+  "id": "DS4单选",
+  "type": 0,
+  "option": ["A、卖掉股票","B、继续收购"],
+  "img":"/imgItem/DS4单选.png",
+
+  "question": "由于AB保险与WW公司的结盟，董事会与项目小组就是否要继续进行并购事宜进行讨论。项目小组有人建议终止收购， 卖掉WW公司的股票；也有人不甘心就此结束，建议继续融资进行收购。 张总监向董事会汇报了具体情况，讨论究竟卖掉股票还是继续收购。(单选题)",
+  "next_id": ""
+},{
+  "id": "DSSS1",
+  "type": 0,
+  "option": [],
+  "img":"/imgItem/DSSS1.png",
+
+  "question": "",
+  "next_id": "",
+  "end": true
+},
+  {
+    "id": "DSCA1",
+    "type": 0,
+    "option": [],
+    "img":"/imgItem/DSCA1.png",
+
+    "question": "",
+    "next_id": "",
+    "end": true
+  },
+  {
+    "id": "TA1",
+    "type": 0,
+    "option": [],
+    "img":"/imgItem/TA1.png",
+    "audio":"/imgItem/TA1.mp3",
+    "question": "",
+    "next_id": "TA2"
+  },
+  {
+    "id": "TA2",
+    "type": 0,
+    "option": [],
+    "img":"/imgItem/TA2.png",
+
+    "question": "",
+    "next_id": "",
+    "end": true
   }
 ]

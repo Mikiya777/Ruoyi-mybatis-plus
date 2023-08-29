@@ -67,6 +67,7 @@ export const constantRoutes = [
     component: () => import("@/views/Student/ExerciseStart/startDetail.vue"),
     hidden: true,
   },
+
   {
     path: "/ExerciseDetail",
     component: Layout,

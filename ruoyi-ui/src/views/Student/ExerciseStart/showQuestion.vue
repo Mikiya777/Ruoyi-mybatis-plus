@@ -1,8 +1,25 @@
 <template>
   <div class="content-box">
-    <!-- 填空 -->
+    <!-- 单填空 -->
     <div v-if="type === 1">
       <template v-for="(item, index) in wrapList">
+        <span :key="index" class="fill-box">
+          <!-- 以index为对象的键 -->
+          <div v-if="index === 0" class="div-indent"></div>
+          <input
+            v-if="item.input"
+            type="text"
+            placeholder="请输入"
+            v-model="answer[index]"
+            class="fill-intput"
+          />
+          <span v-if="item.text">{{ item.text }}</span>
+        </span>
+      </template>
+    </div>
+    <!--多填空-->
+    <div v-if="type === 5">
+      <template v-for="(item, index) in wrapList2">
         <span :key="index" class="fill-box">
           <!-- 以index为对象的键 -->
           <div v-if="index === 0" class="div-indent"></div>
@@ -105,6 +122,11 @@ export default {
       const parsedArray = this.parseText(this.question);
       return parsedArray;
     },
+    wrapList2() {
+      if (this.type !== 5) return;
+      const parsedArray = this.parseText(this.question);
+      return parsedArray;
+    },
   },
 
   methods: {
@@ -142,11 +164,15 @@ export default {
       // 单选题 和 简单题
       if (this.type === 4 || this.type === 2) {
         this.answer = "";
-      } 
+      }
       if (this.type === 1) {
         console.log("12312312312312312",);
         this.answer = {};
-      } 
+      }
+      if (this.type === 5) {
+        console.log("多个填空题",);
+        this.answer = {};
+      }
     },
   },
 };

@@ -16,15 +16,16 @@ export default {
     return {};
   },
 
+  // 保护机制
   methods: {
     changePage: function () {
       startExercise().then((res) => {
         const expId = res.data.expId;
         localStorage.setItem("exp_id", expId || "");
-        // 这个页面跳转的时候清除next_id
+        // 利用浏览器localStorage 存储进行实验必要的数据, 当你一个实验还没结束时又开新的实验时，就需要把先前的next_id清除
         localStorage.removeItem("next_id");
         console.log(expId);
-        // 在当前标签页中使用 window.open 打开新标签页
+        // 在当前标签页中使用 window.open 打开新标签页，后面是startDetail的路由
         const newTab = window.open("/startExercise");
         // 监听新标签页的加载完成事件
         newTab.onload = () => {

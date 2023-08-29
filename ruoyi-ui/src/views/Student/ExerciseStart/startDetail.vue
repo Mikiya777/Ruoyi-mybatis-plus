@@ -60,7 +60,7 @@ export default {
       this.initQuestionId(nextId);
       return;
     }
-    // 设置为第一个题目
+    // 设置为第一个题目，第一个题目的id就在这里设置的
     else {
       this.initQuestionId("0");
     }
@@ -92,6 +92,8 @@ export default {
             answer: JSON.stringify(answer),
             expId: this.expId,
             nextId: this.questionObj.next_id,
+            type: this.questionObj.type,
+            end : this.questionObj.end,
           };
           // 请求
           const res = await pushAnswer(data);
@@ -125,8 +127,18 @@ export default {
         }
       }
 
+      // 多个填空题验证逻辑
+      if (this.questionObj.type === 5) {
+        if (Object.keys(answer).length === this.questionObj.num) {
+          return true;
+        } else {
+          this.$message.error("请填写完整");
+          return false;
+        }
+      }
+
       if (this.questionObj.type === 2) {
-        if (answer !== {}) {
+        if ( answer.length>0) {
           return true;
         } else {
           this.$message.error("请填写完整");

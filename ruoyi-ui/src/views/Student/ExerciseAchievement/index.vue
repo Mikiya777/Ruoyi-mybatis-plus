@@ -63,11 +63,24 @@
         </template>
       </el-table-column>
     </el-table>
+
+    <div class="pagination">
+    <el-pagination
+      background
+      @current-change="handlePageChage"
+      @prev-click="handlePageChage"
+      @next-click="handlePageChage"
+      layout="prev, pager, next"
+      v-show="pages > 0"
+      :page-size="10"
+      :page-count="pages">
+    </el-pagination>
+    </div>
   </div>
 </template>
 
 <script>
-import { getExperiment } from "@/api/student/api.js";
+import {getExperiment, getSchedule} from "@/api/student/api.js";
 
 export default {
   name: "ExerciseAchievement",
@@ -75,9 +88,12 @@ export default {
     return {
       dataList: [],
       loading: true,
+      pages: 0,
+      currentPage: 1,
     };
   },
   created() {
+    this.initValue();
     getExperiment({ pageNum: 1 }).then((res) => {
       this.loading = false;
       this.dataList = res.data.experimentList.map((item) => {
@@ -105,6 +121,27 @@ export default {
       localStorage.setItem("detail_expid", e);
       this.$router.push('/ExerciseDetail/index')
     },
+    initValue() {
+      getExperiment({ pageNum: this.currentPage })
+        .then((res) => {
+          this.pages = res.data.pages;
+          this.dataList = res.data.experimentList.map((item) => {
+            return {
+              ...item,
+              startTime: this.formatDateTime(item.startTime),
+              name: `企业并购${item.expId}次演练`,
+            };
+          });
+          console.log(res);
+        })
+        .catch((e) => {
+          console.log("e", e);
+        });
+    },
+    handlePageChage(e) {
+      this.currentPage = e;
+      this.initValue();
+    },
   },
 };
 </script>
@@ -116,5 +153,12 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.pagination {
+  height: 60px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  padding: 0 50px;
 }
 </style>

@@ -7,6 +7,8 @@ import com.baomidou.mybatisplus.annotation.TableName;
 import java.io.Serializable;
 import lombok.Data;
 
+import javax.validation.constraints.NotNull;
+
 /**
  * 作答记录
  * @TableName answers
@@ -27,7 +29,7 @@ public class Answers implements Serializable {
     private Integer questionId;
 
     /**
-     * 
+     *
      */
     @TableId
     private Long userId;
@@ -46,6 +48,9 @@ public class Answers implements Serializable {
      * 下一页id
      */
     private String nextId;
+
+    @TableField(exist = false)
+    private Integer type;
 
     @TableField(exist = false)
     private static final long serialVersionUID = 1L;
