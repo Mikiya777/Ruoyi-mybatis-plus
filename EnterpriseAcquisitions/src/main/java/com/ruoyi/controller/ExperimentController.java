@@ -7,9 +7,11 @@ import com.ruoyi.pojo.Experiment;
 import com.ruoyi.pojo.ExperimentWithPages;
 import com.ruoyi.pojo.RequestResult;
 import com.ruoyi.pojo.Schedule;
+import com.ruoyi.service.AnswersService;
 import com.ruoyi.service.ExperimentService;
 import com.ruoyi.service.ScheduleService;
 
+import com.ruoyi.service.ScoreService;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -17,9 +19,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
+import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
-import java.util.Map;
 
 import static com.ruoyi.common.utils.PageUtils.startPage;
 
@@ -29,6 +31,12 @@ import static com.ruoyi.common.utils.PageUtils.startPage;
 @RestController
 @RequestMapping("/experiment")
 public class ExperimentController {
+
+    @Resource
+    private AnswersService answersService;
+
+    @Resource
+    private ScoreService scoreService;
 
     @Resource
     private ExperimentService experimentService;
@@ -91,10 +99,15 @@ public class ExperimentController {
 
     @GetMapping("finishExp/{exp_id}")
     public RequestResult<Boolean> finishExp(@PathVariable("exp_id") Integer exp_id) {
-        LoginUser loginUser = SecurityUtils.getLoginUser();
-        Experiment experiment = experimentService.getOne(new QueryWrapper<Experiment>().eq("user_id", loginUser.getUserId()).eq("exp_id", exp_id));
+        Long userId = SecurityUtils.getLoginUser().getUserId();
+
+        Experiment experiment = experimentService.getOne(new QueryWrapper<Experiment>().eq("user_id", userId).eq("exp_id", exp_id));
         experiment.setStatus(true);
         experiment.setEndTime(new Date());
+
+        BigDecimal objectiveScore = scoreService.getObjectiveScore(userId, exp_id, answersService.getAnswer(userId, exp_id));
+        experiment.setObjectiveScore(objectiveScore);
+
         boolean update = experimentService.updateById(experiment);
         return new RequestResult<>(update);
     }

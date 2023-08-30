@@ -1,6 +1,6 @@
 package com.ruoyi.mapper;
-import com.ruoyi.pojo.Schedule;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.ruoyi.pojo.Schedule;
 
 /**
 * @author 25808

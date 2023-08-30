@@ -1,10 +1,10 @@
 package com.ruoyi.pojo;
 
-
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import java.io.Serializable;
+import java.math.BigDecimal;
 import java.util.Date;
 import lombok.Data;
 
@@ -22,7 +22,7 @@ public class Experiment implements Serializable {
     private Integer expId;
 
     /**
-     * 
+     *
      */
     @TableId
     private Long userId;
@@ -41,6 +41,16 @@ public class Experiment implements Serializable {
      * 结束时间
      */
     private Date endTime;
+
+    /**
+     *
+     */
+    private BigDecimal objectiveScore;
+
+    /**
+     *
+     */
+    private BigDecimal subjectiveScore;
 
     @TableField(exist = false)
     private static final long serialVersionUID = 1L;
@@ -61,7 +71,9 @@ public class Experiment implements Serializable {
             && (this.getUserId() == null ? other.getUserId() == null : this.getUserId().equals(other.getUserId()))
             && (this.getStatus() == null ? other.getStatus() == null : this.getStatus().equals(other.getStatus()))
             && (this.getStartTime() == null ? other.getStartTime() == null : this.getStartTime().equals(other.getStartTime()))
-            && (this.getEndTime() == null ? other.getEndTime() == null : this.getEndTime().equals(other.getEndTime()));
+            && (this.getEndTime() == null ? other.getEndTime() == null : this.getEndTime().equals(other.getEndTime()))
+            && (this.getObjectiveScore() == null ? other.getObjectiveScore() == null : this.getObjectiveScore().equals(other.getObjectiveScore()))
+            && (this.getSubjectiveScore() == null ? other.getSubjectiveScore() == null : this.getSubjectiveScore().equals(other.getSubjectiveScore()));
     }
 
     @Override
@@ -73,6 +85,8 @@ public class Experiment implements Serializable {
         result = prime * result + ((getStatus() == null) ? 0 : getStatus().hashCode());
         result = prime * result + ((getStartTime() == null) ? 0 : getStartTime().hashCode());
         result = prime * result + ((getEndTime() == null) ? 0 : getEndTime().hashCode());
+        result = prime * result + ((getObjectiveScore() == null) ? 0 : getObjectiveScore().hashCode());
+        result = prime * result + ((getSubjectiveScore() == null) ? 0 : getSubjectiveScore().hashCode());
         return result;
     }
 
@@ -87,6 +101,8 @@ public class Experiment implements Serializable {
         sb.append(", status=").append(status);
         sb.append(", startTime=").append(startTime);
         sb.append(", endTime=").append(endTime);
+        sb.append(", objectiveScore=").append(objectiveScore);
+        sb.append(", subjectiveScore=").append(subjectiveScore);
         sb.append(", serialVersionUID=").append(serialVersionUID);
         sb.append("]");
         return sb.toString();

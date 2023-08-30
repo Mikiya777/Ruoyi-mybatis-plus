@@ -717,7 +717,7 @@
     "img": "/imgItem/f37MM.png",
     "audio": "/imgItem/f37MM.mp3",
     "question": "",
-    "next_id": "f38"
+    "next_id": "f38单选"
   },
   {
     "id": "f37Son",
@@ -1212,8 +1212,7 @@
     "option": [],
     "img": "/imgItem/FDS.png",
     "question": "",
-    "next_id": "",
-    "ps": "M&A1"
+    "next_id": "M&A1"
   },
   {
     "id": "FDD1",
@@ -1288,10 +1287,10 @@
     "img": "/imgItem/MAA1.png",
     "audio": "/imgItem/MAA1.mp3",
     "question": "",
-    "next_id": "MAA2"
+    "next_id": "MAA2多选"
   },
   {
-    "id": "MAA2",
+    "id": "MAA2多选",
     "type": 3,
     "option": [
       "A、银行贷款",
@@ -1299,7 +1298,7 @@
       "C、股权质押",
       "D、卖方融资"
     ],
-    "img": "/imgItem/MAA2.png",
+    "img": "/imgItem/MAA2多选.png",
     "question": "组长张总监说：“大家说的都很有道理。 我们整个集团需要筹资近200亿元的资金才能保证并购的顺利进行，我们可以根据实际情况，选择（）的融资方式。”(多选题)",
     "next_id": "MAA3"
   },

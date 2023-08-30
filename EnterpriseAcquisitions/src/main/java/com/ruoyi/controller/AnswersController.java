@@ -3,19 +3,24 @@ package com.ruoyi.controller;
 import com.alibaba.fastjson2.JSON;
 import com.alibaba.fastjson2.TypeReference;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
 import com.github.pagehelper.Page;
 import com.ruoyi.common.core.controller.BaseController;
 import com.ruoyi.common.core.domain.model.LoginUser;
 import com.ruoyi.common.utils.SecurityUtils;
 import com.ruoyi.pojo.Answers;
+import com.ruoyi.pojo.Experiment;
 import com.ruoyi.pojo.RequestResult;
 import com.ruoyi.service.AnswersService;
 
+import com.ruoyi.service.ExperimentService;
+import com.ruoyi.service.ScoreService;
 import com.ruoyi.utils.MyPageUtils;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
+import java.math.BigDecimal;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -27,6 +32,12 @@ import java.util.stream.Collectors;
 public class AnswersController extends BaseController {
     @Resource
     private AnswersService answersService;
+
+    @Resource
+    private ExperimentService experimentService;
+
+    @Resource
+    private ScoreService scoreService;
 
     /**
      * @param answers 作答
@@ -227,7 +238,14 @@ public class AnswersController extends BaseController {
         }
 
         if (answersService.CheckAnswersIfValid(answers)) {
-            answersService.save(answers);
+            boolean save = answersService.save(answers);
+            System.out.println("Answer保存结果：\t:"+save);
+            if (answers.getEnd() != null && answers.getEnd()){
+                Boolean aBoolean = finishExp(answers.getUserId(), answers.getExpId());
+                if (!aBoolean){
+                    throw new RuntimeException("Error!");
+                }
+            }
             return new RequestResult<>(answers);
         }
         return new RequestResult<>(400, "落子无悔，无问得失，不可重复提交!", answers);
@@ -291,5 +309,24 @@ public class AnswersController extends BaseController {
         });
         answer = answerMap.get("1");
         return answer;
+    }
+
+    /**
+     * 结束演练的方法
+     * @param userId
+     * @param exp_id
+     * @return
+     */
+    public Boolean finishExp(Long userId ,Integer exp_id) {
+
+
+        BigDecimal objectiveScore = scoreService.getObjectiveScore(userId, exp_id, answersService.getAnswer(userId, exp_id));
+
+
+        boolean update = experimentService.update(new UpdateWrapper<Experiment>()
+                .set("Objective_Score",objectiveScore)
+                .set("end_time",new Date())
+                .set("status",true));
+        return update;
     }
 }

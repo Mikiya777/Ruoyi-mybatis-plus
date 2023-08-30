@@ -8,6 +8,7 @@ import java.io.Serializable;
 import lombok.Data;
 
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Null;
 
 /**
  * 作答记录
@@ -51,6 +52,9 @@ public class Answers implements Serializable {
 
     @TableField(exist = false)
     private Integer type;
+
+    @TableField(exist = false)
+    private Boolean end;
 
     @TableField(exist = false)
     private static final long serialVersionUID = 1L;
@@ -98,6 +102,8 @@ public class Answers implements Serializable {
         sb.append(", id=").append(id);
         sb.append(", nextId=").append(nextId);
         sb.append(", serialVersionUID=").append(serialVersionUID);
+        sb.append(", type=").append(type);
+        sb.append(", end=").append(end);
         sb.append("]");
         return sb.toString();
     }

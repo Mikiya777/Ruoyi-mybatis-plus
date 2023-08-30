@@ -1,11 +1,8 @@
 package com.ruoyi.controller;
 
-import com.alibaba.fastjson2.JSON;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.github.pagehelper.Page;
 import com.ruoyi.common.core.domain.model.LoginUser;
 import com.ruoyi.common.utils.SecurityUtils;
-import com.ruoyi.pojo.Experiment;
 import com.ruoyi.pojo.RequestResult;
 import com.ruoyi.pojo.Schedule;
 import com.ruoyi.pojo.ScheduleListWithPages;
@@ -16,7 +13,6 @@ import com.ruoyi.utils.MyPageUtils;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
-import java.util.ArrayList;
 import java.util.List;
 
 /**
