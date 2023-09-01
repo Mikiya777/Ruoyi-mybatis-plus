@@ -326,7 +326,9 @@ public class AnswersController extends BaseController {
         boolean update = experimentService.update(new UpdateWrapper<Experiment>()
                 .set("Objective_Score",objectiveScore)
                 .set("end_time",new Date())
-                .set("status",true));
+                .set("status",true)
+                .eq("user_id",userId)
+                .eq("exp_id",exp_id));
         return update;
     }
 }

@@ -12,6 +12,8 @@ create table experiment(
     exp_id int not null comment '实验id也是本用户的第几次实验',
     user_id bigint(20) not null,
     status bit(1) comment '0未完成，1已提交',
+    Objective_score DECIMAL(4,1) comment '客观题总分',
+    Subjective_score DECIMAL(4,1) comment '主观题总分',
     start_time datetime comment '开始时间',
     end_time datetime comment '结束时间',
     PRIMARY KEY (exp_id,user_id)
@@ -21,12 +23,21 @@ create table schedule(
     exp_id int not null,
     user_id bigint(20) not null,
     status bit(1) comment '0未完成，1已提交',
+    Objective_score DECIMAL(4,1) comment '客观题总分',
+    Subjective_score DECIMAL(4,1) comment '主观题总分',
     id varchar(32) comment '页面id',
     next_id varchar(32) comment '下一页id',
     start_time datetime,
     end_time datetime,
     primary key(exp_id,user_id)
 )comment '演练进度';
+
+create table Score(
+    id varchar(32) comment '页面id',
+    answer varchar(255) comment '标准答案',
+    type int comment '题目类型',
+    score DECIMAL(4,1) comment '答案分数'
+);
 
 # create table page_info(
 #     page_info_id bigint auto_increment,
@@ -59,7 +70,7 @@ END;
 DELIMITER ;
 
 # 在插入新记录后，首先检查新记录中的 score 是否不为空（NULL）。
-# 如果 score 不为空，那么就执行一个 UPDATE 语句来将 experiment 表中对应实验和用户的总分加上新记录中的 score。
+# # 如果 score 不为空，那么就执行一个 UPDATE 语句来将 experiment 表中对应实验和用户的总分加上新记录中的 score。
 # DELIMITER //
 #
 # CREATE TRIGGER update_sum_score
@@ -77,18 +88,19 @@ DELIMITER ;
 
 
 # 当作答记录插入时，更新进度表的实验总分
-# DELIMITER //
-#
-# CREATE TRIGGER sync_experiment_score
-#     AFTER UPDATE ON experiment
-#     FOR EACH ROW
-# BEGIN
-#     UPDATE schedule
-#     SET sum_score = NEW.sum_score
-#     WHERE exp_id = NEW.exp_id AND user_id = NEW.user_id;
-# END//
-#
-# DELIMITER ;
+DELIMITER //
+
+CREATE TRIGGER sync_experiment_score
+    AFTER UPDATE ON experiment
+    FOR EACH ROW
+BEGIN
+    UPDATE schedule
+    SET Objective_Score = NEW.Objective_score,
+        Subjective_Score = NEW.Subjective_score
+    WHERE exp_id = NEW.exp_id AND user_id = NEW.user_id;
+END//
+
+DELIMITER ;
 
 
 

@@ -68,7 +68,7 @@ public class ExperimentController {
         newSchedule.setUserId(user_id);
         newSchedule.setStatus(false);
         newSchedule.setStartTime(experiment.getStartTime());
-        newSchedule.setNextId("p1");
+        newSchedule.setNextId("0");
 
         scheduleService.save(newSchedule);
         return new RequestResult<>(experiment);
