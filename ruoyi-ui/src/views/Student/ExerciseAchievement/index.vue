@@ -33,8 +33,14 @@
         </template>
       </el-table-column>
       <el-table-column
-        prop="score"
-        label="总得分"
+        prop="score1"
+        label="客观题得分"
+        align="center"
+        :show-overflow-tooltip="true"
+      ></el-table-column>
+      <el-table-column
+        prop="score2"
+        label="主观题得分"
         align="center"
         :show-overflow-tooltip="true"
       ></el-table-column>
@@ -101,6 +107,7 @@ export default {
           ...item,
           startTime: this.formatDateTime(item.startTime),
           name: `企业并购${item.expId}次演练`,
+          // score1: `${item.expId}`,//后续再修改
         };
       });
       console.log(res, res);

@@ -53,19 +53,19 @@ public class AnswersController extends BaseController {
             case 2:
                 answers.setAnswer(parseString(answers.getAnswer()));
                 break;
-                //多选答案转换
+            //多选答案转换
             case 3:
                 answers.setAnswer(parseStringArray(answers.getAnswer()));
                 break;
-                //单填空答案转
+            //单填空答案转
             case 1:
                 answers.setAnswer(parseStringFromSingleBlank(answers.getAnswer()));
                 break;
-                //简答题答案
+            //简答题答案
             case 4:
                 answers.setAnswer(parseString(answers.getAnswer()));
                 break;
-                //多填空答案转换
+            //多填空答案转换
             case 5:
                 answers.setAnswer(parseStringFromMutilBlank(answers.getAnswer()));
                 break;
