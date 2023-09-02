@@ -14,6 +14,13 @@
           v-if="type === 1"
           v-html="`${wrapContent(question)}`"
         ></div>
+
+        <div
+          class="fill"
+          v-if="type === 5"
+          v-html="`${wrapContentMulti(question)}`"
+        ></div>
+
         <div v-if="type === 2">
           <div>{{ question }}</div>
           <div class="answer-box">
@@ -95,15 +102,30 @@ export default {
   methods: {
     wrapContent(content) {
       const dataArray = (this.answer && JSON.parse(this.answer)) || [];
-      console.log(dataArray);
+      console.log('dataArray'+dataArray);
 
-      let index = 0;
+      let index = 0;//单填空中不需要
       const replacedText = content.replace(
         /\[文本框\]/g,
-        () => `<span class="deep-span"> ${dataArray[++index] || ""}</span>`
+        () => `<span class="deep-span"> ${dataArray || ""}</span>`
       );
       return replacedText;
     },
+
+    wrapContentMulti(content) {
+      console.log('MultiData+' , this.answer);
+      const dataArrayM = (this.answer && JSON.parse(this.answer)) || [];
+
+
+      let index = 0;//
+      const replacedTextM = content.replace(
+        /\[文本框\]/g,
+        () => `<span class="deep-span"> ${dataArrayM[++index] || ""}</span>`
+      );
+      return replacedTextM;
+    },
+
+
     mapCharacters(input) {
       const mapping = {
         A: 0,

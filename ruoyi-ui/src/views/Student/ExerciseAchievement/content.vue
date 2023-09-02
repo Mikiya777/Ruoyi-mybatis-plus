@@ -93,7 +93,7 @@ export default {
       // 后端数据合并到前端
       const mergedAndFilteredData = serverData.map((serverItem) => {
         const frontendItem = frontendDataMap[serverItem.id];
-        return { ...frontendItem, ...serverItem };
+        return { ...frontendItem, ...serverItem,type:frontendItem.type};
       });
       return mergedAndFilteredData;
     },

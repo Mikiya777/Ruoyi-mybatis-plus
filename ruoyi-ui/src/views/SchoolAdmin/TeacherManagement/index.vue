@@ -232,7 +232,7 @@
           </el-col>
           <el-col :span="12">
             <el-form-item label="归属院系" prop="deptId">
-              <treeselect v-model="form.deptId" :options="deptOptions" :show-count="true" multiple placeholder="请选择归属院系"/>
+              <treeselect v-model="form.deptId" :options="deptOptions" :show-count="true"  placeholder="请选择归属院系"/>
             </el-form-item>
           </el-col>
         </el-row>
@@ -567,7 +567,7 @@ export default {
     reset() {
       this.form = {
         userId: undefined,
-        deptId: undefined,
+        deptId: undefined,//让他冗余
         userName: undefined,
         nickName: undefined,
         password: undefined,
