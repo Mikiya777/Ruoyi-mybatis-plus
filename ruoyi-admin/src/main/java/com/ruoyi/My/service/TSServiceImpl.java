@@ -45,17 +45,19 @@ public class TSServiceImpl extends SysUserServiceImpl {
 //        List<SysUser> sysUsers = selectUserList(user);
         List<SysUser> sysUsers = customUserMapper.selectUserList(user);
         teacherList = filterRoles(sysUsers,"Teacher");
-        for (SysUser teacher : teacherList){
-            String gid;
-            if ((gid = teacher.getGroupId())!=null){
-                SysDept sysDept = new SysDept();
-                sysDept.setGroupId(gid);
-                List<SysDept> sysDepts = sysDeptMapper.selectDeptList(sysDept);
-                List<String> collect = sysDepts.stream().map(dept ->dept.getDeptName())
-                        .collect(Collectors.toList());
-                SysDept dept = teacher.getDept();
-                dept.setDeptName(String.join(",", collect));
-                teacher.setDept(dept);
+        if (user.getGroupId()!=null){
+            for (SysUser teacher : teacherList){
+                String gid;
+                if ((gid = teacher.getGroupId())!=null){
+                    SysDept sysDept = new SysDept();
+                    sysDept.setGroupId(gid);
+                    List<SysDept> sysDepts = sysDeptMapper.selectDeptList(sysDept);
+                    List<String> collect = sysDepts.stream().map(dept ->dept.getDeptName())
+                            .collect(Collectors.toList());
+                    SysDept dept = teacher.getDept();
+                    dept.setDeptName(String.join(",", collect));
+                    teacher.setDept(dept);
+                }
             }
         }
         return teacherList;
