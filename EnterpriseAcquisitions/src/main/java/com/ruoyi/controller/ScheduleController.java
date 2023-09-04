@@ -38,7 +38,6 @@ public class ScheduleController {
     public RequestResult<ScheduleListWithPages> getScheduleList() {
 
         LoginUser loginUser = SecurityUtils.getLoginUser();
-
         ScheduleListWithPages scheduleListWithPages = new ScheduleListWithPages();
         int total = scheduleService.count(new QueryWrapper<Schedule>().eq("user_id", loginUser.getUserId()));
         scheduleListWithPages.setPages( (int)Math.ceil(total / 8.0) );

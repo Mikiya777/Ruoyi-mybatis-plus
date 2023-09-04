@@ -107,7 +107,7 @@ export default {
       let index = 0;//单填空中不需要
       const replacedText = content.replace(
         /\[文本框\]/g,
-        () => `<span class="deep-span"> ${dataArray || ""}</span>`
+        () => `<span class="deep-span"> ${dataArray[++index] || ""}</span>`
       );
       return replacedText;
     },

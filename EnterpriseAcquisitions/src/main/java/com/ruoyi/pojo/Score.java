@@ -7,7 +7,7 @@ import java.math.BigDecimal;
 import lombok.Data;
 
 /**
- *
+ * 
  * @TableName score
  */
 @TableName(value ="score")

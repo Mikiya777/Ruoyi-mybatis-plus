@@ -1,5 +1,6 @@
 package com.ruoyi.My.Controller;
 
+import com.ruoyi.My.mapper.CustomUserMapper;
 import com.ruoyi.My.service.TSServiceImpl;
 import com.ruoyi.common.core.controller.BaseController;
 import com.ruoyi.common.core.domain.entity.SysUser;
@@ -19,6 +20,13 @@ public class TSController extends BaseController {
     @Qualifier("tsServiceImpl")
     private TSServiceImpl tsService;
 
+
+
+    /**
+     * 院校管理员查看老师
+     * @param user
+     * @return
+     */
     @GetMapping("/getTeacherList")
     public TableDataInfo getTeacherList(SysUser user){
         startPage();
@@ -26,10 +34,28 @@ public class TSController extends BaseController {
         return getDataTable(teacherList);
     }
 
+    /**
+     * 院校管理员查看学生
+     * @param user
+     * @return
+     */
+
     @GetMapping("/getStudentList")
     public TableDataInfo getStudentList(SysUser user){
         startPage();
         List<SysUser> studentList = tsService.selectStudentList(user);
+        return getDataTable(studentList);
+    }
+
+    /**
+     * 老师端查看学生
+     * @param user
+     * @return
+     */
+    @GetMapping("/teacher/getStudentList")
+    public TableDataInfo getStudentList2(SysUser user){
+        startPage();
+        List<SysUser> studentList = tsService.selectStudentList2(user);
         return getDataTable(studentList);
     }
 }

@@ -1,7 +1,7 @@
 package com.ruoyi.mapper;
 
-import com.ruoyi.pojo.Score;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.ruoyi.pojo.Score;
 
 /**
 * @author mac

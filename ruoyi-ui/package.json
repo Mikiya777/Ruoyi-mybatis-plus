@@ -5,7 +5,7 @@
   "author": "若依",
   "license": "MIT",
   "scripts": {
-    "serve": "export NODE_OPTIONS=--openssl-legacy-provider &&  vue-cli-service serve",
+    "serve": "set NODE_OPTIONS=--openssl-legacy-provider &&  vue-cli-service serve",
     "start": "set NODE_OPTIONS=--openssl-legacy-provider && npm run serve",
     "dev": "  set NODE_OPTIONS=--openssl-legacy-provider && npm run serve",
     "build": "set NODE_OPTIONS=--openssl-legacy-provider && vue-cli-service build --report"

@@ -51,6 +51,17 @@ public class SysDept extends BaseEntity
 
     /** 父部门名称 */
     private String parentName;
+
+    public String getGroupId() {
+        return groupId;
+    }
+
+    public void setGroupId(String groupId) {
+        this.groupId = groupId;
+    }
+
+    /** 组ID*/
+    private String groupId;
     
     /** 子部门 */
     private List<SysDept> children = new ArrayList<SysDept>();

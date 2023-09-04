@@ -71,6 +71,17 @@ public class LoginUser implements UserDetails
      */
     private SysUser user;
 
+    /**组Id*/
+    private String group_id;
+
+    public String getGroup_id() {
+        return group_id;
+    }
+
+    public void setGroup_id(String group_id) {
+        this.group_id = group_id;
+    }
+
     public Long getUserId()
     {
         return userId;

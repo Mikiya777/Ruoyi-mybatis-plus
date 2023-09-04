@@ -39,20 +39,6 @@ create table Score(
     score DECIMAL(4,1) comment '答案分数'
 );
 
-# create table page_info(
-#     page_info_id bigint auto_increment,
-#     FriendBodyString varchar(255),
-#     PayWay varchar(255),
-#     controlNumber int,
-#     friendNumber int,
-#     friendsing int,
-#     isPlaying boolean,
-#     randomString varchar(255),
-#     workString varchar(255),
-#     worksing int,
-#     primary key (page_info_id)
-# )comment '页面信息-用于完成继续实验的跳转功能';
-
 # 使得experiment表在插入新数据时，每个用户自己的exp_id自增
 DELIMITER //
 CREATE TRIGGER set_increment_exp_id BEFORE INSERT ON experiment
@@ -103,9 +89,6 @@ END//
 DELIMITER ;
 
 
-
-
-
 # 在插入新记录前，查询当前用户在特定实验（由插入操作中的 exp_id 决定）下的最大 question_id。
 # 如果没有记录，则将 question_id 设置为 1，否则将其增加 1。
 DELIMITER //
@@ -140,6 +123,15 @@ BEGIN
 END;
 //
 DELIMITER ;
+
+alter table ruoyi.sys_user
+    add group_id varchar(255) null;
+
+alter table ruoyi.sys_dept
+    add group_id varchar(255) null;
+
+
+
 
 
 
