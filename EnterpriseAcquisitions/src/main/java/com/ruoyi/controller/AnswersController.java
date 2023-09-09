@@ -4,7 +4,6 @@ import com.alibaba.fastjson2.JSON;
 import com.alibaba.fastjson2.TypeReference;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
-import com.github.pagehelper.Page;
 import com.ruoyi.common.core.controller.BaseController;
 import com.ruoyi.common.core.domain.model.LoginUser;
 import com.ruoyi.common.utils.SecurityUtils;
@@ -12,13 +11,9 @@ import com.ruoyi.pojo.Answers;
 import com.ruoyi.pojo.Experiment;
 import com.ruoyi.pojo.RequestResult;
 import com.ruoyi.service.AnswersService;
-
 import com.ruoyi.service.ExperimentService;
 import com.ruoyi.service.ScoreService;
-import com.ruoyi.utils.MyPageUtils;
-import org.apache.ibatis.annotations.Param;
 import org.springframework.web.bind.annotation.*;
-
 import javax.annotation.Resource;
 import java.math.BigDecimal;
 import java.util.*;
@@ -70,7 +65,9 @@ public class AnswersController extends BaseController {
                     }
                     break;
                 case "dprice":
-                    if (Double.parseDouble(answers.getAnswer()) >= 25) {
+                    Map<String,String> answerMap = JSON.parseObject(answers.getAnswer(), new TypeReference<Map<String, String>>() {
+                    });
+                    if (Double.parseDouble(answerMap.get("1")) >= 25) {
                         answers.setNextId("f1");
                     } else
                         answers.setNextId("h1");
@@ -252,15 +249,15 @@ public class AnswersController extends BaseController {
 
         BigDecimal objectiveScore = scoreService.getObjectiveScore(userId, exp_id, answersService.getAnswer(userId, exp_id));
 
-
         boolean update = experimentService.update(new UpdateWrapper<Experiment>()
                 .set("Objective_Score",objectiveScore)
                 .set("end_time",new Date())
                 .set("status",true)
-                .set("id","")
-                .set("next_id","")
                 .eq("user_id",userId)
                 .eq("exp_id",exp_id));
         return update;
     }
+
+
+
 }

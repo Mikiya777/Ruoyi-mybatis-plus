@@ -2,20 +2,17 @@ package com.ruoyi.service.impl;
 
 import com.alibaba.fastjson2.JSON;
 import com.alibaba.fastjson2.TypeReference;
-import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.ruoyi.mapper.ScoreMapper;
 import com.ruoyi.pojo.Answers;
 import com.ruoyi.pojo.Score;
 import com.ruoyi.service.ScoreService;
 import org.springframework.stereotype.Service;
-
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
 /**
@@ -38,27 +35,30 @@ public class ScoreServiceImpl extends ServiceImpl<ScoreMapper, Score>
     @Override
     public BigDecimal getObjectiveScore(Long userId, Integer expId, List<Answers> answersList) {
         List <Answers> answersListConveted = answersList.stream().map(answers -> {
-            switch (answers.getType()){
-                //单选答案转换
-                case 2:
-                    answers.setAnswer(parseString(answers.getAnswer()));
-                    break;
-                //多选答案转换
-                case 3:
-                    answers.setAnswer(parseStringArray(answers.getAnswer()));
-                    break;
-                //单填空答案转
-                case 1:
-                    answers.setAnswer(parseStringFromSingleBlank(answers.getAnswer()));
-                    break;
-                //简答题答案
-                case 4:
-                    answers.setAnswer(parseString(answers.getAnswer()));
-                    break;
-                //多填空答案转换
-                case 5:
-                    answers.setAnswer(parseStringFromMutilBlank(answers.getAnswer()));
-                    break;
+            System.out.println(answers.getType());
+            if (answers.getType()!=null){
+                switch (answers.getType()){
+                    //单选答案转换
+                    case 2:
+                        answers.setAnswer(parseString(answers.getAnswer()));
+                        break;
+                    //多选答案转换
+                    case 3:
+                        answers.setAnswer(parseStringArray(answers.getAnswer()));
+                        break;
+                    //单填空答案转
+                    case 1:
+                        answers.setAnswer(parseStringFromSingleBlank(answers.getAnswer()));
+                        break;
+                    //简答题答案
+                    case 4:
+                        answers.setAnswer(parseString(answers.getAnswer()));
+                        break;
+                    //多填空答案转换
+                    case 5:
+                        answers.setAnswer(parseStringFromMutilBlank(answers.getAnswer()));
+                        break;
+                }
             }
             return answers;
         }).collect(Collectors.toList());

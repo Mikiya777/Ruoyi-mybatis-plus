@@ -50,7 +50,7 @@ public class Answers implements Serializable {
      */
     private String nextId;
 
-    @TableField(exist = false)
+
     private Integer type;
 
     @TableField(exist = false)
