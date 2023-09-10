@@ -37,6 +37,7 @@ public class TeacherController {
     public RequestResult<List<Experiment>> getExperiment(){
         List<SysUser> studentList2 = tsService.selectStudentList(new SysUser());
         List<Long> IdList = studentList2.stream().map(SysUser::getUserId).collect(Collectors.toList());
+
         List<Experiment> experimentList = experimentService.list(new QueryWrapper<Experiment>().in("user_id", IdList));
         Comparator<Experiment> comparator = (e1,e2)-> {
             Date currentTime = new Date();
@@ -71,6 +72,7 @@ public class TeacherController {
             for (SysUser s:studentList2){
                 if (s.getUserId().equals(experiment.getUserId())){
                     experiment.setStudentName(s.getNickName());
+                    experiment.setClassName(s.getDept().getDeptName());
                     continue Loop;
                 }
             }
