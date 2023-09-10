@@ -66,6 +66,16 @@ public class TeacherController {
             }
         };
         experimentList.sort(comparator);
+
+        Loop :for (Experiment experiment : experimentList){
+            for (SysUser s:studentList2){
+                if (s.getUserId().equals(experiment.getUserId())){
+                    experiment.setStudentName(s.getNickName());
+                    continue Loop;
+                }
+            }
+        }
+
         return new RequestResult<List<Experiment>>(experimentList);
     }
 

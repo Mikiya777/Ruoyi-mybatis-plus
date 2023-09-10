@@ -15,6 +15,13 @@ import lombok.Data;
 @TableName(value ="experiment")
 @Data
 public class Experiment implements Serializable {
+
+    @TableField(exist = false)
+    private String studentName;
+
+
+    @TableField(exist = false)
+    private String className;
     /**
      * 实验id也是本用户的第几次实验
      */
