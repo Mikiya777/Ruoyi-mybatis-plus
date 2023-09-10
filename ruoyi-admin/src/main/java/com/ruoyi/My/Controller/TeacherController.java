@@ -2,7 +2,9 @@ package com.ruoyi.My.Controller;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.ruoyi.My.service.TSServiceImpl;
+import com.ruoyi.common.core.controller.BaseController;
 import com.ruoyi.common.core.domain.entity.SysUser;
+import com.ruoyi.common.core.page.TableDataInfo;
 import com.ruoyi.pojo.Answers;
 import com.ruoyi.pojo.Experiment;
 import com.ruoyi.pojo.RequestResult;
@@ -20,7 +22,7 @@ import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/teacher")
-public class TeacherController {
+public class TeacherController extends BaseController {
     @Resource
     private ExperimentService experimentService;
 
@@ -34,10 +36,11 @@ public class TeacherController {
      * 教师端-学生成绩
      */
     @GetMapping("/getExperiment")
-    public RequestResult<List<Experiment>> getExperiment(){
+    public TableDataInfo getExperiment(){
+        startPage();
         List<SysUser> studentList2 = tsService.selectStudentList(new SysUser());
         List<Long> IdList = studentList2.stream().map(SysUser::getUserId).collect(Collectors.toList());
-
+        startPage();
         List<Experiment> experimentList = experimentService.list(new QueryWrapper<Experiment>().in("user_id", IdList));
         Comparator<Experiment> comparator = (e1,e2)-> {
             Date currentTime = new Date();
@@ -68,8 +71,8 @@ public class TeacherController {
         };
         experimentList.sort(comparator);
 
-        Loop :for (Experiment experiment : experimentList){
-            for (SysUser s:studentList2){
+        for (SysUser s:studentList2){
+            Loop : for (Experiment experiment : experimentList){
                 if (s.getUserId().equals(experiment.getUserId())){
                     experiment.setStudentName(s.getNickName());
                     experiment.setClassName(s.getDept().getDeptName());
@@ -78,7 +81,7 @@ public class TeacherController {
             }
         }
 
-        return new RequestResult<List<Experiment>>(experimentList);
+        return getDataTable(experimentList);
     }
 
     /**
