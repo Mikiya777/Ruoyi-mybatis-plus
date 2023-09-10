@@ -4,9 +4,12 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.ruoyi.My.service.TSServiceImpl;
 import com.ruoyi.common.core.controller.BaseController;
 import com.ruoyi.common.core.domain.entity.SysUser;
+
 import com.ruoyi.common.core.page.TableDataInfo;
+
 import com.ruoyi.pojo.Answers;
 import com.ruoyi.pojo.Experiment;
+import com.ruoyi.pojo.ExperimentWithPages;
 import com.ruoyi.pojo.RequestResult;
 import com.ruoyi.service.AnswersService;
 import com.ruoyi.service.ExperimentService;
@@ -36,7 +39,7 @@ public class TeacherController extends BaseController {
      * 教师端-学生成绩
      */
     @GetMapping("/getExperiment")
-    public TableDataInfo getExperiment(){
+    public RequestResult<ExperimentWithPages> getExperiment(){
         startPage();
         List<SysUser> studentList2 = tsService.selectStudentList(new SysUser());
         List<Long> IdList = studentList2.stream().map(SysUser::getUserId).collect(Collectors.toList());
@@ -80,8 +83,10 @@ public class TeacherController extends BaseController {
                 }
             }
         }
+        int total = experimentService.count(new QueryWrapper<Experiment>().in("user_id", IdList));
+        ExperimentWithPages experimentWithPages = new ExperimentWithPages(experimentList, (int) Math.ceil(total / 10.0));
 
-        return getDataTable(experimentList);
+        return new RequestResult<>(experimentWithPages);
     }
 
     /**
@@ -120,6 +125,17 @@ public class TeacherController extends BaseController {
                 .eq("exp_id", expId)
                 .setEntity(experiment));
         return new RequestResult<>(update);
+    }
+
+    @GetMapping("/getAnswer/{user_id}/{exp_id}")
+    public RequestResult<List<Answers>> getAnswer(@PathVariable("user_id") long userId,@PathVariable("exp_id")Integer expId){
+        List<Answers> list = answersService
+                .list(new QueryWrapper<Answers>()
+                        .eq("user_id", userId)
+                        .eq("exp_id", expId)
+                        .orderByAsc("question_id"));
+        list = list.stream().distinct().collect(Collectors.toList());
+        return new RequestResult<>(list);
     }
 
 
