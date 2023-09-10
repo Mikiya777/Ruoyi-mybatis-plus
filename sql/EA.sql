@@ -7,7 +7,7 @@ create table answers(
     id varchar(32) comment '页面id',
     next_id varchar(32) comment '下一页id',
     primary key(exp_id,question_id,user_id)
-)character set utf8 comment '作答记录';
+)engine=innodb character set utf8 comment '作答记录';
 
 create table experiment(
     exp_id int not null comment '实验id也是本用户的第几次实验',
@@ -18,7 +18,7 @@ create table experiment(
     start_time datetime comment '开始时间',
     end_time datetime comment '结束时间',
     PRIMARY KEY (exp_id,user_id)
-)comment '实验表';
+)engine=innodb comment '实验表' character set utf8;
 
 create table schedule(
     exp_id int not null,
@@ -31,14 +31,14 @@ create table schedule(
     start_time datetime,
     end_time datetime,
     primary key(exp_id,user_id)
-)comment '演练进度';
+)engine=innodb comment '演练进度' character set utf8;
 
 create table Score(
     id varchar(32) comment '页面id',
     answer varchar(255) comment '标准答案',
     type int comment '题目类型',
     score DECIMAL(4,1) comment '答案分数'
-);
+)engine=innodb character set utf8;
 
 # 使得experiment表在插入新数据时，每个用户自己的exp_id自增
 DELIMITER //
@@ -130,6 +130,9 @@ alter table ruoyi.sys_user
 
 alter table ruoyi.sys_dept
     add group_id varchar(255) null;
+
+
+
 
 
 

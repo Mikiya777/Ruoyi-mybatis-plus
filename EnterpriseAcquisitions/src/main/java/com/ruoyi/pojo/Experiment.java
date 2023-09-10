@@ -52,6 +52,9 @@ public class Experiment implements Serializable {
      */
     private BigDecimal subjectiveScore;
 
+
+    private String navBar;
+
     @TableField(exist = false)
     private static final long serialVersionUID = 1L;
 

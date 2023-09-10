@@ -20,6 +20,14 @@ public interface SysUserMapper
     public List<SysUser> selectUserList(SysUser sysUser);
 
     /**
+     * 根据条件分页查询学生列表
+     * @param sysUser 学生信息
+     * @return 学生信息集合信息
+     */
+
+    public List<SysUser> selectStudentList(SysUser sysUser);
+
+    /**
      * 根据条件分页查询已配用户角色列表
      * 
      * @param user 用户信息

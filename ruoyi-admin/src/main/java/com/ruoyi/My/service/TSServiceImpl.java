@@ -45,21 +45,21 @@ public class TSServiceImpl extends SysUserServiceImpl {
 //        List<SysUser> sysUsers = selectUserList(user);
         List<SysUser> sysUsers = customUserMapper.selectUserList(user);
         teacherList = filterRoles(sysUsers,"Teacher");
-        if (user.getGroupId()!=null){
-            for (SysUser teacher : teacherList){
-                String gid;
-                if ((gid = teacher.getGroupId())!=null){
-                    SysDept sysDept = new SysDept();
-                    sysDept.setGroupId(gid);
-                    List<SysDept> sysDepts = sysDeptMapper.selectDeptList(sysDept);
-                    List<String> collect = sysDepts.stream().map(dept ->dept.getDeptName())
-                            .collect(Collectors.toList());
-                    SysDept dept = teacher.getDept();
-                    dept.setDeptName(String.join(",", collect));
-                    teacher.setDept(dept);
-                }
-            }
-        }
+//        if (user.getGroupId()!=null){
+//            for (SysUser teacher : teacherList){
+//                String gid;
+//                if ((gid = teacher.getGroupId())!=null){
+//                    SysDept sysDept = new SysDept();
+//                    sysDept.setGroupId(gid);
+//                    List<SysDept> sysDepts = sysDeptMapper.selectDeptList(sysDept);
+//                    List<String> collect = sysDepts.stream().map(dept ->dept.getDeptName())
+//                            .collect(Collectors.toList());
+//                    SysDept dept = teacher.getDept();
+//                    dept.setDeptName(String.join(",", collect));
+//                    teacher.setDept(dept);
+//                }
+//            }
+//        }
         return teacherList;
     }
 
@@ -70,10 +70,12 @@ public class TSServiceImpl extends SysUserServiceImpl {
      */
 
     public List<SysUser> selectStudentList(SysUser user) {
-        LoginUser loginUser = SecurityUtils.getLoginUser();
         List<SysUser> studentList = null;
-        List<SysUser> sysUsers = selectUserList(user);
+        List<SysUser> sysUsers = super.selectStudentList(user);
+        System.out.println("--------------");
+        System.out.println("sysUser.length = "+ sysUsers.size());
         studentList = filterRoles(sysUsers,"Student");
+        System.out.println("studentList.length = "+ studentList.size());
         return studentList;
     }
 
@@ -139,12 +141,13 @@ public class TSServiceImpl extends SysUserServiceImpl {
                     sysUser.setRoles(sysRoles);
                     return sysUser;
                 }).collect(Collectors.toList());
-        for (SysUser sysUser : userList) {
+        Loop :for (SysUser sysUser : userList) {
+            System.out.println(sysUser.getNickName());
             List<SysRole> roles = sysUser.getRoles();
             for (SysRole role : roles) {
                 if (role.isFlag() && role.getRoleKey().equals(roleKey)) {
                     tempList.add(sysUser);
-                    continue;
+                    continue Loop;
                 }
             }
         }

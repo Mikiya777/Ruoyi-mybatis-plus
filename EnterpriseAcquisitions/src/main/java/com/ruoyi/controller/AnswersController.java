@@ -215,7 +215,11 @@ public class AnswersController extends BaseController {
 
         if (answersService.CheckAnswersIfValid(answers)) {
             boolean save = answersService.save(answers);
-            System.out.println("Answer保存结果：\t:"+save);
+            Experiment experiment = experimentService.getOne(new QueryWrapper<Experiment>()
+                    .eq("exp_id", answers.getExpId())
+                    .eq("user_id", answers.getUserId()));
+            experiment.setNavBar(answers.getNavBar());
+            experimentService.updateById(experiment);
             if (answers.getEnd() != null && answers.getEnd()){
                 Boolean aBoolean = finishExp(answers.getUserId(), answers.getExpId());
                 if (!aBoolean){

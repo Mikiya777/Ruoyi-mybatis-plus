@@ -64,6 +64,17 @@ public class SysUserServiceImpl implements ISysUserService
     protected Validator validator;
 
     /**
+     * 查找学生列表
+     * @param user
+     * @return
+     */
+    @DataScope(deptAlias = "d", userAlias = "u")
+    public List<SysUser> selectStudentList(SysUser user)
+    {
+        return userMapper.selectStudentList(user);
+    }
+
+    /**
      * 根据条件分页查询用户列表
      * 
      * @param user 用户信息

@@ -54,6 +54,9 @@ public class Answers implements Serializable {
     private Integer type;
 
     @TableField(exist = false)
+    private String navBar;
+
+    @TableField(exist = false)
     private Boolean end;
 
     @TableField(exist = false)
