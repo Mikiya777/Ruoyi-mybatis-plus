@@ -36,6 +36,7 @@
 import fontJson from "@/assets/list.json";
 import ShowBox from "@/views/Student/ExerciseAchievement/showBox.vue";
 import { getExpDedetail_expidtail } from "@/api/student/api.js";
+import {getDegital} from "@/api/teacher/api";
 export default {
   name: "contentCompontent",
   components: { ShowBox },
@@ -51,8 +52,9 @@ export default {
   computed: {},
   created() {
     // 拿到detail_expid
+    const userId = localStorage.getItem("detail_userid");
     const expId = localStorage.getItem("detail_expid");
-    this.getData(expId);
+    this.getData(userId,expId);
     /* 配置的字段 */
     // 前端保存图片内容 根据id进行对应
     /* 后端获取字段 */
@@ -62,10 +64,10 @@ export default {
     // 如果没有就是返回空字符串
   },
   methods: {
-    async getData(expId) {
+    async getData(userId,expId) {
       this.show = false;
       try {
-        const data = await getExpDetail(expId);
+        const data = await getDegital(userId,expId);
         // 拿到数据
         let serverData = data.data;
         // 合并数据

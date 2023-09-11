@@ -68,21 +68,7 @@ export const constantRoutes = [
     hidden: true,
   },
 
-  {
-    path: "/ExerciseDetail",
-    component: Layout,
-    redirect: "index",
-    children: [
-      {
-        path: "index",
-        component: () =>
-          import("@/views/Student/ExerciseAchievement/content.vue"),
-        name: "Index",
-        meta: { title: "演练详情", icon: "dashboard", activeMenu: "/Student/ExerciseAchievement" },
-      },
-    ],
-    hidden: true,
-  },
+
   {
     path: "",
     component: Layout,
@@ -110,7 +96,41 @@ export const constantRoutes = [
       },
     ],
   },
+
+  {
+    path: "/ExerciseDetail",
+    component: Layout,
+    redirect: "index",
+    children: [
+      {
+        path: "index",
+        component: () =>
+          import("@/views/Student/ExerciseAchievement/content.vue"),
+        name: "Index",
+        meta: { title: "演练详情", icon: "dashboard", activeMenu: "/Student/ExerciseAchievement" },
+      },
+    ],
+    hidden: true,
+  },
+  {
+    path: "/TeacherExerciseDetail",
+    component: Layout,
+    redirect: "index",
+    children: [
+      {
+        path: "index",
+        component: () =>
+          import("@/views/Teacher/StudentAchievement/content.vue"),
+        name: "Index",
+        meta: { title: "演练详情", icon: "dashboard", activeMenu: "/Teacher/StudentAchievement" },
+      },
+    ],
+    hidden: true,
+  },
+
 ];
+
+
 
 // 动态路由，基于用户权限动态去加载
 export const dynamicRoutes = [
@@ -199,6 +219,7 @@ Router.prototype.replace = function push(location) {
 };
 
 export default new Router({
+  base: '/ruoyi-admin',
   mode: "history", // 去掉url中的#
   scrollBehavior: () => ({ y: 0 }),
   routes: constantRoutes,

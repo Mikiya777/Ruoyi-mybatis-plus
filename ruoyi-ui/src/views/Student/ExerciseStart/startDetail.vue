@@ -1,5 +1,9 @@
 <template>
   <div class="border-box" v-show="show">
+    <navigator
+      :questionObj="questionObj"
+    />
+
     <img
       class="imgBox"
       draggable="false"
@@ -27,10 +31,12 @@
 <script>
 import questionJSON from "@/assets/list.json";
 import showQuestion from "./showQuestion.vue";
+import navigator from "@/views/Student/ExerciseStart/navigator/navigator.vue";
 import { pushAnswer } from "@/api/student/api.js";
 export default {
   components: {
     showQuestion,
+    navigator,
   },
   name: "startComponent",
   data() {

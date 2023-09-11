@@ -1,6 +1,7 @@
 [
   {
     "id": "0",
+    "name": "公司基本情况",
     "type": 0,
     "option": [],
     "img": "/imgItem/p1.png",
@@ -9,6 +10,7 @@
   },
   {
     "id": "p2",
+    "name": "公司基本情况",
     "type": 0,
     "option": [],
     "img": "/imgItem/p2.png",
@@ -17,6 +19,7 @@
   },
   {
     "id": "p3",
+    "name": "虚拟仿真的考核目标和步骤",
     "type": 0,
     "option": [],
     "img": "/imgItem/p3.png",
@@ -25,6 +28,7 @@
   },
   {
     "id": "p4",
+    "name": "盈利能力分析",
     "type": 0,
     "option": [],
     "img": "/imgItem/p4.png",
@@ -34,6 +38,7 @@
   },
   {
     "id": "p5",
+    "name": "盈利能力分析",
     "type": 0,
     "option": [],
     "img": "/imgItem/p5.png",
@@ -43,6 +48,7 @@
   },
   {
     "id": "p6填空",
+    "name": "盈利能力分析",
     "type": 5,
     "option": [],
     "img": "/imgItem/p6填空.png",
@@ -52,6 +58,7 @@
   },
   {
     "id": "p7",
+    "name": "发展能力分析",
     "type": 0,
     "option": [],
     "img": "/imgItem/p7.png",
@@ -61,6 +68,7 @@
   },
   {
     "id": "p8多选",
+    "name": "发展能力分析",
     "type": 3,
     "option": [
       "A、净资产收益率",
@@ -74,6 +82,7 @@
   },
   {
     "id": "p9",
+    "name": "发展能力分析",
     "type": 0,
     "option": [],
     "img": "/imgItem/p9.png",
@@ -83,6 +92,7 @@
   },
   {
     "id": "p10",
+    "name": "发展能力分析",
     "type": 0,
     "option": [],
     "img": "/imgItem/p10.png",
@@ -92,6 +102,7 @@
   },
   {
     "id": "p11填空",
+    "name": "发展能力分析",
     "type": 1,
     "option": [],
     "img": "/imgItem/p11填空.png",
@@ -101,6 +112,7 @@
   },
   {
     "id": "p12",
+    "name": "发展能力分析",
     "type": 0,
     "option": [],
     "img": "/imgItem/p12.png",
@@ -110,6 +122,7 @@
   },
   {
     "id": "p13单选",
+    "name": "发展能力分析",
     "type": 2,
     "option": [
       "A、是",
@@ -121,6 +134,7 @@
   },
   {
     "id": "p14",
+    "name": "偿债能力分析",
     "type": 0,
     "option": [],
     "img": "/imgItem/p14.png",
@@ -130,6 +144,7 @@
   },
   {
     "id": "p15",
+    "name": "偿债能力分析",
     "type": 0,
     "option": [],
     "img": "/imgItem/p15.png",
@@ -139,6 +154,7 @@
   },
   {
     "id": "p16填空",
+    "name": "偿债能力分析",
     "type": 5,
     "option": [],
     "img": "/imgItem/p16填空.png",
@@ -148,6 +164,7 @@
   },
   {
     "id": "p17",
+    "name": "偿债能力分析",
     "type": 0,
     "option": [],
     "img": "/imgItem/p17.png",
@@ -157,6 +174,7 @@
   },
   {
     "id": "p18多选",
+    "name": "偿债能力分析",
     "type": 3,
     "option": [
       "A、资产负债率",
@@ -168,6 +186,7 @@
   },
   {
     "id": "p19",
+    "name": "营运能力分析",
     "type": 0,
     "option": [],
     "img": "/imgItem/p19.png",
@@ -177,6 +196,7 @@
   },
   {
     "id": "p20",
+    "name": "营运能力分析",
     "type": 0,
     "option": [],
     "img": "/imgItem/p20.png",
@@ -186,6 +206,7 @@
   },
   {
     "id": "p21填空",
+    "name": "营运能力分析",
     "type": 1,
     "option": [],
     "img": "/imgItem/p21填空.png",
@@ -195,6 +216,7 @@
   },
   {
     "id": "p22",
+    "name": "营运能力分析",
     "type": 0,
     "option": [],
     "img": "/imgItem/p22.png",
@@ -204,6 +226,7 @@
   },
   {
     "id": "p23单选",
+    "name": "营运能力分析",
     "type": 2,
     "option": [
       "A、是",
@@ -215,6 +238,7 @@
   },
   {
     "id": "p24",
+    "name": "并购时机分析",
     "type": 0,
     "option": [],
     "img": "/imgItem/p24.png",
@@ -224,6 +248,7 @@
   },
   {
     "id": "p25",
+    "name": "并购时机分析",
     "type": 0,
     "option": [],
     "img": "/imgItem/p25.png",
@@ -233,6 +258,7 @@
   },
   {
     "id": "p26单选",
+    "name": "并购时机分析",
     "type": 2,
     "option": [
       "A、是",
@@ -244,6 +270,7 @@
   },
   {
     "id": "p27",
+    "name": "并购时机分析",
     "type": 0,
     "option": [],
     "img": "/imgItem/p27.png",
@@ -253,6 +280,7 @@
   },
   {
     "id": "p28简答",
+    "name": "并购时机分析",
     "type": 4,
     "option": [],
     "img": "/imgItem/p28简答.png",
@@ -261,6 +289,7 @@
   },
   {
     "id": "p29",
+    "name": "被并公司的估值",
     "type": 0,
     "option": [],
     "img": "/imgItem/p29.png",
@@ -270,6 +299,7 @@
   },
   {
     "id": "p30填空",
+    "name": "被并公司的估值",
     "type": 1,
     "option": [],
     "img": "/imgItem/p30填空.png",
@@ -279,6 +309,7 @@
   },
   {
     "id": "p31",
+    "name": "是否可并购判断",
     "type": 0,
     "option": [],
     "img": "/imgItem/p31.png",
@@ -288,6 +319,7 @@
   },
   {
     "id": "p32单选",
+    "name": "是否可并购判断",
     "type": 2,
     "option": [
       "A、被高估/适合并购",
@@ -301,6 +333,7 @@
   },
   {
     "id": "p33",
+    "name": "被并公司意愿调查",
     "type": 0,
     "option": [],
     "img": "/imgItem/p33.png",
@@ -310,6 +343,7 @@
   },
   {
     "id": "dgood",
+    "name": "被并公司意愿调查",
     "type": 0,
     "option": [],
     "img": "/imgItem/dgood.png",
@@ -319,6 +353,7 @@
   },
   {
     "id": "dbad",
+    "name": "被并公司意愿调查",
     "type": 0,
     "option": [],
     "img": "/imgItem/dbad.png",
@@ -327,6 +362,7 @@
   },
   {
     "id": "dquestion",
+    "name": "被并公司意愿调查",
     "type": 2,
     "option": [
       "A、谈判结束",
@@ -339,6 +375,7 @@
   },
   {
     "id": "dwork",
+    "name": "被并公司意愿调查",
     "type": 0,
     "option": [],
     "img": "/imgItem/dwork.png",
@@ -348,6 +385,7 @@
   },
   {
     "id": "dprice",
+    "name": "被并公司意愿调查",
     "type": 1,
     "option": [],
     "img": "/imgItem/dprice.png",
@@ -358,6 +396,7 @@
   },
   {
     "id": "f1",
+    "name": "并购方奏制定",
     "type": 0,
     "option": [],
     "img": "/imgItem/f1.png",
@@ -366,6 +405,7 @@
   },
   {
     "id": "f2",
+    "name": "并购方奏制定",
     "type": 0,
     "option": [],
     "img": "/imgItem/f2.png",
@@ -375,6 +415,7 @@
   },
   {
     "id": "f3",
+    "name": "并购方奏制定",
     "type": 4,
     "option": [],
     "img": "/imgItem/f3.png",
@@ -383,6 +424,7 @@
   },
   {
     "id": "f4",
+    "name": "并购方奏制定",
     "type": 0,
     "option": [],
     "img": "/imgItem/f4.png",
@@ -391,6 +433,7 @@
   },
   {
     "id": "f5",
+    "name": "尽职调查",
     "type": 0,
     "option": [],
     "img": "/imgItem/f5.png",
@@ -399,6 +442,7 @@
   },
   {
     "id": "f6",
+    "name": "尽职调查",
     "type": 0,
     "option": [],
     "img": "/imgItem/f6.png",
@@ -408,6 +452,7 @@
   },
   {
     "id": "f7",
+    "name": "尽职调查",
     "type": 0,
     "option": [],
     "img": "/imgItem/f7.png",
@@ -417,6 +462,7 @@
   },
   {
     "id": "f8",
+    "name": "尽职调查",
     "type": 0,
     "option": [],
     "img": "/imgItem/f8.png",
@@ -426,6 +472,7 @@
   },
   {
     "id": "f9",
+    "name": "尽职调查",
     "type": 0,
     "option": [],
     "img": "/imgItem/f9.png",
@@ -435,6 +482,7 @@
   },
   {
     "id": "f10",
+    "name": "尽职调查",
     "type": 0,
     "option": [],
     "img": "/imgItem/f10.png",
@@ -444,6 +492,7 @@
   },
   {
     "id": "f11",
+    "name": "尽职调查",
     "type": 0,
     "option": [],
     "img": "/imgItem/f11.png",
@@ -453,6 +502,7 @@
   },
   {
     "id": "f12",
+    "name": "尽职调查",
     "type": 0,
     "option": [],
     "img": "/imgItem/f12.png",
@@ -462,6 +512,7 @@
   },
   {
     "id": "f13",
+    "name": "尽职调查",
     "type": 0,
     "option": [],
     "img": "/imgItem/f13.png",
@@ -471,6 +522,7 @@
   },
   {
     "id": "f14",
+    "name": "尽职调查",
     "type": 0,
     "option": [],
     "img": "/imgItem/f14.png",
@@ -479,6 +531,7 @@
   },
   {
     "id": "f15简答",
+    "name": "尽职调查",
     "type": 4,
     "option": [],
     "img": "/imgItem/f15简答.png",
@@ -487,6 +540,7 @@
   },
   {
     "id": "f16",
+    "name": "尽职调查",
     "type": 0,
     "option": [],
     "img": "/imgItem/f16.png",
@@ -496,6 +550,7 @@
   },
   {
     "id": "f17",
+    "name": "尽职调查",
     "type": 0,
     "option": [],
     "img": "/imgItem/f17.png",
@@ -505,6 +560,7 @@
   },
   {
     "id": "f18选择",
+    "name": "尽职调查",
     "type": 2,
     "option": [
       "A、我方是诚意并购，暂时按贵方所提定下",
@@ -516,6 +572,7 @@
   },
   {
     "id": "f19",
+    "name": "尽职调查",
     "type": 0,
     "option": [],
     "img": "/imgItem/f19.png",
@@ -525,6 +582,7 @@
   },
   {
     "id": "f20单选",
+    "name": "尽职调查",
     "type": 2,
     "option": [
       "A、“好的，我们同意贵方的报价。”",
@@ -536,6 +594,7 @@
   },
   {
     "id": "f21",
+    "name": "基本交易结构设汁",
     "type": 0,
     "option": [],
     "img": "/imgItem/f21.png",
@@ -545,6 +604,7 @@
   },
   {
     "id": "f22",
+    "name": "基本交易结构设汁",
     "type": 0,
     "option": [],
     "img": "/imgItem/f22.png",
@@ -554,6 +614,7 @@
   },
   {
     "id": "f23",
+    "name": "基本交易结构设汁",
     "type": 0,
     "option": [],
     "img": "/imgItem/f23.png",
@@ -563,6 +624,7 @@
   },
   {
     "id": "f24",
+    "name": "基本交易结构设汁",
     "type": 0,
     "option": [],
     "img": "/imgItem/f24.png",
@@ -572,6 +634,7 @@
   },
   {
     "id": "f25单选",
+    "name": "基本交易结构设汁",
     "type": 2,
     "option": [
       "A、股权收购",
@@ -584,6 +647,7 @@
   },
   {
     "id": "f26",
+    "name": "基本交易结构设汁",
     "type": 0,
     "option": [],
     "img": "/imgItem/f26.png",
@@ -593,6 +657,7 @@
   },
   {
     "id": "f27简答",
+    "name": "基本交易结构设汁",
     "type": 4,
     "option": [],
     "img": "/imgItem/f27简答.png",
@@ -601,6 +666,7 @@
   },
   {
     "id": "f28",
+    "name": "并购主体确定",
     "type": 0,
     "option": [],
     "img": "/imgItem/f28.png",
@@ -610,6 +676,7 @@
   },
   {
     "id": "f29",
+    "name": "并购主体确定",
     "type": 0,
     "option": [],
     "img": "/imgItem/f29.png",
@@ -619,6 +686,7 @@
   },
   {
     "id": "f30",
+    "name": "并购主体确定",
     "type": 0,
     "option": [],
     "img": "/imgItem/f30.png",
@@ -628,6 +696,7 @@
   },
   {
     "id": "f31",
+    "name": "并购主体确定",
     "type": 0,
     "option": [],
     "img": "/imgItem/f31.png",
@@ -637,9 +706,10 @@
   },
   {
     "id": "f32单选",
+    "name": "并购主体确定",
     "type": 2,
     "option": [
-      "A、MM公司0",
+      "A、MM公司",
       "B、MM公司控股股东成立的子公司",
       "C、与投资公司合作的投资基金"
     ],
@@ -649,6 +719,7 @@
   },
   {
     "id": "f33",
+    "name": "并购主体确定",
     "type": 0,
     "option": [],
     "img": "/imgItem/f33.png",
@@ -658,6 +729,7 @@
   },
   {
     "id": "f34简答",
+    "name": "并购主体确定",
     "type": 4,
     "option": [],
     "img": "/imgItem/f34简答.png",
@@ -667,6 +739,7 @@
   },
   {
     "id": "f35MM",
+    "name": "并购支付方式设计",
     "type": 0,
     "option": [],
     "img": "/imgItem/f35MM.png",
@@ -676,6 +749,7 @@
   },
   {
     "id": "f35Son",
+    "name": "并购支付方式设计",
     "type": 0,
     "option": [],
     "img": "/imgItem/f35Son.png",
@@ -685,15 +759,17 @@
   },
   {
     "id": "f35Gold",
+    "name": "并购支付方式设计",
     "type": 0,
     "option": [],
     "img": "/imgItem/f35Gold.png",
     "audio": "/imgItem/f35Gold.mp3",
     "question": "",
-    "next_id": "f36Gold"
+    "next_id": "f41"
   },
   {
     "id": "f36MM",
+    "name": "并购支付方式设计",
     "type": 0,
     "option": [],
     "img": "/imgItem/f36MM.png",
@@ -703,6 +779,7 @@
   },
   {
     "id": "f36Son",
+    "name": "并购支付方式设计",
     "type": 0,
     "option": [],
     "img": "/imgItem/f36Son.png",
@@ -712,6 +789,7 @@
   },
   {
     "id": "f37MM",
+    "name": "并购支付方式设计",
     "type": 0,
     "option": [],
     "img": "/imgItem/f37MM.png",
@@ -721,6 +799,7 @@
   },
   {
     "id": "f37Son",
+    "name": "并购支付方式设计",
     "type": 0,
     "option": [],
     "img": "/imgItem/f37Son.png",
@@ -730,6 +809,7 @@
   },
   {
     "id": "f38单选",
+    "name": "并购支付方式设计",
     "type": 2,
     "option": [
       "A、现金支付",
@@ -742,6 +822,7 @@
   },
   {
     "id": "f39混合",
+    "name": "并购支付方式设计",
     "type": 0,
     "option": [],
     "img": "/imgItem/f39混合.png",
@@ -751,6 +832,7 @@
   },
   {
     "id": "f39现金",
+    "name": "并购支付方式设计",
     "type": 0,
     "option": [],
     "img": "/imgItem/f39现金.png",
@@ -760,6 +842,7 @@
   },
   {
     "id": "f40混合",
+    "name": "并购支付方式设计",
     "type": 3,
     "option": [
       "A、对WW公司原股东定向增发+自有现金",
@@ -772,6 +855,7 @@
   },
   {
     "id": "f40现金",
+    "name": "并购支付方式设计",
     "type": 3,
     "option": [
       "A、股票融资",
@@ -784,6 +868,7 @@
   },
   {
     "id": "f41",
+    "name": "并购支付方式设计",
     "type": 0,
     "option": [],
     "img": "/imgItem/f41.png",
@@ -793,6 +878,7 @@
   },
   {
     "id": "f42",
+    "name": "管理层补偿设计",
     "type": 0,
     "option": [],
     "img": "/imgItem/f42.png",
@@ -802,6 +888,7 @@
   },
   {
     "id": "f43",
+    "name": "管理层补偿设计",
     "type": 0,
     "option": [],
     "img": "/imgItem/f43.png",
@@ -811,6 +898,7 @@
   },
   {
     "id": "f44",
+    "name": "管理层补偿设计",
     "type": 0,
     "option": [],
     "img": "/imgItem/f44.png",
@@ -820,6 +908,7 @@
   },
   {
     "id": "f45",
+    "name": "管理层补偿设计",
     "type": 0,
     "option": [],
     "img": "/imgItem/f45.png",
@@ -829,6 +918,7 @@
   },
   {
     "id": "f46",
+    "name": "管理层补偿设计",
     "type": 0,
     "option": [],
     "img": "/imgItem/f46.png",
@@ -838,6 +928,7 @@
   },
   {
     "id": "f47",
+    "name": "管理层补偿设计",
     "type": 2,
     "option": [
       "A、收入，收入",
@@ -851,6 +942,7 @@
   },
   {
     "id": "f48",
+    "name": "管理层补偿设计",
     "type": 0,
     "option": [],
     "img": "/imgItem/f48.png",
@@ -860,6 +952,7 @@
   },
   {
     "id": "f49",
+    "name": "管理层补偿设计",
     "type": 0,
     "option": [],
     "img": "/imgItem/f49.png",
@@ -869,6 +962,7 @@
   },
   {
     "id": "f50",
+    "name": "管理层补偿设计",
     "type": 0,
     "option": [],
     "img": "/imgItem/f50.png",
@@ -878,6 +972,7 @@
   },
   {
     "id": "f51",
+    "name": "管理层补偿设计",
     "type": 0,
     "option": [],
     "img": "/imgItem/f51.png",
@@ -887,6 +982,7 @@
   },
   {
     "id": "f52",
+    "name": "业绩承诺协议制定",
     "type": 0,
     "option": [],
     "img": "/imgItem/f52.png",
@@ -896,6 +992,7 @@
   },
   {
     "id": "f53",
+    "name": "业绩承诺协议制定",
     "type": 0,
     "option": [],
     "img": "/imgItem/f53.png",
@@ -905,6 +1002,7 @@
   },
   {
     "id": "f54",
+    "name": "业绩承诺协议制定",
     "type": 0,
     "option": [],
     "img": "/imgItem/f54.png",
@@ -914,6 +1012,7 @@
   },
   {
     "id": "f55",
+    "name": "业绩承诺协议制定",
     "type": 0,
     "option": [],
     "img": "/imgItem/f55.png",
@@ -923,6 +1022,7 @@
   },
   {
     "id": "f56",
+    "name": "业绩承诺协议制定",
     "type": 0,
     "option": [],
     "img": "/imgItem/f56.png",
@@ -932,6 +1032,7 @@
   },
   {
     "id": "f57简答",
+    "name": "业绩承诺协议制定",
     "type": 4,
     "option": [],
     "img": "/imgItem/f57简答.png",
@@ -940,6 +1041,7 @@
   },
   {
     "id": "f58",
+    "name": "业绩承诺协议制定",
     "type": 0,
     "option": [],
     "img": "/imgItem/f58.png",
@@ -949,6 +1051,7 @@
   },
   {
     "id": "f59填空",
+    "name": "业绩承诺协议制定",
     "type": 0,
     "option": [],
     "img": "/imgItem/f59填空.png",
@@ -958,6 +1061,7 @@
   },
   {
     "id": "f60",
+    "name": "业绩承诺协议制定",
     "type": 0,
     "option": [],
     "img": "/imgItem/f60.png",
@@ -968,6 +1072,7 @@
   },
   {
     "id": "f回归母公司",
+    "name": "回归母公司",
     "type": 0,
     "option": [],
     "img": "/imgItem/f回归母公司.png",
@@ -978,6 +1083,7 @@
   },
   {
     "id": "fMM混合",
+    "name": "并购完成",
     "type": 0,
     "option": [],
     "img": "/imgItem/fMM混合.png",
@@ -988,6 +1094,7 @@
   },
   {
     "id": "fMM现金",
+    "name": "并购完成",
     "type": 0,
     "option": [],
     "img": "/imgItem/fMM现金.png",
@@ -998,6 +1105,7 @@
   },
   {
     "id": "fSon混合",
+    "name": "并购完成",
     "type": 0,
     "option": [],
     "img": "/imgItem/fSon混合.png",
@@ -1008,6 +1116,7 @@
   },
   {
     "id": "fSon现金",
+    "name": "并购完成",
     "type": 0,
     "option": [],
     "img": "/imgItem/fSon现金.png",
@@ -1018,6 +1127,7 @@
   },
   {
     "id": "fgold",
+    "name": "并购完成",
     "type": 0,
     "option": [],
     "img": "/imgItem/fgold.png",
@@ -1028,6 +1138,7 @@
   },
   {
     "id": "h1",
+    "name": "并购方案制定",
     "type": 0,
     "option": [],
     "img": "/imgItem/h1.png",
@@ -1038,6 +1149,7 @@
   },
   {
     "id": "h2",
+    "name": "并购方案制定",
     "type": 0,
     "option": [],
     "img": "/imgItem/h2.png",
@@ -1047,6 +1159,7 @@
   },
   {
     "id": "h3",
+    "name": "并购方案制定",
     "type": 0,
     "option": [],
     "img": "/imgItem/h3.png",
@@ -1056,6 +1169,7 @@
   },
   {
     "id": "h4",
+    "name": "并购方案制定",
     "type": 0,
     "option": [],
     "img": "/imgItem/h4.png",
@@ -1065,6 +1179,7 @@
   },
   {
     "id": "h5",
+    "name": "并购方案制定",
     "type": 0,
     "option": [],
     "img": "/imgItem/h5.png",
@@ -1073,6 +1188,7 @@
   },
   {
     "id": "h6简答",
+    "name": "并购方案制定",
     "type": 4,
     "option": [],
     "img": "/imgItem/h6简答.png",
@@ -1081,6 +1197,7 @@
   },
   {
     "id": "h7",
+    "name": "并购方案制定",
     "type": 0,
     "option": [],
     "img": "/imgItem/h7.png",
@@ -1089,6 +1206,7 @@
   },
   {
     "id": "h8",
+    "name": "井购方式设计",
     "type": 0,
     "option": [],
     "img": "/imgItem/h8.png",
@@ -1098,6 +1216,7 @@
   },
   {
     "id": "h9",
+    "name": "井购方式设计",
     "type": 0,
     "option": [],
     "img": "/imgItem/h9.png",
@@ -1107,6 +1226,7 @@
   },
   {
     "id": "h10",
+    "name": "井购方式设计",
     "type": 0,
     "option": [],
     "img": "/imgItem/h10.png",
@@ -1116,6 +1236,7 @@
   },
   {
     "id": "h11单选",
+    "name": "井购方式设计",
     "type": 2,
     "option": [
       "A、现金流充足稳定",
@@ -1130,6 +1251,7 @@
   },
   {
     "id": "h12",
+    "name": "井购方式设计",
     "type": 0,
     "option": [],
     "img": "/imgItem/h12.png",
@@ -1139,6 +1261,7 @@
   },
   {
     "id": "h13单选",
+    "name": "井购方式设计",
     "type": 2,
     "option": [
       "A、现金流充足稳定",
@@ -1153,6 +1276,7 @@
   },
   {
     "id": "h14",
+    "name": "反井购策路",
     "type": 0,
     "option": [],
     "img": "/imgItem/h14.png",
@@ -1162,6 +1286,7 @@
   },
   {
     "id": "h15",
+    "name": "反井购策路",
     "type": 0,
     "option": [],
     "img": "/imgItem/h15.png",
@@ -1171,14 +1296,21 @@
   },
   {
     "id": "h16单选",
+    "name": "反井购策路",
     "type": 2,
-    "option": ["A、董事会轮选制","B、毒性卖权","C、股票回购","D、毒药丸"],
+    "option": [
+      "A、董事会轮选制",
+      "B、毒性卖权",
+      "C、股票回购",
+      "D、毒药丸"
+    ],
     "img": "/imgItem/h16单选.png",
     "question": "张总监说到：“小李，我知道你说的是（）策略，但是这项规定在中国的适用性实际存在一定的限制。看样子，并购对我们非常有利。”(单选题)",
     "next_id": "h17"
   },
   {
     "id": "h17",
+    "name": "反井购策路",
     "type": 0,
     "option": [],
     "img": "/imgItem/h17.png",
@@ -1188,6 +1320,7 @@
   },
   {
     "id": "h18单选",
+    "name": "保卫控制权设计",
     "type": 2,
     "option": [
       "A、用自有资金加紧收购，防止修改章程",
@@ -1200,6 +1333,7 @@
   },
   {
     "id": "FD1",
+    "name": "保卫控制权设计",
     "type": 0,
     "option": [],
     "img": "/imgItem/FD1.png",
@@ -1208,6 +1342,7 @@
   },
   {
     "id": "FDS",
+    "name": "保卫控制权设计",
     "type": 0,
     "option": [],
     "img": "/imgItem/FDS.png",
@@ -1216,6 +1351,7 @@
   },
   {
     "id": "FDD1",
+    "name": "保卫控制权设计",
     "type": 0,
     "option": [],
     "img": "/imgItem/FDD1.png",
@@ -1224,6 +1360,7 @@
   },
   {
     "id": "FDD2单选",
+    "name": "保卫控制权设计",
     "type": 2,
     "option": [
       "A、卖掉股票，终止并购",
@@ -1235,6 +1372,7 @@
   },
   {
     "id": "M&A1",
+    "name": "并购融资方式",
     "type": 0,
     "option": [],
     "img": "/imgItem/M&A1.png",
@@ -1244,6 +1382,7 @@
   },
   {
     "id": "M&A2",
+    "name": "并购融资方式",
     "type": 0,
     "option": [],
     "img": "/imgItem/M&A2.png",
@@ -1253,6 +1392,7 @@
   },
   {
     "id": "M&A3",
+    "name": "并购融资方式",
     "type": 0,
     "option": [],
     "img": "/imgItem/M&A3.png",
@@ -1262,6 +1402,7 @@
   },
   {
     "id": "M&A4",
+    "name": "并购融资方式",
     "type": 0,
     "option": [],
     "img": "/imgItem/M&A4.png",
@@ -1271,6 +1412,7 @@
   },
   {
     "id": "M&A5单选",
+    "name": "并购融资方式",
     "type": 2,
     "option": [
       "A、意识到收购风险，趁着当前股票价格还不错，决定卖掉股票终止收购",
@@ -1282,6 +1424,7 @@
   },
   {
     "id": "MAA1",
+    "name": "并购融盗分析",
     "type": 0,
     "option": [],
     "img": "/imgItem/MAA1.png",
@@ -1291,6 +1434,7 @@
   },
   {
     "id": "MAA2多选",
+    "name": "并购融盗分析",
     "type": 3,
     "option": [
       "A、银行贷款",
@@ -1304,6 +1448,7 @@
   },
   {
     "id": "MAA3",
+    "name": "并购融盗分析",
     "type": 0,
     "option": [],
     "img": "/imgItem/MAA3.png",
@@ -1313,6 +1458,7 @@
   },
   {
     "id": "MAA4单选",
+    "name": "并购融盗分析",
     "type": 2,
     "option": [
       "A、决定卖掉股票终止收购",
@@ -1324,6 +1470,7 @@
   },
   {
     "id": "CC1",
+    "name": "控制权争夺",
     "type": 0,
     "option": [],
     "img": "/imgItem/CC1.png",
@@ -1333,6 +1480,7 @@
   },
   {
     "id": "CC2多选",
+    "name": "控制权争夺",
     "type": 3,
     "option": [
       "A、杠杆风险",
@@ -1346,6 +1494,7 @@
   },
   {
     "id": "CC3",
+    "name": "控制权争夺",
     "type": 0,
     "option": [],
     "img": "/imgItem/CC3.png",
@@ -1355,6 +1504,7 @@
   },
   {
     "id": "CC4",
+    "name": "控制权争夺",
     "type": 0,
     "option": [],
     "img": "/imgItem/CC4.png",
@@ -1364,6 +1514,7 @@
   },
   {
     "id": "CC5单选",
+    "name": "控制权争夺",
     "type": 2,
     "option": [
       "A、局势日趋复杂化，决定卖掉股票终止收购",
@@ -1375,47 +1526,59 @@
   },
   {
     "id": "AB1",
+    "name": "与保险谈判",
     "type": 0,
     "option": [],
-    "img":"/imgItem/AB1.png",
-    "audio":"/imgItem/AB1.mp3",
+    "img": "/imgItem/AB1.png",
+    "audio": "/imgItem/AB1.mp3",
     "question": "",
     "next_id": "AB2"
-  },{
-  "id": "AB2",
-  "type": 0,
-  "option": [],
-  "img":"/imgItem/AB2.png",
-  "audio":"/imgItem/AB2.mp3",
-  "question": "",
-  "next_id": "AB3"
-},{
-  "id": "AB3",
-  "type": 0,
-  "option": [],
-  "img":"/imgItem/AB3.png",
-  "audio":"/imgItem/AB3.mp3",
-  "question": "",
-  "next_id": "AB4"
-},{
-  "id": "AB4",
-  "type": 0,
-  "option": [],
-  "img":"/imgItem/AB4.png",
-  "audio":"/imgItem/AB4.mp3",
-  "question": "",
-  "next_id": "AB5单选"
-},{
-  "id": "AB5单选",
-  "type": 2,
-  "option": ["A、认为很有必要与AB保险公司合作，接着到：“贵公司若与我们结盟，若成功并购，我们将会保证贵方利益。","B、没必要投入过多与AB保险公司合作，接着到：“您言之有理，那我们再研究研究。"],
-  "img":"/imgItem/AB5单选.png",
-
-  "question": "看到对方较为看重利益，若结盟可能需要足够的投入满足对方的要求，张总监思考片刻：(单选题)",
-  "next_id": ""
-},
+  },
+  {
+    "id": "AB2",
+    "name": "与保险谈判",
+    "type": 0,
+    "option": [],
+    "img": "/imgItem/AB2.png",
+    "audio": "/imgItem/AB2.mp3",
+    "question": "",
+    "next_id": "AB3"
+  },
+  {
+    "id": "AB3",
+    "name": "与保险谈判",
+    "type": 0,
+    "option": [],
+    "img": "/imgItem/AB3.png",
+    "audio": "/imgItem/AB3.mp3",
+    "question": "",
+    "next_id": "AB4"
+  },
+  {
+    "id": "AB4",
+    "name": "与保险谈判",
+    "type": 0,
+    "option": [],
+    "img": "/imgItem/AB4.png",
+    "audio": "/imgItem/AB4.mp3",
+    "question": "",
+    "next_id": "AB5单选"
+  },
+  {
+    "id": "AB5单选",
+    "name": "与保险谈判",
+    "type": 2,
+    "option": [
+      "A、认为很有必要与AB保险公司合作，接着到：“贵公司若与我们结盟，若成功并购，我们将会保证贵方利益。",
+      "B、没必要投入过多与AB保险公司合作，接着到：“您言之有理，那我们再研究研究。"
+    ],
+    "img": "/imgItem/AB5单选.png",
+    "question": "看到对方较为看重利益，若结盟可能需要足够的投入满足对方的要求，张总监思考片刻：(单选题)",
+    "next_id": ""
+  },
   {
     "id": "SC1",
+    "name": "成为一致行动人",
     "type": 0,
     "option": [],
     "img": "/imgItem/SC1.png",
@@ -1424,6 +1587,7 @@
   },
   {
     "id": "SC2",
+    "name": "成为一致行动人",
     "type": 0,
     "option": [],
     "img": "/imgItem/SC2.png",
@@ -1432,6 +1596,7 @@
   },
   {
     "id": "SC3",
+    "name": "并购成功",
     "type": 0,
     "option": [],
     "img": "/imgItem/SC3.png",
@@ -1441,24 +1606,25 @@
   },
   {
     "id": "BMA1",
+    "name": "并购受阻",
     "type": 0,
     "option": [],
     "img": "/imgItem/BMA1.png",
-
     "question": "",
     "next_id": "BMA2"
   },
   {
     "id": "BMA2",
+    "name": "并购受阻",
     "type": 0,
     "option": [],
     "img": "/imgItem/BMA2.png",
-
     "question": "",
     "next_id": "BMA3单选"
   },
   {
     "id": "BMA3单选",
+    "name": "防御策略",
     "type": 2,
     "option": [
       "A、股票回购",
@@ -1472,15 +1638,16 @@
   },
   {
     "id": "BMA4",
+    "name": "最终决策",
     "type": 0,
     "option": [],
     "img": "/imgItem/BMA4.png",
-
     "question": "",
     "next_id": "BMA5"
   },
   {
     "id": "BMA5单选",
+    "name": "最终决策",
     "type": 2,
     "option": [
       "A、卖掉股票",
@@ -1492,108 +1659,127 @@
   },
   {
     "id": "SS1",
+    "name": "卖掉股票",
     "type": 0,
     "option": [],
     "img": "/imgItem/SS1.png",
-
     "question": "",
     "next_id": "",
     "end": true
   },
   {
     "id": "CA1",
+    "name": "并购失败",
     "type": 0,
     "option": [],
     "img": "/imgItem/CA1.png",
-
     "question": "",
     "next_id": "",
     "end": true
   },
   {
     "id": "NF1",
+    "name": "未成为一致行动人",
     "type": 0,
     "option": [],
     "img": "/imgItem/NF1.png",
-
     "question": "",
     "next_id": "NF2单选"
   },
   {
     "id": "NF2单选",
+    "name": "未成为一致行动人",
     "type": 2,
-    "option": ["A、决定卖掉股票终止收购","B、收购仍较为有利，决定继续收购"],
+    "option": [
+      "A、决定卖掉股票终止收购",
+      "B、收购仍较为有利，决定继续收购"
+    ],
     "img": "/imgItem/NF2单选.png",
-
     "question": "接着，在讨论并购融资的小组会议上，财务专家小章提出：“我们通过A、B等旗下公司层层连环质押， 放大了质押的WW公司股票贬值带来的风险。当一个环节出现问题时，整个链条都将会断裂。若WW公司股价下跌， 会导致持有该公司股票的价值下降，这会让债权人要求我们公司追加担保物、 拍卖股票或者提前还款的方式保证债权，造成巨大的资金风险。组长张总监经过权衡，做出选择：(单选题)",
     "next_id": ""
-  },{
-  "id": "DS1",
-  "type": 0,
-  "option": [],
-  "img":"/imgItem/DS1.png",
-  "audio":"/imgItem/DS1.mp3",
-  "question": "",
-  "next_id": "DS2单选"
-},{
-  "id": "DS2单选",
-  "type": 2,
-  "option": ["A、股票回购","B、杠杆资本重组","C、白衣骑士","D、帕克曼式防御"],
-  "img":"/imgItem/DS2单选.png",
-
-  "question": "张总监在第二天向董事会进行汇报：“董事长，WW公司目前已经找到了别人帮忙，他们准备采取（）并购防御策略。”(单选题)",
-  "next_id": "DS3"
-},{
-  "id": "DS3",
-  "type": 0,
-  "option": [],
-  "img":"/imgItem/DS3.png",
-  "audio":"/imgItem/DS3.mp3",
-  "question": "",
-  "next_id": "DS4单选"
-},{
-  "id": "DS4单选",
-  "type": 0,
-  "option": ["A、卖掉股票","B、继续收购"],
-  "img":"/imgItem/DS4单选.png",
-
-  "question": "由于AB保险与WW公司的结盟，董事会与项目小组就是否要继续进行并购事宜进行讨论。项目小组有人建议终止收购， 卖掉WW公司的股票；也有人不甘心就此结束，建议继续融资进行收购。 张总监向董事会汇报了具体情况，讨论究竟卖掉股票还是继续收购。(单选题)",
-  "next_id": ""
-},{
-  "id": "DSSS1",
-  "type": 0,
-  "option": [],
-  "img":"/imgItem/DSSS1.png",
-
-  "question": "",
-  "next_id": "",
-  "end": true
-},
+  },
   {
-    "id": "DSCA1",
+    "id": "DS1",
+    "name": "未成为一致行动人",
     "type": 0,
     "option": [],
-    "img":"/imgItem/DSCA1.png",
-
+    "img": "/imgItem/DS1.png",
+    "audio": "/imgItem/DS1.mp3",
+    "question": "",
+    "next_id": "DS2单选"
+  },
+  {
+    "id": "DS2单选",
+    "name": "防御策略",
+    "type": 2,
+    "option": [
+      "A、股票回购",
+      "B、杠杆资本重组",
+      "C、白衣骑士",
+      "D、帕克曼式防御"
+    ],
+    "img": "/imgItem/DS2单选.png",
+    "question": "张总监在第二天向董事会进行汇报：“董事长，WW公司目前已经找到了别人帮忙，他们准备采取（）并购防御策略。”(单选题)",
+    "next_id": "DS3"
+  },
+  {
+    "id": "DS3",
+    "name": "防御策略",
+    "type": 0,
+    "option": [],
+    "img": "/imgItem/DS3.png",
+    "audio": "/imgItem/DS3.mp3",
+    "question": "",
+    "next_id": "DS4单选"
+  },
+  {
+    "id": "DS4单选",
+    "name": "最终决策",
+    "type": 0,
+    "option": [
+      "A、卖掉股票",
+      "B、继续收购"
+    ],
+    "img": "/imgItem/DS4单选.png",
+    "question": "由于AB保险与WW公司的结盟，董事会与项目小组就是否要继续进行并购事宜进行讨论。项目小组有人建议终止收购， 卖掉WW公司的股票；也有人不甘心就此结束，建议继续融资进行收购。 张总监向董事会汇报了具体情况，讨论究竟卖掉股票还是继续收购。(单选题)",
+    "next_id": ""
+  },
+  {
+    "id": "DSSS1",
+    "name": "卖掉股票",
+    "type": 0,
+    "option": [],
+    "img": "/imgItem/DSSS1.png",
+    "question": "",
+    "next_id": "",
+    "end": true
+  },
+  {
+    "id": "DSCA1",
+    "name": "并购失败",
+    "type": 0,
+    "option": [],
+    "img": "/imgItem/DSCA1.png",
     "question": "",
     "next_id": "",
     "end": true
   },
   {
     "id": "TA1",
+    "name": "中途终止并购",
     "type": 0,
     "option": [],
-    "img":"/imgItem/TA1.png",
-    "audio":"/imgItem/TA1.mp3",
+    "img": "/imgItem/TA1.png",
+    "audio": "/imgItem/TA1.mp3",
     "question": "",
     "next_id": "TA2"
   },
   {
     "id": "TA2",
+    "name": "中途终止并购",
     "type": 0,
     "option": [],
-    "img":"/imgItem/TA2.png",
-
+    "img": "/imgItem/TA2.png",
     "question": "",
     "next_id": "",
     "end": true

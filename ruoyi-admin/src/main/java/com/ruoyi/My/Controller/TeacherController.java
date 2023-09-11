@@ -44,36 +44,10 @@ public class TeacherController extends BaseController {
         List<SysUser> studentList2 = tsService.selectStudentList(new SysUser());
         List<Long> IdList = studentList2.stream().map(SysUser::getUserId).collect(Collectors.toList());
         startPage();
-        List<Experiment> experimentList = experimentService.list(new QueryWrapper<Experiment>().in("user_id", IdList));
-        Comparator<Experiment> comparator = (e1,e2)-> {
-            Date currentTime = new Date();
 
-            // 处理endTime为null的情况
-            if (e1.getEndTime() == null && e2.getEndTime() != null) {
-                return Long.compare(e1.getStartTime().getTime(), e2.getEndTime().getTime());
-            } else if (e1.getEndTime() != null && e2.getEndTime() == null) {
-                return Long.compare(e1.getEndTime().getTime(), e2.getStartTime().getTime());
-            } else if (e1.getEndTime() == null && e2.getEndTime() == null) {
-                return Long.compare(Math.abs(e1.getStartTime().getTime() - currentTime.getTime())
-                        , Math.abs(e2.getStartTime().getTime() - currentTime.getTime()));
-            }
-
-            // 首先按照endTime距离当前时间的远近排序
-            long endTimeDiff1 = Math.abs(e1.getEndTime().getTime() - currentTime.getTime());
-            long endTimeDiff2 = Math.abs(e2.getEndTime().getTime() - currentTime.getTime());
-            int endTimeComparison = Long.compare(endTimeDiff1, endTimeDiff2);
-
-            // 如果endTime相等，再按照startTime距离当前时间的远近排序
-            if (endTimeComparison == 0) {
-                long startTimeDiff1 = Math.abs(e1.getStartTime().getTime() - currentTime.getTime());
-                long startTimeDiff2 = Math.abs(e2.getStartTime().getTime() - currentTime.getTime());
-                return Long.compare(startTimeDiff1, startTimeDiff2);
-            } else {
-                return endTimeComparison;
-            }
-        };
-        experimentList.sort(comparator);
-
+        List<Experiment> experimentList = experimentService.list(new QueryWrapper<Experiment>()
+                .in("user_id", IdList)
+                .orderByDesc("CASE WHEN end_time IS NOT NULL THEN end_time ELSE start_time END"));
         for (SysUser s:studentList2){
             Loop : for (Experiment experiment : experimentList){
                 if (s.getUserId().equals(experiment.getUserId())){
