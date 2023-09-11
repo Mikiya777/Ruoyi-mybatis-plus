@@ -215,11 +215,10 @@ public class AnswersController extends BaseController {
 
         if (answersService.CheckAnswersIfValid(answers)) {
             boolean save = answersService.save(answers);
-            Experiment experiment = experimentService.getOne(new QueryWrapper<Experiment>()
-                    .eq("exp_id", answers.getExpId())
-                    .eq("user_id", answers.getUserId()));
-            experiment.setNavBar(answers.getNavBar());
-            experimentService.updateById(experiment);
+            experimentService.update(new UpdateWrapper<Experiment>()
+                    .set("nav_bar",answers.getNavBar())
+                    .eq("user_id",answers.getUserId())
+                    .eq("exp_id",answers.getExpId()));
             if (answers.getEnd() != null && answers.getEnd()){
                 Boolean aBoolean = finishExp(answers.getUserId(), answers.getExpId());
                 if (!aBoolean){

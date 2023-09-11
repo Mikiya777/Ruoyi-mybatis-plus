@@ -24,7 +24,7 @@
       <source :src="questionObj.audio" type="audio/mpeg" />
     </audio>
 
-    <img class="next-box" @click="handleNext" src="/ImgItem/next_step.png" />
+    <img class="next-box" @click="handleNext" src="/imgItem/next_step.png" />
   </div>
 </template>
 
@@ -87,6 +87,13 @@ export default {
       console.log("点击下一步获取到的答案", answer);
 
       if (!this.verify(answer)) return;
+
+      if (this.questionObj.end === true) {
+        window.alert("实验完成，页面将于5秒钟后关闭");
+        setTimeout(function() {
+          window.close();
+        }, 5000); // 5000毫秒 = 5秒
+      }
 
       // 从data中拿到数据  如果有数据  提交给服务器
       try {

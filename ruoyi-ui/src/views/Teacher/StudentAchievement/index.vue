@@ -117,7 +117,7 @@ export default {
           className:`${item.className}`,
           startTime: this.formatDateTime(item.startTime),
           name: `企业并购${item.expId}次演练`,
-          score: `${item.objectiveScore}`,//后续再修改
+          score: item.objectiveScore===null ? '-' : `${item.objectiveScore}`,
         };
       });
       console.log(res, res);
@@ -154,7 +154,7 @@ export default {
               className:`${item.className}`,
               startTime: this.formatDateTime(item.startTime),
               name: `企业并购${item.expId}次演练`,
-              score: `${item.objectiveScore}`,//后续再修改
+              score: item.objectiveScore===null ? '-' : `${item.objectiveScore}`,
             };
           });
           console.log(res);

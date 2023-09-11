@@ -16,6 +16,7 @@ import com.ruoyi.service.ExperimentService;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletResponse;
 import javax.validation.constraints.Size;
 import java.math.BigDecimal;
 import java.util.Comparator;
@@ -39,7 +40,10 @@ public class TeacherController extends BaseController {
      * 教师端-学生成绩
      */
     @GetMapping("/getExperiment")
-    public RequestResult<ExperimentWithPages> getExperiment(){
+    public RequestResult<ExperimentWithPages> getExperiment(HttpServletResponse response){
+        response.setHeader("Cache-Control", "no-store, no-cache, must-revalidate");
+        response.setHeader("Pragma", "no-cache");
+        response.setHeader("Expires", "0");
         startPage();
         List<SysUser> studentList2 = tsService.selectStudentList(new SysUser());
         List<Long> IdList = studentList2.stream().map(SysUser::getUserId).collect(Collectors.toList());

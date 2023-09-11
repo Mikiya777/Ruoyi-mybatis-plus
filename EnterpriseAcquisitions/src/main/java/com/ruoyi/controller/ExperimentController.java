@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletResponse;
 import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
@@ -79,7 +80,10 @@ public class ExperimentController {
      * @return 实验列表
      */
     @GetMapping("/get")
-    public RequestResult<ExperimentWithPages> getExprimentList(){
+    public RequestResult<ExperimentWithPages> getExprimentList(HttpServletResponse response){
+        response.setHeader("Cache-Control", "no-store, no-cache, must-revalidate");
+        response.setHeader("Pragma", "no-cache");
+        response.setHeader("Expires", "0");
         LoginUser loginUser = SecurityUtils.getLoginUser();
         startPage();
         List<Experiment> experimentList = experimentService

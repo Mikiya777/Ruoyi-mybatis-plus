@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
     <!-- 日志存放路径 -->
-	<property name="log.path" value="/Users/mac/Documents/new/Untitled/ruoyi-admin/log" />
+	<property name="log.path" value="/root/log" />
     <!-- 日志输出格式 -->
 	<property name="log.pattern" value="%d{HH:mm:ss.SSS} [%thread] %-5level %logger{20} - [%method,%line] - %msg%n" />
 
@@ -9,6 +9,7 @@
 	<appender name="console" class="ch.qos.logback.core.ConsoleAppender">
 		<encoder>
 			<pattern>${log.pattern}</pattern>
+            <charset>UTF-8</charset>
 		</encoder>
 	</appender>
 
@@ -24,6 +25,7 @@
 		</rollingPolicy>
 		<encoder>
 			<pattern>${log.pattern}</pattern>
+            <charset>UTF-8</charset>
 		</encoder>
 		<filter class="ch.qos.logback.classic.filter.LevelFilter">
             <!-- 过滤的级别 -->
@@ -46,6 +48,7 @@
         </rollingPolicy>
         <encoder>
             <pattern>${log.pattern}</pattern>
+            <charset>UTF-8</charset>
         </encoder>
         <filter class="ch.qos.logback.classic.filter.LevelFilter">
             <!-- 过滤的级别 -->
@@ -68,6 +71,7 @@
         </rollingPolicy>
         <encoder>
             <pattern>${log.pattern}</pattern>
+            <charset>UTF-8</charset>
         </encoder>
     </appender>
 

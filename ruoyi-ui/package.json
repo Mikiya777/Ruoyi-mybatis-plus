@@ -1,14 +1,14 @@
 {
   "name": "ruoyi",
   "version": "3.8.6",
-  "description": "若依管理系统",
-  "author": "若依",
+  "description": "企业并购虚拟仿真系统",
+  "author": "有钱真系大噻",
   "license": "MIT",
   "scripts": {
     "serve": "export NODE_OPTIONS=--openssl-legacy-provider &&  vue-cli-service serve",
     "start": "set NODE_OPTIONS=--openssl-legacy-provider && npm run serve",
     "dev": "  set NODE_OPTIONS=--openssl-legacy-provider && npm run serve",
-    "build": "set NODE_OPTIONS=--openssl-legacy-provider && vue-cli-service build --report"
+    "build": "export NODE_OPTIONS=--openssl-legacy-provider && vue-cli-service build --mode production"
   },
   "husky": {
     "hooks": {

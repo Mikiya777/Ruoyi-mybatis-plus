@@ -22,7 +22,7 @@ import com.ruoyi.system.service.ISysConfigService;
 
 /**
  * 验证码操作处理
- * 
+ *
  * @author ruoyi
  */
 @RestController
@@ -36,7 +36,7 @@ public class CaptchaController
 
     @Autowired
     private RedisCache redisCache;
-    
+
     @Autowired
     private ISysConfigService configService;
     /**
@@ -45,6 +45,9 @@ public class CaptchaController
     @GetMapping("/captchaImage")
     public AjaxResult getCode(HttpServletResponse response) throws IOException
     {
+        response.setHeader("Cache-Control", "no-store, no-cache, must-revalidate");
+        response.setHeader("Pragma", "no-cache");
+        response.setHeader("Expires", "0");
         AjaxResult ajax = AjaxResult.success();
         boolean captchaEnabled = configService.selectCaptchaEnabled();
         ajax.put("captchaEnabled", captchaEnabled);
@@ -86,7 +89,6 @@ public class CaptchaController
         {
             return AjaxResult.error(e.getMessage());
         }
-
         ajax.put("uuid", uuid);
         ajax.put("img", Base64.encode(os.toByteArray()));
         return ajax;

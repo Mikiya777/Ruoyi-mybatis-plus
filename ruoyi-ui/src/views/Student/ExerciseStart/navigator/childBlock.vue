@@ -3,7 +3,6 @@
     <div class="circle-container">
       <div class="circle">
           <span class="container">
-            1
           </span>
       </div>
       <div class="content">

@@ -1,6 +1,8 @@
 <template>
-  <div>
-    {{ title }}
+  <div class="box-div">
+    <img src="@/assets/fortune1.png" alt="img">
+    <img src="@/assets/fortune2.png" alt="img">
+    <img src="@/assets/fortune3.png" alt="img">
   </div>
 </template>
 
@@ -16,5 +18,15 @@ export default {
 </script>
 
 <style scoped>
+.box-div {
+  height: calc(100vh - 84px);
+  width: 100%;
+  overflow: auto;
+}
 
+img {
+  height: 100%;
+  width: 100%;
+  object-fit: fill;
+}
 </style>

@@ -34,10 +34,10 @@
         <!--        搜索栏-->
         <el-form :model="queryParams" ref="queryForm" size="small" :inline="true" v-show="showSearch"
                  label-width="68px">
-          <el-form-item label="教师名称" prop="userName">
+          <el-form-item label="学生名称" prop="userName">
             <el-input
               v-model="queryParams.userName"
-              placeholder="请输入教师名称"
+              placeholder="请输入学生名称"
               clearable
               style="width: 240px"
               @keyup.enter.native="handleQuery"
@@ -226,8 +226,8 @@
       <el-form ref="form" :model="form" :rules="rules" label-width="80px">
         <el-row>
           <el-col :span="12">
-            <el-form-item label="教师姓名" prop="nickName">
-              <el-input v-model="form.nickName" placeholder="请输入教师姓名" maxlength="30"/>
+            <el-form-item label="学生姓名" prop="nickName">
+              <el-input v-model="form.nickName" placeholder="请输入学生姓名" maxlength="30"/>
             </el-form-item>
           </el-col>
           <el-col :span="12">
@@ -310,7 +310,7 @@
                   :label="item.roleName"
                   :value="item.roleId"
                   :disabled="item.status == 1"
-                  v-if="item.roleId === 104"
+                  v-if="item.roleId === 105"
                 ></el-option>
               </el-select>
             </el-form-item>

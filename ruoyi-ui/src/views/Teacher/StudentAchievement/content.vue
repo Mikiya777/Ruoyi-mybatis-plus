@@ -35,7 +35,6 @@
 <script>
 import fontJson from "@/assets/list.json";
 import ShowBox from "@/views/Student/ExerciseAchievement/showBox.vue";
-import { getExpDedetail_expidtail } from "@/api/student/api.js";
 import {getDegital} from "@/api/teacher/api";
 export default {
   name: "contentCompontent",

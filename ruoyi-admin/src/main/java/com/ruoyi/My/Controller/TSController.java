@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 
 @RestController
@@ -28,7 +29,10 @@ public class TSController extends BaseController {
      * @return
      */
     @GetMapping("/getTeacherList")
-    public TableDataInfo getTeacherList(SysUser user){
+    public TableDataInfo getTeacherList(SysUser user, HttpServletResponse response){
+        response.setHeader("Cache-Control", "no-store, no-cache, must-revalidate");
+        response.setHeader("Pragma", "no-cache");
+        response.setHeader("Expires", "0");
         startPage();
         List<SysUser> teacherList = tsService.selectTeacherList(user);
         return getDataTable(teacherList);
@@ -41,7 +45,10 @@ public class TSController extends BaseController {
      */
 
     @GetMapping("/getStudentList")
-    public TableDataInfo getStudentList(SysUser user){
+    public TableDataInfo getStudentList(SysUser user,HttpServletResponse response){
+        response.setHeader("Cache-Control", "no-store, no-cache, must-revalidate");
+        response.setHeader("Pragma", "no-cache");
+        response.setHeader("Expires", "0");
         startPage();
         List<SysUser> studentList = tsService.selectStudentList(user);
         return getDataTable(studentList);
