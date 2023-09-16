@@ -13,6 +13,7 @@ import com.ruoyi.utils.MyPageUtils;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 
 /**
@@ -35,8 +36,10 @@ public class ScheduleController {
      */
 
     @GetMapping("/get")
-    public RequestResult<ScheduleListWithPages> getScheduleList() {
-
+    public RequestResult<ScheduleListWithPages> getScheduleList(HttpServletResponse response) {
+        response.setHeader("Cache-Control", "no-store, no-cache, must-revalidate");
+        response.setHeader("Pragma", "no-cache");
+        response.setHeader("Expires", "0");
         LoginUser loginUser = SecurityUtils.getLoginUser();
         ScheduleListWithPages scheduleListWithPages = new ScheduleListWithPages();
         int total = scheduleService.count(new QueryWrapper<Schedule>().eq("user_id", loginUser.getUserId()));

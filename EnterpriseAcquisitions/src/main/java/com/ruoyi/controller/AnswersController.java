@@ -126,7 +126,13 @@ public class AnswersController extends BaseController {
                             .eq("id", "f38单选")
                             .eq("exp_id", answers.getExpId())
                             .eq("user_id", SecurityUtils.getLoginUser().getUserId()));
-                    if (Son2 != null) {
+                    Answers f32 = answersService.getOne(new QueryWrapper<Answers>()
+                            .eq("id", "f32单选")
+                            .eq("exp_id", answers.getExpId())
+                            .eq("user_id", answers.getUserId()));
+                    if (f32.getAnswer().equals("\"C\"")){
+                        answers.setNextId("fgold");
+                    }else if (Son2 != null) {
                         if (f38.getAnswer().equals("\"A\"")) {
                             answers.setNextId("fSon现金");
 
@@ -170,7 +176,7 @@ public class AnswersController extends BaseController {
                         answers.setNextId("CC1");
                     }
                     break;
-                case "CC5":
+                case "CC5单选":
                     if (answers.getAnswer().equals("\"A\"")) {
                         answers.setNextId("TA1");
                     } else if (answers.getAnswer().equals("\"B\"")) {

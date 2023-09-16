@@ -52,7 +52,10 @@ public class ExperimentController {
      */
     @GetMapping("/createExp")
     @PreAuthorize("@ss.hasPermi('ExerciseStart')")
-    public RequestResult<Experiment> createExp() {
+    public RequestResult<Experiment> createExp(HttpServletResponse response) {
+        response.setHeader("Cache-Control", "no-store, no-cache, must-revalidate");
+        response.setHeader("Pragma", "no-cache");
+        response.setHeader("Expires", "0");
         LoginUser loginUser = SecurityUtils.getLoginUser();
         Long user_id = loginUser.getUserId();
 
@@ -102,7 +105,10 @@ public class ExperimentController {
      */
 
     @GetMapping("finishExp/{exp_id}")
-    public RequestResult<Boolean> finishExp(@PathVariable("exp_id") Integer exp_id) {
+    public RequestResult<Boolean> finishExp(@PathVariable("exp_id") Integer exp_id,HttpServletResponse response) {
+        response.setHeader("Cache-Control", "no-store, no-cache, must-revalidate");
+        response.setHeader("Pragma", "no-cache");
+        response.setHeader("Expires", "0");
         Long userId = SecurityUtils.getLoginUser().getUserId();
 
         Experiment experiment = experimentService.getOne(new QueryWrapper<Experiment>().eq("user_id", userId).eq("exp_id", exp_id));

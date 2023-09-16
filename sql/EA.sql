@@ -83,7 +83,8 @@ CREATE TRIGGER sync_experiment_score
 BEGIN
     UPDATE schedule
     SET Objective_Score = NEW.Objective_score,
-        Subjective_Score = NEW.Subjective_score
+        Subjective_Score = NEW.Subjective_score,
+        status = NEW.status
     WHERE exp_id = NEW.exp_id AND user_id = NEW.user_id;
 END//
 

@@ -5,12 +5,14 @@
       <template v-for="(item, index) in dataList">
         <div class="box-margin" :key="index + item.id">
           <div class="border-box bac">
+            <div v-show="!item.status" class="text-box">练习中</div>
+            <div v-show="item.status" class="text-box-done">已提交</div>
             <h4 class="title">企业并购{{ item.expId }}次演练</h4>
             <div class="content">
-              <div>演练得分：{{ item.score }}</div>
+              <div>演练得分：{{item.objectiveScore}}</div>
               <div>开始时间：{{ formatDateTime(item.startTime) }}</div>
             </div>
-            <div class="bottom" @click="handleGoPage(item.expId, item.nextId)">
+            <div v-show="!item.status" class="bottom" @click="handleGoPage(item.expId, item.nextId)">
               <svg
                 viewBox="64 64 896 896"
                 fill="currentColor"
@@ -26,10 +28,27 @@
 
               继续演练
             </div>
+
+            <div v-show="item.status" class="bottom-done">
+              <svg
+                viewBox="64 64 896 896"
+                fill="currentColor"
+                width="1em"
+                height="1em"
+                data-icon="copy"
+                aria-hidden="true"
+              >
+                <path
+                  d="M832 64H296c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h496v688c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8V96c0-17.7-14.3-32-32-32zM704 192H192c-17.7 0-32 14.3-32 32v530.7c0 8.5 3.4 16.6 9.4 22.6l173.3 173.3c2.2 2.2 4.7 4 7.4 5.5v1.9h4.2c3.5 1.3 7.2 2 11 2H704c17.7 0 32-14.3 32-32V224c0-17.7-14.3-32-32-32zM350 856.2L263.9 770H350v86.2zM664 888H414V746c0-22.1-17.9-40-40-40H232V264h432v624z"
+                ></path>
+              </svg>
+              已提交
+            </div>
           </div>
         </div>
       </template>
     </div>
+
     <div class="pagination">
       <el-pagination
         background
@@ -54,6 +73,7 @@ export default {
   data() {
     return {
       title: "进度",
+      score:'-',
       pages: 0,
       dataList: [],
       currentPage: 1,
@@ -142,7 +162,25 @@ export default {
   justify-content: center;
   margin-top: 15px;
 }
+
+.text-box {
+  position: absolute; /* 使用绝对定位 */
+  top: 10px; /* 距离上边界为0 */
+  right:25px; /* 距离右边界为0 */
+  background-color: rgb(41, 216, 199); /* 绿色背景颜色 */
+  color: white; /* 文本颜色 */
+}
+
+.text-box-done {
+  position: absolute; /* 使用绝对定位 */
+  top: 10px; /* 距离上边界为0 */
+  right:25px; /* 距离右边界为0 */
+  background-color: rgb(54, 131, 242); /* 绿色背景颜色 */
+  color: white; /* 文本颜色 */
+}
+
 .all-border-box {
+  padding: 10px;
   display: flex;
   flex-wrap: wrap;
   justify-content: left;
@@ -152,6 +190,14 @@ export default {
   bottom: 30px;
   left: 45px;
   color: #2f9eff;
+  cursor: pointer;
+}
+
+.bottom-done {
+  position: absolute;
+  bottom: 30px;
+  left: 45px;
+  color: black;
   cursor: pointer;
 }
 .border-box {
