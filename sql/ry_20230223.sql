@@ -705,7 +705,7 @@ create table answers(
                         exp_id int not null comment '实验id也是本用户的第几次实验',
                         question_id int not null comment '作答顺序',
                         user_id bigint(20) not null ,
-                        answer varchar(255) comment '作答内容',
+                        answer varchar(15000) comment '作答内容',
                         type int comment '题目类型',
                         id varchar(32) comment '页面id',
                         next_id varchar(32) comment '下一页id',
@@ -738,7 +738,7 @@ create table schedule(
 
 create table Score(
                       id varchar(32) comment '页面id',
-                      answer varchar(255) comment '标准答案',
+                      answer varchar(15000) comment '标准答案',
                       type int comment '题目类型',
                       score DECIMAL(4,1) comment '答案分数'
 )engine=innodb character set utf8;
