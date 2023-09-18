@@ -80,7 +80,7 @@ public class ScoreServiceImpl extends ServiceImpl<ScoreMapper, Score>
         }
 
         BigDecimal objectiveScore = new BigDecimal(0);
-
+        //计算出了简答题以外的分数
         A: for (Answers answers:answersListConveted){
             for (Score score : list){
                 if (answers.getId().equals(score.getId()) && answers.getAnswer()!=null && answers.getAnswer().equals(score.getAnswer())){
@@ -89,9 +89,30 @@ public class ScoreServiceImpl extends ServiceImpl<ScoreMapper, Score>
                 }
             }
         }
-
-
-
+        //抽取简答题
+        List<Answers> JianDaList = answersListConveted.stream().filter(answers -> {
+            if (answers.getType() == 4) {
+                return true;
+            }
+            return false;
+        }).collect(Collectors.toList());
+        //简答题算分
+        for (Answers answers : JianDaList){
+            objectiveScoreFromPath = objectiveScoreFromPath.add(new BigDecimal(5));
+            if (answers.getKind() == 0){
+                if (answers.getAnswer().length()>=20){
+                    objectiveScore = objectiveScore.add(new BigDecimal(5));
+                } else if (answers.getId().equals("f27简答")&&answers.getAnswer().length()>=5&&answers.getAnswer().length()<10) {
+                    objectiveScore = objectiveScore.add(new BigDecimal(2));
+                } else if (answers.getId().equals("f27简答")&&answers.getAnswer().length()>10) {
+                    objectiveScore = objectiveScore.add(new BigDecimal(5));
+                }
+            }else if (answers.getKind() == 1){
+                if (answers.getAnswer().length()>=50){
+                    objectiveScore = objectiveScore.add(new BigDecimal(5));
+                }
+            }
+        }
         objectiveScore = objectiveScore
                 .divide(objectiveScoreFromPath,1, RoundingMode.HALF_UP).multiply(new BigDecimal("100"));
         return objectiveScore;

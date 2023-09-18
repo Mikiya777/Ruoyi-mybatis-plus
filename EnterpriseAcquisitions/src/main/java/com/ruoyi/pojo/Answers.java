@@ -53,6 +53,8 @@ public class Answers implements Serializable {
 
     private Integer type;
 
+    private Integer kind;
+
     @TableField(exist = false)
     private String navBar;
 

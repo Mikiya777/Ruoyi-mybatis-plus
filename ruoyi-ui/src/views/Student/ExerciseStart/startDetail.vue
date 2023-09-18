@@ -107,6 +107,7 @@ export default {
             nextId: this.questionObj.next_id,
             type: this.questionObj.type,
             end : this.questionObj.end,
+            kind : this.questionObj.kind,
           };
           // 请求
           const res = await pushAnswer(data);
