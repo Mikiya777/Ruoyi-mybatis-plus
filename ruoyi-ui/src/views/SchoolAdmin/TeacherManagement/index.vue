@@ -129,8 +129,7 @@
               size="mini"
               @click="handleImport"
               v-hasPermi="['system:user:import']"
-            >导入
-            </el-button>
+            >导入</el-button>
           </el-col>
           <el-col :span="1.5">
             <el-button
@@ -140,8 +139,7 @@
               size="mini"
               @click="handleExport"
               v-hasPermi="['system:user:export']"
-            >导出
-            </el-button>
+            >导出</el-button>
           </el-col>
           <right-toolbar :showSearch.sync="showSearch" @queryTable="getList" :columns="columns"></right-toolbar>
         </el-row>
@@ -303,7 +301,7 @@
           </el-col>
           <el-col :span="12">
             <el-form-item label="角色">
-              <el-select v-model="form.roleIds" multiple placeholder="请选择角色">
+              <el-select v-model="form.roleIds" multiple disabled placeholder="请选择角色">
                 <el-option
                   v-for="item in roleOptions"
                   :key="item.roleId"
@@ -577,7 +575,7 @@ export default {
         status: "0",
         remark: undefined,
         postIds: [],
-        roleIds: []
+        roleIds: [104]
       };
       this.resetForm("form");
     },

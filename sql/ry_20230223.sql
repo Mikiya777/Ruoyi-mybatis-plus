@@ -23,16 +23,16 @@ create table sys_dept (
 -- ----------------------------
 -- 初始化-部门表数据
 -- ----------------------------
-insert into sys_dept values(100,  0,   '0',          '若依科技',   0, '若依', '15888888888', 'ry@qq.com', '0', '0', 'admin', sysdate(), '', null);
-insert into sys_dept values(101,  100, '0,100',      '深圳总公司', 1, '若依', '15888888888', 'ry@qq.com', '0', '0', 'admin', sysdate(), '', null);
-insert into sys_dept values(102,  100, '0,100',      '长沙分公司', 2, '若依', '15888888888', 'ry@qq.com', '0', '0', 'admin', sysdate(), '', null);
-insert into sys_dept values(103,  101, '0,100,101',  '研发部门',   1, '若依', '15888888888', 'ry@qq.com', '0', '0', 'admin', sysdate(), '', null);
-insert into sys_dept values(104,  101, '0,100,101',  '市场部门',   2, '若依', '15888888888', 'ry@qq.com', '0', '0', 'admin', sysdate(), '', null);
-insert into sys_dept values(105,  101, '0,100,101',  '测试部门',   3, '若依', '15888888888', 'ry@qq.com', '0', '0', 'admin', sysdate(), '', null);
-insert into sys_dept values(106,  101, '0,100,101',  '财务部门',   4, '若依', '15888888888', 'ry@qq.com', '0', '0', 'admin', sysdate(), '', null);
-insert into sys_dept values(107,  101, '0,100,101',  '运维部门',   5, '若依', '15888888888', 'ry@qq.com', '0', '0', 'admin', sysdate(), '', null);
-insert into sys_dept values(108,  102, '0,100,102',  '市场部门',   1, '若依', '15888888888', 'ry@qq.com', '0', '0', 'admin', sysdate(), '', null);
-insert into sys_dept values(109,  102, '0,100,102',  '财务部门',   2, '若依', '15888888888', 'ry@qq.com', '0', '0', 'admin', sysdate(), '', null);
+insert into sys_dept values(100,  0,   '0',          'B2B',   0, 'HRBUST', '1008611', 'HRBUST@edu.com', '0', '0', 'admin', sysdate(), '', null);
+# insert into sys_dept values(101,  100, '0,100',      '深圳总公司', 1, '若依', '15888888888', 'ry@qq.com', '0', '0', 'admin', sysdate(), '', null);
+#insert into sys_dept values(102,  100, '0,100',      '长沙分公司', 2, '若依', '15888888888', 'ry@qq.com', '0', '0', 'admin', sysdate(), '', null);
+#insert into sys_dept values(103,  101, '0,100,101',  '研发部门',   1, '若依', '15888888888', 'ry@qq.com', '0', '0', 'admin', sysdate(), '', null);
+#insert into sys_dept values(104,  101, '0,100,101',  '市场部门',   2, '若依', '15888888888', 'ry@qq.com', '0', '0', 'admin', sysdate(), '', null);
+#insert into sys_dept values(105,  101, '0,100,101',  '测试部门',   3, '若依', '15888888888', 'ry@qq.com', '0', '0', 'admin', sysdate(), '', null);
+#insert into sys_dept values(106,  101, '0,100,101',  '财务部门',   4, '若依', '15888888888', 'ry@qq.com', '0', '0', 'admin', sysdate(), '', null);
+#insert into sys_dept values(107,  101, '0,100,101',  '运维部门',   5, '若依', '15888888888', 'ry@qq.com', '0', '0', 'admin', sysdate(), '', null);
+#insert into sys_dept values(108,  102, '0,100,102',  '市场部门',   1, '若依', '15888888888', 'ry@qq.com', '0', '0', 'admin', sysdate(), '', null);
+#insert into sys_dept values(109,  102, '0,100,102',  '财务部门',   2, '若依', '15888888888', 'ry@qq.com', '0', '0', 'admin', sysdate(), '', null);
 
 
 -- ----------------------------
@@ -65,9 +65,8 @@ create table sys_user (
 -- ----------------------------
 -- 初始化-用户信息表数据
 -- ----------------------------
-insert into sys_user values(1,  103, 'admin', '若依', '00', 'ry@163.com', '15888888888', '1', '', '$2a$10$7JB720yubVSZvUI0rEqK/.VqGOZTH.ulu33dHOiBE8ByOhJIrdAu2', '0', '0', '127.0.0.1', sysdate(), 'admin', sysdate(), '', null, '管理员');
-insert into sys_user values(2,  105, 'ry',    '若依', '00', 'ry@qq.com',  '15666666666', '1', '', '$2a$10$7JB720yubVSZvUI0rEqK/.VqGOZTH.ulu33dHOiBE8ByOhJIrdAu2', '0', '0', '127.0.0.1', sysdate(), 'admin', sysdate(), '', null, '测试员');
-
+insert into sys_user values(1,  100, 'admin', 'B2B', '00', 'HRBUST@edu.com', '1008611', '1', '', '$2a$10$7JB720yubVSZvUI0rEqK/.VqGOZTH.ulu33dHOiBE8ByOhJIrdAu2', '0', '0', '127.0.0.1', sysdate(), 'admin', sysdate(), '', null, '管理员');
+# insert into sys_user values(2,  105, 'ry',    '若依', '00', 'ry@qq.com',  '15666666666', '1', '', '$2a$10$7JB720yubVSZvUI0rEqK/.VqGOZTH.ulu33dHOiBE8ByOhJIrdAu2', '0', '0', '127.0.0.1', sysdate(), 'admin', sysdate(), '', null, '测试员');
 
 -- ----------------------------
 -- 3、岗位信息表
@@ -91,10 +90,10 @@ create table sys_post
 -- ----------------------------
 -- 初始化-岗位信息表数据
 -- ----------------------------
-insert into sys_post values(1, 'ceo',  '董事长',    1, '0', 'admin', sysdate(), '', null, '');
-insert into sys_post values(2, 'se',   '项目经理',  2, '0', 'admin', sysdate(), '', null, '');
-insert into sys_post values(3, 'hr',   '人力资源',  3, '0', 'admin', sysdate(), '', null, '');
-insert into sys_post values(4, 'user', '普通员工',  4, '0', 'admin', sysdate(), '', null, '');
+insert into sys_post values(1, 'ceo',  '校长',    1, '0', 'admin', sysdate(), '', null, '');
+insert into sys_post values(2, 'se',   '系主任',  2, '0', 'admin', sysdate(), '', null, '');
+insert into sys_post values(3, 'hr',   '职工',  3, '0', 'admin', sysdate(), '', null, '');
+insert into sys_post values(4, 'user', '讲师',  4, '0', 'admin', sysdate(), '', null, '');
 
 
 -- ----------------------------
@@ -124,7 +123,9 @@ create table sys_role (
 -- ----------------------------
 insert into sys_role values('1', '超级管理员',  'admin',  1, 1, 1, 1, '0', '0', 'admin', sysdate(), '', null, '超级管理员');
 insert into sys_role values('2', '普通角色',    'common', 2, 2, 1, 1, '0', '0', 'admin', sysdate(), '', null, '普通角色');
-
+INSERT INTO `sys_role` (`role_id`, `role_name`, `role_key`, `role_sort`, `data_scope`, `menu_check_strictly`, `dept_check_strictly`, `status`, `del_flag`, `create_by`, `create_time`, `update_by`, `update_time`, `remark`) VALUES (103, '院校管理员', 'SchoolAdmin', 3, '4', 1, 1, '0', '0', 'admin', '2023-08-16 22:28:43', 'admin', '2023-08-19 17:01:38', NULL);
+INSERT INTO `sys_role` (`role_id`, `role_name`, `role_key`, `role_sort`, `data_scope`, `menu_check_strictly`, `dept_check_strictly`, `status`, `del_flag`, `create_by`, `create_time`, `update_by`, `update_time`, `remark`) VALUES (104, '教师', 'Teacher', 4, '4', 1, 1, '0', '0', 'SchoolAdmin', '2023-08-17 09:53:43', 'admin', '2023-08-20 15:26:53', NULL);
+INSERT INTO `sys_role` (`role_id`, `role_name`, `role_key`, `role_sort`, `data_scope`, `menu_check_strictly`, `dept_check_strictly`, `status`, `del_flag`, `create_by`, `create_time`, `update_by`, `update_time`, `remark`) VALUES (105, '学生', 'Student', 5, '1', 1, 1, '0', '0', 'SchoolAdmin', '2023-08-17 09:54:05', 'admin', '2023-08-17 09:54:41', NULL);
 
 -- ----------------------------
 -- 5、菜单权限表
@@ -267,13 +268,13 @@ create table sys_user_role (
   user_id   bigint(20) not null comment '用户ID',
   role_id   bigint(20) not null comment '角色ID',
   primary key(user_id, role_id)
-) engine=innodb character set utf8 comment = '用户和角色关联表';
+) engine=innodb  character set utf8 comment = '用户和角色关联表';
 
 -- ----------------------------
 -- 初始化-用户和角色关联表数据
 -- ----------------------------
 insert into sys_user_role values ('1', '1');
-insert into sys_user_role values ('2', '2');
+#insert into sys_user_role values ('2', '2');
 
 
 -- ----------------------------
@@ -383,14 +384,14 @@ create table sys_role_dept (
   role_id   bigint(20) not null comment '角色ID',
   dept_id   bigint(20) not null comment '部门ID',
   primary key(role_id, dept_id)
-) engine=innodb  character set utf8 comment = '角色和部门关联表';
+) engine=innodb character set utf8 comment = '角色和部门关联表';
 
 -- ----------------------------
 -- 初始化-角色和部门关联表数据
 -- ----------------------------
 insert into sys_role_dept values ('2', '100');
-insert into sys_role_dept values ('2', '101');
-insert into sys_role_dept values ('2', '105');
+#insert into sys_role_dept values ('2', '101');
+#insert into sys_role_dept values ('2', '105');
 
 
 -- ----------------------------
@@ -408,7 +409,7 @@ create table sys_user_post
 -- 初始化-用户与岗位关联表数据
 -- ----------------------------
 insert into sys_user_post values ('1', '1');
-insert into sys_user_post values ('2', '2');
+#insert into sys_user_post values ('2', '2');
 
 
 -- ----------------------------
@@ -568,7 +569,7 @@ create table sys_logininfor (
   primary key (info_id),
   key idx_sys_logininfor_s  (status),
   key idx_sys_logininfor_lt (login_time)
-) engine=innodb  character set utf8 auto_increment=100 comment = '系统访问记录';
+) engine=innodb character set utf8 auto_increment=100 comment = '系统访问记录';
 
 
 -- ----------------------------
@@ -590,7 +591,7 @@ create table sys_job (
   update_time         datetime                                 comment '更新时间',
   remark              varchar(500)  default ''                 comment '备注信息',
   primary key (job_id, job_name, job_group)
-) engine=innodb  character set utf8 auto_increment=100 comment = '定时任务调度表';
+) engine=innodb character set utf8 auto_increment=100 comment = '定时任务调度表';
 
 insert into sys_job values(1, '系统默认（无参）', 'DEFAULT', 'ryTask.ryNoParams',        '0/10 * * * * ?', '3', '1', '1', 'admin', sysdate(), '', null, '');
 insert into sys_job values(2, '系统默认（有参）', 'DEFAULT', 'ryTask.ryParams(\'ry\')',  '0/15 * * * * ?', '3', '1', '1', 'admin', sysdate(), '', null, '');
@@ -697,3 +698,150 @@ create table gen_table_column (
   update_time       datetime                                   comment '更新时间',
   primary key (column_id)
 ) engine=innodb character set utf8 auto_increment=1 comment = '代码生成业务表字段';
+
+
+
+create table answers(
+                        exp_id int not null comment '实验id也是本用户的第几次实验',
+                        question_id int not null comment '作答顺序',
+                        user_id bigint(20) not null ,
+                        answer varchar(255) comment '作答内容',
+                        type int comment '题目类型',
+                        id varchar(32) comment '页面id',
+                        next_id varchar(32) comment '下一页id',
+                        primary key(exp_id,question_id,user_id)
+)engine=innodb character set utf8 comment '作答记录';
+
+create table experiment(
+                           exp_id int not null comment '实验id也是本用户的第几次实验',
+                           user_id bigint(20) not null,
+                           status bit(1) comment '0未完成，1已提交',
+                           Objective_score DECIMAL(4,1) comment '客观题总分',
+                           Subjective_score DECIMAL(4,1) comment '主观题总分',
+                           start_time datetime comment '开始时间',
+                           end_time datetime comment '结束时间',
+                           PRIMARY KEY (exp_id,user_id)
+)engine=innodb comment '实验表' character set utf8;
+
+create table schedule(
+                         exp_id int not null,
+                         user_id bigint(20) not null,
+                         status bit(1) comment '0未完成，1已提交',
+                         Objective_score DECIMAL(4,1) comment '客观题总分',
+                         Subjective_score DECIMAL(4,1) comment '主观题总分',
+                         id varchar(32) comment '页面id',
+                         next_id varchar(32) comment '下一页id',
+                         start_time datetime,
+                         end_time datetime,
+                         primary key(exp_id,user_id)
+)engine=innodb comment '演练进度' character set utf8;
+
+create table Score(
+                      id varchar(32) comment '页面id',
+                      answer varchar(255) comment '标准答案',
+                      type int comment '题目类型',
+                      score DECIMAL(4,1) comment '答案分数'
+)engine=innodb character set utf8;
+
+# 使得experiment表在插入新数据时，每个用户自己的exp_id自增
+DELIMITER //
+CREATE TRIGGER set_increment_exp_id BEFORE INSERT ON experiment
+    FOR EACH ROW
+BEGIN
+    DECLARE max_exp_id INT;
+    SET max_exp_id = (SELECT MAX(exp_id) FROM experiment WHERE user_id = NEW.user_id);
+    IF max_exp_id IS NULL THEN
+        SET NEW.exp_id = 1;
+    ELSE
+        SET NEW.exp_id = max_exp_id + 1;
+    END IF;
+END;
+//
+DELIMITER ;
+
+# 在插入新记录后，首先检查新记录中的 score 是否不为空（NULL）。
+# # 如果 score 不为空，那么就执行一个 UPDATE 语句来将 experiment 表中对应实验和用户的总分加上新记录中的 score。
+# DELIMITER //
+#
+# CREATE TRIGGER update_sum_score
+#     AFTER INSERT ON answers
+#     FOR EACH ROW
+# BEGIN
+#     IF NEW.score IS NOT NULL THEN
+#         UPDATE experiment
+#         SET sum_score = sum_score + NEW.score
+#         WHERE exp_id = NEW.exp_id AND user_id = NEW.user_id;
+#     END IF;
+# END;
+# //
+# DELIMITER ;
+
+
+# 当作答记录插入时，更新进度表的实验总分
+DELIMITER //
+
+CREATE TRIGGER sync_experiment_score
+    AFTER UPDATE ON experiment
+    FOR EACH ROW
+BEGIN
+    UPDATE schedule
+    SET Objective_Score = NEW.Objective_score,
+        Subjective_Score = NEW.Subjective_score
+    WHERE exp_id = NEW.exp_id AND user_id = NEW.user_id;
+END//
+
+DELIMITER ;
+
+
+# 在插入新记录前，查询当前用户在特定实验（由插入操作中的 exp_id 决定）下的最大 question_id。
+# 如果没有记录，则将 question_id 设置为 1，否则将其增加 1。
+DELIMITER //
+
+CREATE TRIGGER set_increment_question_id BEFORE INSERT ON answers
+    FOR EACH ROW
+BEGIN
+    DECLARE max_question_id INT;
+
+    -- Get the maximum question_id for the user and exp_id
+    SET max_question_id = (SELECT MAX(question_id) FROM answers WHERE user_id = NEW.user_id AND exp_id = NEW.exp_id);
+
+    -- If there are no existing records for the user and exp_id, set question_id to 1
+    IF max_question_id IS NULL THEN
+        SET NEW.question_id = 1;
+    ELSE
+        SET NEW.question_id = max_question_id + 1;
+    END IF;
+
+END;
+//
+
+DELIMITER ;
+
+# 提交新作答后记录最新的页面id和下一页id用于继续演练的功能
+DELIMITER //
+CREATE TRIGGER insert_schedule AFTER INSERT ON answers
+    FOR EACH ROW
+BEGIN
+    UPDATE schedule SET id = NEW.id, next_id = NEW.next_id
+    WHERE exp_id = NEW.exp_id AND user_id = NEW.user_id;
+END;
+//
+DELIMITER ;
+
+alter table sys_user
+    add group_id varchar(255) null;
+
+alter table sys_dept
+    add group_id varchar(255) null;
+
+
+
+
+
+
+
+
+
+
+
+

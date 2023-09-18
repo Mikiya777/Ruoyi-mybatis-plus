@@ -219,7 +219,7 @@ Router.prototype.replace = function push(location) {
 };
 
 export default new Router({
-  base: '/ruoyi-admin',
+  base: '/B2B',
   mode: "history", // 去掉url中的#
   scrollBehavior: () => ({ y: 0 }),
   routes: constantRoutes,

@@ -14,7 +14,7 @@ import com.ruoyi.common.xss.Xss;
 
 /**
  * 用户对象 sys_user
- * 
+ *
  * @author ruoyi
  */
 public class SysUser extends BaseEntity
@@ -81,12 +81,15 @@ public class SysUser extends BaseEntity
     private List<SysRole> roles;
 
     /** 角色组 */
+
     private Long[] roleIds;
 
     /** 岗位组 */
     private Long[] postIds;
 
+
     /** 角色ID */
+    @Excel(name = "角色ID",cellType = ColumnType.NUMERIC,type = Type.ALL)
     private Long roleId;
 
     /** 组ID*/

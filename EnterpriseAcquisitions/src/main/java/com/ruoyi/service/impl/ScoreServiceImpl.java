@@ -90,9 +90,12 @@ public class ScoreServiceImpl extends ServiceImpl<ScoreMapper, Score>
             }
         }
 
+
+
         objectiveScore = objectiveScore
                 .divide(objectiveScoreFromPath,1, RoundingMode.HALF_UP).multiply(new BigDecimal("100"));
         return objectiveScore;
+
     }
 
     public List<Score> filterScoreList(List<Score> scoreList){

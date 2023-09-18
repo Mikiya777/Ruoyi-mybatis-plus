@@ -1,37 +1,37 @@
 <template>
   <div class="app-container">
-<!--    <el-row :gutter="20">-->
-<!--      &lt;!&ndash;部门数据&ndash;&gt;-->
-<!--      <el-col :span="4" :xs="24">-->
-<!--        <div class="head-container">-->
-<!--          <el-input-->
-<!--            v-model="deptName"-->
-<!--            placeholder="请输入院系名称"-->
-<!--            clearable-->
-<!--            size="small"-->
-<!--            prefix-icon="el-icon-search"-->
-<!--            style="margin-bottom: 20px"-->
-<!--          />-->
-<!--        </div>-->
-<!--        <div class="head-container">-->
-<!--          <el-tree-->
-<!--            :data="deptOptions"-->
-<!--            :props="defaultProps"-->
-<!--            :expand-on-click-node="false"-->
-<!--            :filter-node-method="filterNode"-->
-<!--            ref="tree"-->
-<!--            node-key="id"-->
-<!--            default-expand-all-->
-<!--            highlight-current-->
-<!--            @node-click="handleNodeClick"-->
-<!--          />-->
-<!--        </div>-->
-<!--      </el-col>-->
+    <el-row :gutter="20">
+      <!--部门数据-->
+      <el-col :span="4" :xs="24">
+        <div class="head-container">
+          <el-input
+            v-model="deptName"
+            placeholder="请输入院系名称"
+            clearable
+            size="small"
+            prefix-icon="el-icon-search"
+            style="margin-bottom: 20px"
+          />
+        </div>
+        <div class="head-container">
+          <el-tree
+            :data="deptOptions"
+            :props="defaultProps"
+            :expand-on-click-node="false"
+            :filter-node-method="filterNode"
+            ref="tree"
+            node-key="id"
+            default-expand-all
+            highlight-current
+            @node-click="handleNodeClick"
+          />
+        </div>
+      </el-col>
 
       <!--用户数据-->
 
 <!--    此处修改表单大小-->
-      <el-col :span="30" :xs="24">
+      <el-col :span="20" :xs="24">
         <!--        搜索栏-->
         <el-form :model="queryParams" ref="queryForm" size="small" :inline="true" v-show="showSearch"
                  label-width="68px">
@@ -130,8 +130,7 @@
               size="mini"
               @click="handleImport"
               v-hasPermi="['system:user:import']"
-            >导入
-            </el-button>
+            >导入</el-button>
           </el-col>
           <el-col :span="1.5">
             <el-button
@@ -141,8 +140,7 @@
               size="mini"
               @click="handleExport"
               v-hasPermi="['system:user:export']"
-            >导出
-            </el-button>
+            >导出</el-button>
           </el-col>
           <right-toolbar :showSearch.sync="showSearch" @queryTable="getList" :columns="columns"></right-toolbar>
         </el-row>
@@ -304,14 +302,13 @@
           </el-col>
           <el-col :span="12">
             <el-form-item label="角色">
-              <el-select v-model="form.roleIds" multiple placeholder="请选择角色">
+              <el-select v-model="form.roleIds" multiple disabled placeholder="请选择角色">
                 <el-option
                   v-for="item in roleOptions"
                   :key="item.roleId"
                   :label="item.roleName"
                   :value="item.roleId"
                   :disabled="item.status == 1"
-                  v-if="item.roleId === 105"
                 ></el-option>
               </el-select>
             </el-form-item>
@@ -578,7 +575,7 @@ export default {
         status: "0",
         remark: undefined,
         postIds: [],
-        roleIds: []
+        roleIds: [105]
       };
       this.resetForm("form");
     },
